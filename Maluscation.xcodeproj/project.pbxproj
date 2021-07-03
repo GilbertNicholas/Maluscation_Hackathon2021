@@ -26,6 +26,7 @@
 		02CBAE85268FFA90001B1E1F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		02CBAE88268FFA90001B1E1F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		02CBAE8A268FFA90001B1E1F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		02D49A822690219F003B7108 /* Maluscation.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Maluscation.entitlements; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,6 +59,7 @@
 		02CBAE78268FFA8C001B1E1F /* Maluscation */ = {
 			isa = PBXGroup;
 			children = (
+				02D49A822690219F003B7108 /* Maluscation.entitlements */,
 				02CBAE90268FFB06001B1E1F /* Model */,
 				02CBAE92268FFB19001B1E1F /* View */,
 				02CBAE93268FFB1E001B1E1F /* Controller */,
@@ -314,6 +316,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = Maluscation/Maluscation.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = NZ4J9325UD;
 				INFOPLIST_FILE = Maluscation/Info.plist;
@@ -324,7 +327,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.gilbertnicholas.Maluscation;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -333,6 +336,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = Maluscation/Maluscation.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = NZ4J9325UD;
 				INFOPLIST_FILE = Maluscation/Info.plist;
@@ -343,7 +347,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.gilbertnicholas.Maluscation;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};

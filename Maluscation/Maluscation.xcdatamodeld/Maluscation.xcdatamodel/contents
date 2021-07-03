@@ -1,4 +1,37 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="1" systemVersion="11A491" minimumToolsVersion="Automatic" sourceLanguage="Swift" usedWithCloudKit="false" userDefinedModelVersionIdentifier="">
-    <elements/>
+<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="18154" systemVersion="20F71" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
+    <entity name="Booking" representedClassName="Booking" syncable="YES" codeGenerationType="class">
+        <attribute name="checkIn" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
+        <attribute name="checkOut" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
+        <attribute name="email" optional="YES" attributeType="String"/>
+        <attribute name="name" optional="YES" attributeType="String"/>
+        <attribute name="phone" optional="YES" attributeType="String"/>
+        <relationship name="bookingToPlace" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="DestinationPlace" inverseName="placeToBooking" inverseEntity="DestinationPlace"/>
+        <relationship name="bookingToUser" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="User" inverseName="userToBooking" inverseEntity="User"/>
+    </entity>
+    <entity name="DestinationPlace" representedClassName="DestinationPlace" syncable="YES" codeGenerationType="class">
+        <attribute name="facility" optional="YES" attributeType="Transformable"/>
+        <attribute name="location" optional="YES" attributeType="String"/>
+        <attribute name="ratingAll" optional="YES" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES"/>
+        <relationship name="placeToBooking" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Booking" inverseName="bookingToPlace" inverseEntity="Booking"/>
+        <relationship name="placeToReview" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Review" inverseName="reviewToPlace" inverseEntity="Review"/>
+    </entity>
+    <entity name="Review" representedClassName="Review" syncable="YES" codeGenerationType="class">
+        <attribute name="feedback" optional="YES" attributeType="String"/>
+        <attribute name="rating" optional="YES" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES"/>
+        <relationship name="reviewToPlace" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="DestinationPlace" inverseName="placeToReview" inverseEntity="DestinationPlace"/>
+        <relationship name="reviewToUser" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="User" inverseName="userToReview" inverseEntity="User"/>
+    </entity>
+    <entity name="User" representedClassName="User" syncable="YES" codeGenerationType="class">
+        <attribute name="email" attributeType="String"/>
+        <attribute name="name" attributeType="String"/>
+        <relationship name="userToBooking" optional="YES" toMany="YES" deletionRule="Cascade" destinationEntity="Booking" inverseName="bookingToUser" inverseEntity="Booking"/>
+        <relationship name="userToReview" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Review" inverseName="reviewToUser" inverseEntity="Review"/>
+    </entity>
+    <elements>
+        <element name="Booking" positionX="-54" positionY="9" width="128" height="134"/>
+        <element name="DestinationPlace" positionX="-36" positionY="18" width="128" height="104"/>
+        <element name="Review" positionX="-18" positionY="63" width="128" height="89"/>
+        <element name="User" positionX="-63" positionY="-18" width="128" height="89"/>
+    </elements>
 </model>

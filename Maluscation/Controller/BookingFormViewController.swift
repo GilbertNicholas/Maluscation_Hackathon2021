@@ -22,6 +22,8 @@ class BookingFormViewController: UIViewController {
     let datePicker = UIDatePicker()
     let datePicker2 = UIDatePicker()
     
+    var minDate: Date?
+    
     let toolbar = UIToolbar()
     
     var books = [NSManagedObject]()
@@ -42,6 +44,8 @@ class BookingFormViewController: UIViewController {
         checkOutTextField.inputAccessoryView = toolbar
         
         setUpTapGesture()
+        
+        minDate = datePicker.minimumDate
     }
     
     @IBAction func closeButtonTapped(_ sender: Any) {
@@ -135,7 +139,7 @@ extension BookingFormViewController {
         formatter.dateFormat = "dd/MM/yyyy"
 
         datePicker2.datePickerMode = .dateAndTime
-        datePicker2.minimumDate = Calendar.current.date(byAdding: .day, value: 1, to: Date())
+        datePicker2.minimumDate = Calendar.current.date(byAdding: .day, value: 1, to: minDate ?? Date())
         datePicker2.addTarget(self, action: #selector(checkOutValueChanged(sender:)), for: .valueChanged)
         datePicker2.frame.size = CGSize(width: 0, height: 250)
     }

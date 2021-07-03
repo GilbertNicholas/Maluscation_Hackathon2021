@@ -108,11 +108,20 @@
                         <outlet property="fullNameTextField" destination="AIn-B5-cpV" id="b4h-FA-D3v"/>
                         <outlet property="paymentButton" destination="Rnr-Px-Evi" id="mJo-lC-uHc"/>
                         <outlet property="phoneNumberTextField" destination="wKe-6R-dcc" id="Nzu-U3-Uhb"/>
+                        <segue destination="gMp-Tu-56i" kind="presentation" identifier="toReceipt" modalPresentationStyle="fullScreen" modalTransitionStyle="crossDissolve" id="hFt-C8-GYC"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="138.46153846153845" y="93.838862559241704"/>
+        </scene>
+        <!--Receipt-->
+        <scene sceneID="dt1-st-t2S">
+            <objects>
+                <viewControllerPlaceholder storyboardName="Receipt" id="gMp-Tu-56i" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="mJV-3T-KMd" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1040" y="123"/>
         </scene>
     </scenes>
     <resources>

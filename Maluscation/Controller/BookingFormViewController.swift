@@ -79,6 +79,18 @@ class BookingFormViewController: UIViewController {
         self.present(alert, animated: true, completion: nil)
     }
     
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "toReceipt" {
+            if let nextVC = segue.destination as? ReceiptViewController {
+                nextVC.fullName = fullNameTextField.text
+                nextVC.email = emailTextField.text
+                nextVC.phoneNumber = phoneNumberTextField.text
+                nextVC.checkInDate = checkInTextField.text
+                nextVC.checkOutDate = checkOutTextField.text
+            }
+        }
+    }
+    
     @IBAction func continueButtonTapped(_ sender: Any) {
         if checkInTextField.text != "" && checkOutTextField.text != "" && fullNameTextField.text != "" && emailTextField.text != "" && phoneNumberTextField.text != "" {
             if fullNameTextField.text!.count >= 3 && validateEmail(enteredEmail: emailTextField.text!) && phoneNumberTextField.text!.count >= 10 {
@@ -102,6 +114,8 @@ class BookingFormViewController: UIViewController {
                 } catch let error as NSError {
                     print("Could not save. \(error), \(error.userInfo)")
                 }
+                
+                performSegue(withIdentifier: "toReceipt", sender: nil)
             } else {
                popUpAlert()
             }

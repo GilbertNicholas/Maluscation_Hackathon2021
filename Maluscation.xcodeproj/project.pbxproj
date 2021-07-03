@@ -17,6 +17,10 @@
 		02D49A842690244B003B7108 /* DataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02D49A832690244B003B7108 /* DataManager.swift */; };
 		F388126A269025A40061D243 /* BookingForm.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F3881269269025A40061D243 /* BookingForm.storyboard */; };
 		F388126C269025D20061D243 /* BookingFormViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F388126B269025D20061D243 /* BookingFormViewController.swift */; };
+		F388126E26905EEC0061D243 /* RobotoSlab-Black.ttf in Resources */ = {isa = PBXBuildFile; fileRef = F388126D26905EEC0061D243 /* RobotoSlab-Black.ttf */; };
+		F388127126906A4E0061D243 /* Signika-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = F388127026906A4E0061D243 /* Signika-Bold.ttf */; };
+		F388127426906ACE0061D243 /* RobotoSlab-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = F388127226906ACE0061D243 /* RobotoSlab-Medium.ttf */; };
+		F388127526906ACE0061D243 /* RobotoSlab-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = F388127326906ACE0061D243 /* RobotoSlab-Light.ttf */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -33,6 +37,10 @@
 		02D49A832690244B003B7108 /* DataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataManager.swift; sourceTree = "<group>"; };
 		F3881269269025A40061D243 /* BookingForm.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = BookingForm.storyboard; sourceTree = "<group>"; };
 		F388126B269025D20061D243 /* BookingFormViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookingFormViewController.swift; sourceTree = "<group>"; };
+		F388126D26905EEC0061D243 /* RobotoSlab-Black.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "RobotoSlab-Black.ttf"; sourceTree = "<group>"; };
+		F388127026906A4E0061D243 /* Signika-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Signika-Bold.ttf"; sourceTree = "<group>"; };
+		F388127226906ACE0061D243 /* RobotoSlab-Medium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "RobotoSlab-Medium.ttf"; sourceTree = "<group>"; };
+		F388127326906ACE0061D243 /* RobotoSlab-Light.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "RobotoSlab-Light.ttf"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -69,6 +77,7 @@
 				02CBAE90268FFB06001B1E1F /* Model */,
 				02CBAE92268FFB19001B1E1F /* View */,
 				02CBAE93268FFB1E001B1E1F /* Controller */,
+				F388126F26905F2C0061D243 /* Fonts */,
 				02CBAE79268FFA8C001B1E1F /* AppDelegate.swift */,
 				02CBAE7B268FFA8C001B1E1F /* SceneDelegate.swift */,
 				02CBAE85268FFA90001B1E1F /* Assets.xcassets */,
@@ -103,6 +112,17 @@
 				F388126B269025D20061D243 /* BookingFormViewController.swift */,
 			);
 			path = Controller;
+			sourceTree = "<group>";
+		};
+		F388126F26905F2C0061D243 /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+				F388127026906A4E0061D243 /* Signika-Bold.ttf */,
+				F388126D26905EEC0061D243 /* RobotoSlab-Black.ttf */,
+				F388127326906ACE0061D243 /* RobotoSlab-Light.ttf */,
+				F388127226906ACE0061D243 /* RobotoSlab-Medium.ttf */,
+			);
+			path = Fonts;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -164,7 +184,11 @@
 			files = (
 				02CBAE89268FFA90001B1E1F /* LaunchScreen.storyboard in Resources */,
 				02CBAE86268FFA90001B1E1F /* Assets.xcassets in Resources */,
+				F388126E26905EEC0061D243 /* RobotoSlab-Black.ttf in Resources */,
 				F388126A269025A40061D243 /* BookingForm.storyboard in Resources */,
+				F388127526906ACE0061D243 /* RobotoSlab-Light.ttf in Resources */,
+				F388127126906A4E0061D243 /* Signika-Bold.ttf in Resources */,
+				F388127426906ACE0061D243 /* RobotoSlab-Medium.ttf in Resources */,
 				02CBAE81268FFA8C001B1E1F /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

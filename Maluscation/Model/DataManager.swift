@@ -5,4 +5,9 @@
 //  Created by Gilbert Nicholas on 03/07/21.
 //
 
-import Foundation
+import UIKit
+import CoreData
+
+class DataManager {
+    
+}

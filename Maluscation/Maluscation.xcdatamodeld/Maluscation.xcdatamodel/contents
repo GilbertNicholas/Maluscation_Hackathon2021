@@ -6,6 +6,7 @@
         <attribute name="email" optional="YES" attributeType="String"/>
         <attribute name="name" optional="YES" attributeType="String"/>
         <attribute name="phone" optional="YES" attributeType="String"/>
+        <attribute name="totalPrice" optional="YES" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES"/>
         <relationship name="bookingToPlace" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="DestinationPlace" inverseName="placeToBooking" inverseEntity="DestinationPlace"/>
         <relationship name="bookingToUser" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="User" inverseName="userToBooking" inverseEntity="User"/>
     </entity>
@@ -29,7 +30,7 @@
         <relationship name="userToReview" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Review" inverseName="reviewToUser" inverseEntity="Review"/>
     </entity>
     <elements>
-        <element name="Booking" positionX="-54" positionY="9" width="128" height="134"/>
+        <element name="Booking" positionX="-54" positionY="9" width="128" height="149"/>
         <element name="DestinationPlace" positionX="-36" positionY="18" width="128" height="104"/>
         <element name="Review" positionX="-18" positionY="63" width="128" height="89"/>
         <element name="User" positionX="-63" positionY="-18" width="128" height="89"/>

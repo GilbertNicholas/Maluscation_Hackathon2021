@@ -115,6 +115,9 @@
                                 <state key="normal" title="Submit">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
+                                <connections>
+                                    <action selector="submitBtnTapped:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="nT3-AA-cCy"/>
+                                </connections>
                             </button>
                             <navigationBar contentMode="scaleToFill" barStyle="black" translatesAutoresizingMaskIntoConstraints="NO" id="EF0-b5-SeP">
                                 <rect key="frame" x="0.0" y="44" width="390" height="44"/>

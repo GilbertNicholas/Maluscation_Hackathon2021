@@ -21,10 +21,13 @@ class ReviewViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+<<<<<<< HEAD
         
         upvote = 0
         downvote = 0
         
+=======
+>>>>>>> development
         setUpView()
     }
     
@@ -92,4 +95,7 @@ class ReviewViewController: UIViewController {
         
     }
     
+    @IBAction func submitBtnTapped(_ sender: UIButton) {
+        
+    }
 }

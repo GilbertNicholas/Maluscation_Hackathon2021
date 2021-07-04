@@ -169,7 +169,7 @@ class CoreDataManager {
         do {
             let request = Booking.fetchRequest() as NSFetchRequest<Booking>
             
-            let pred = NSPredicate(format: "id == %@", id as CVarArg)
+            let pred = NSPredicate(format: "bookingId == %@", id as CVarArg)
             request.predicate = pred
             
             tempBookings = try context.fetch(request)

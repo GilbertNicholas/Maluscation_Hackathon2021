@@ -20,6 +20,10 @@ class ReviewViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        upvote = 0
+        downvote = 0
+        
         setUpView()
     }
     
@@ -49,6 +53,42 @@ class ReviewViewController: UIViewController {
     
     @IBAction func closeButtonTapped(_ sender: Any) {
         self.dismiss(animated: true)
+    }
+    
+    @IBAction func upvoteButtonTapped(_ sender: Any) {
+        upvoteButton.backgroundColor = UIColor(red: 9/255, green: 28/255, blue: 87/255, alpha: 1)
+        upvoteButton.setTitleColor(.white, for: .normal)
+        upvoteButton.tintColor = .white
+        
+        downvoteButton.backgroundColor = .white
+        downvoteButton.setTitleColor(UIColor(red: 9/255, green: 28/255, blue: 87/255, alpha: 1), for: .normal)
+        downvoteButton.tintColor = UIColor(red: 9/255, green: 28/255, blue: 87/255, alpha: 1)
+        
+        if upvote == 0 {
+            upvote! += 1
+        } else {
+            upvote! += 0
+        }
+    }
+    
+    @IBAction func downvoteButtonTapped(_ sender: Any) {
+        upvoteButton.backgroundColor = .white
+        upvoteButton.setTitleColor(UIColor(red: 9/255, green: 28/255, blue: 87/255, alpha: 1), for: .normal)
+        upvoteButton.tintColor = UIColor(red: 9/255, green: 28/255, blue: 87/255, alpha: 1)
+        
+        downvoteButton.backgroundColor = UIColor(red: 9/255, green: 28/255, blue: 87/255, alpha: 1)
+        downvoteButton.setTitleColor(.white, for: .normal)
+        downvoteButton.tintColor = .white
+        
+        if upvote == 0 {
+            upvote! += 1
+        } else {
+            upvote! += 0
+        }
+    }
+    
+    func saveFeedback() {
+        
     }
     
     @IBAction func submitBtnTapped(_ sender: UIButton) {

@@ -36,32 +36,18 @@ class SwipePageViewController: UIViewController {
     
     var chosenPref: String!
     var DataManager: CoreDataManager!
+    var id: UUID!
     
     private var usedIdx: Int!
     private var divisor: CGFloat!
     private var placeDataBasedOnCategory: [DestinationPlace]!
     
-//    enum prefChosen {
-//        case Active
-//        case Casual
-//        case Nature
-//        case Chill
-//    }
-//
-//    var usedPref: prefChosen {
-//        didSet {
-//            switch usedPref {
-//            case .Active:
-//                activeBtn.layer.borderWidth = 5
-//            case .Casual:
-//                activeBtn.layer.borderWidth = 5
-//            case .Nature:
-//                natureBtn.layer.borderWidth = 5
-//            case .Chill:
-//                chillBtn.layer.borderWidth = 5
-//            }
-//        }
-//    }
+    private let colors: [String: UIColor] = [
+        "Active": red,
+        "Casual": yellow,
+        "Nature": green,
+        "Chill": blue
+    ]
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -123,20 +109,27 @@ class SwipePageViewController: UIViewController {
         nameLblContainer.alpha = 0.8
         
         statusLblContainer.layer.cornerRadius = 8
-        
+        statusLblContainer.layer.shadowColor = UIColor.black.cgColor
+        statusLblContainer.layer.shadowOpacity = 1
+        statusLblContainer.layer.shadowOffset = .zero
+        statusLblContainer.layer.shadowRadius = 2
+
         setupCardContent()
     }
     
     private func setupCardContent() {
         if placeDataBasedOnCategory != nil {
+            id = placeDataBasedOnCategory[usedIdx].id
             cardImage.image = UIImage(data: placeDataBasedOnCategory[usedIdx].image!)
             placeNameLbl.text = placeDataBasedOnCategory[usedIdx].name
             locationLbl.text = placeDataBasedOnCategory[usedIdx].location
             
             if placeDataBasedOnCategory[usedIdx].status {
                 statusLbl.text = "Red Zone"
+                statusLblContainer.backgroundColor = red
             } else {
                 statusLbl.text = "Green Zone"
+                statusLblContainer.backgroundColor = green
             }
             
             facility1Lbl.text = placeDataBasedOnCategory[usedIdx].facility![0]
@@ -148,6 +141,10 @@ class SwipePageViewController: UIViewController {
             downvoteLbl.text = String(placeDataBasedOnCategory[usedIdx].totalDownvote)
             hygieneLbl.text = "\(String(placeDataBasedOnCategory[usedIdx].totalHygiene))/5"
             priceLbl.text = "IDR \(String(placeDataBasedOnCategory[usedIdx].price))"
+            
+            cardContainer.backgroundColor = colors[chosenPref]
+            
+            prevBtn.isEnabled = usedIdx == 0 ? false : true
         }
     }
     
@@ -166,7 +163,7 @@ class SwipePageViewController: UIViewController {
     }
     
     @IBAction func panCardTapped(_ sender: UITapGestureRecognizer) {
-        //PAGE DETAIL PLACE
+        self.performSegue(withIdentifier: "detailSegue", sender: self)
         print("TAPPED!")
     }
     
@@ -188,10 +185,11 @@ class SwipePageViewController: UIViewController {
                 })
                 
                 usedIdx += 1
-                if usedIdx <= placeDataBasedOnCategory.count {
+                if usedIdx < placeDataBasedOnCategory.count {
                     setupCardContent()
                 } else {
-                    //OPTION PLACE ABIS
+                    self.usedIdx = 0
+                    setupCardContent()
                 }
 
             } else if card.center.x > (view.frame.width - 30) {
@@ -202,10 +200,11 @@ class SwipePageViewController: UIViewController {
                 })
                 
                 usedIdx += 1
-                if usedIdx <= placeDataBasedOnCategory.count {
+                if usedIdx < placeDataBasedOnCategory.count {
                     setupCardContent()
                 } else {
-                    //OPTION PLACE ABIS
+                    self.usedIdx = 0
+                    setupCardContent()
                 }
             }
             resetCard()

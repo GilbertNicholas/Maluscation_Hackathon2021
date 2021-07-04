@@ -95,7 +95,7 @@ class BookingFormViewController: UIViewController {
         checkOutDate.minimumDate = Calendar.current.date(byAdding: .day, value: 1, to: checkInDate.minimumDate!)
         
         // TODO: Replace with Apple ID's data
-        userNameLabel.text = fullName ?? "Stefan Adisurya"
+        userNameLabel.text = fullName ?? "Evelyn Widjaja"
         
         paymentOptLabel.text = paymentOpt ?? "Choose"
         

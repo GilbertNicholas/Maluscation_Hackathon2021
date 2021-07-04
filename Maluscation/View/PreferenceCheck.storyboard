@@ -27,6 +27,9 @@
                                 <state key="normal" title="Active">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
+                                <connections>
+                                    <action selector="prefButtonTapped:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="bHx-ty-Ikk"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qKm-yj-CQy">
                                 <rect key="frame" x="213" y="401" width="137" height="137"/>
@@ -36,6 +39,9 @@
                                 <state key="normal" title="Casual">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
+                                <connections>
+                                    <action selector="prefButtonTapped:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="14c-Xy-obv"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zFL-6U-riA">
                                 <rect key="frame" x="213" y="573" width="137" height="137"/>
@@ -45,6 +51,9 @@
                                 <state key="normal" title="Chill">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
+                                <connections>
+                                    <action selector="prefButtonTapped:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="bP6-62-BCp"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KaS-kl-NIU">
                                 <rect key="frame" x="41" y="573" width="137" height="137"/>
@@ -54,11 +63,17 @@
                                 <state key="normal" title="Nature">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
+                                <connections>
+                                    <action selector="prefButtonTapped:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="Min-cn-Ju2"/>
+                                </connections>
                             </button>
                             <button hidden="YES" opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6QF-PE-a8I">
                                 <rect key="frame" x="308" y="748" width="42" height="42"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" image="btnPref"/>
+                                <state key="normal" image="btnNext"/>
+                                <connections>
+                                    <action selector="nextButtonTapped:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="8kR-Vh-B6Y"/>
+                                </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="What kind of a staycation do you like?  " textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Csq-cj-7qb">
                                 <rect key="frame" x="49" y="240" width="293" height="72"/>
@@ -76,15 +91,34 @@
                             <constraint firstItem="vnv-5B-CkZ" firstAttribute="top" secondItem="5EZ-qb-Rvc" secondAttribute="top" id="ivt-Wm-PoX"/>
                         </constraints>
                     </view>
+                    <navigationItem key="navigationItem" id="6O5-ae-Yh4"/>
+                    <connections>
+                        <outlet property="activeBtn" destination="Ee2-NN-abT" id="pCo-4Y-lzD"/>
+                        <outlet property="casualBtn" destination="qKm-yj-CQy" id="1Fr-1r-9jc"/>
+                        <outlet property="chillBtn" destination="zFL-6U-riA" id="OJD-OR-Z63"/>
+                        <outlet property="natureBtn" destination="KaS-kl-NIU" id="Lqp-wN-HeE"/>
+                        <outlet property="nextBtn" destination="6QF-PE-a8I" id="ER3-Nu-JrJ"/>
+                        <segue destination="9Qy-Om-AxV" kind="presentation" identifier="swipeSegue" modalPresentationStyle="fullScreen" id="BV7-4c-CEH"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="130.76923076923077" y="100.94786729857819"/>
+            <point key="canvasLocation" x="1060" y="100.94786729857819"/>
+        </scene>
+        <!--SwipePage-->
+        <scene sceneID="kXO-3b-ucB">
+            <objects>
+                <viewControllerPlaceholder storyboardName="SwipePage" id="9Qy-Om-AxV" sceneMemberID="viewController">
+                    <navigationItem key="navigationItem" id="4JM-zJ-Zxs"/>
+                </viewControllerPlaceholder>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Ohw-Hh-Z9P" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1910" y="100.94786729857819"/>
         </scene>
     </scenes>
     <resources>
         <image name="BGMalus" width="390" height="347"/>
-        <image name="btnPref" width="42" height="42"/>
+        <image name="btnNext" width="42" height="42"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

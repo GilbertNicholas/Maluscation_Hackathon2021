@@ -119,6 +119,16 @@
                                             </userDefinedRuntimeAttribute>
                                         </userDefinedRuntimeAttributes>
                                     </view>
+                                    <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="eFn-xV-oWP">
+                                        <rect key="frame" x="0.0" y="14" width="14" height="62"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                    </view>
+                                    <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="sG8-Ep-TI5">
+                                        <rect key="frame" x="310" y="14" width="16" height="62"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                    </view>
                                 </subviews>
                                 <color key="backgroundColor" red="0.98085910080000005" green="0.45497393609999998" blue="0.43436145780000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <userDefinedRuntimeAttributes>
@@ -321,12 +331,14 @@
                         <outlet property="dateLabel" destination="foh-ka-N7b" id="NRm-9p-ClP"/>
                         <outlet property="dateView" destination="ILm-aT-I19" id="K5J-bt-qwN"/>
                         <outlet property="fullNameLabel" destination="rxW-cy-D6c" id="8BG-E1-fYz"/>
+                        <outlet property="leftView" destination="eFn-xV-oWP" id="N7D-JN-0Yr"/>
                         <outlet property="paymentDateLabel" destination="nVb-45-pSG" id="YGk-w3-Hb1"/>
                         <outlet property="paymentOptLabel" destination="vpq-vA-VdN" id="QUe-3b-4GZ"/>
                         <outlet property="paymentStatusButton" destination="6RM-VQ-RoT" id="ipX-Eu-RsM"/>
                         <outlet property="paymentView" destination="fyu-on-Y3m" id="NKZ-8d-2Jq"/>
                         <outlet property="qrCodeButton" destination="SNM-aX-i1T" id="jnV-Hd-Vtb"/>
                         <outlet property="reviewButton" destination="gHv-9n-fhm" id="OW2-Mc-7kL"/>
+                        <outlet property="rightView" destination="sG8-Ep-TI5" id="mVq-CP-ZjP"/>
                         <outlet property="villaNameView" destination="QE4-Ja-YKh" id="t6K-zT-6j7"/>
                         <segue destination="t8d-Fc-fIg" kind="presentation" identifier="toQRCode" id="VFU-j7-0x2"/>
                         <segue destination="rgU-K4-62K" kind="presentation" identifier="toReview" id="C8P-2r-84f"/>

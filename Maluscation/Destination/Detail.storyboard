@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="18122" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="gkc-Qa-X3U">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="18122" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="bI3-D9-uMA">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="18093"/>
@@ -16,7 +16,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="background" translatesAutoresizingMaskIntoConstraints="NO" id="DNt-MC-ZMB">
-                                <rect key="frame" x="0.0" y="44" width="414" height="358.5"/>
+                                <rect key="frame" x="0.0" y="88" width="414" height="358.5"/>
                             </imageView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Gxt-FT-Bfe">
                                 <rect key="frame" x="0.0" y="793.5" width="414" height="134.5"/>
@@ -76,7 +76,7 @@
                                 </constraints>
                             </view>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="insetGrouped" separatorStyle="default" allowsSelection="NO" rowHeight="700" estimatedRowHeight="-1" sectionHeaderHeight="18" sectionFooterHeight="18" translatesAutoresizingMaskIntoConstraints="NO" id="mLP-6N-NLs">
-                                <rect key="frame" x="0.0" y="44" width="414" height="749.5"/>
+                                <rect key="frame" x="0.0" y="88" width="414" height="705.5"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <color key="separatorColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <color key="sectionIndexColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -101,7 +101,14 @@
                             <constraint firstItem="Gxt-FT-Bfe" firstAttribute="height" secondItem="cUA-7z-4RL" secondAttribute="height" multiplier="0.15" id="u8Q-Uq-Hg7"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="6up-0n-8SN"/>
+                    <navigationItem key="navigationItem" id="6up-0n-8SN">
+                        <barButtonItem key="leftBarButtonItem" title="Item" image="chevron.left" catalog="system" id="Q2y-pE-rDw">
+                            <color key="tintColor" red="0.027450980390000001" green="0.086274509799999996" blue="0.27450980390000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <connections>
+                                <action selector="backButtonTapped:" destination="gkc-Qa-X3U" id="8Mt-3d-bFr"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="bookButton" destination="YCd-cD-j9g" id="Gve-83-QXH"/>
                         <outlet property="discountLabel" destination="uPu-UW-1B5" id="Vjm-t3-m21"/>
@@ -113,7 +120,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="2Js-xl-aJY" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3681" y="139"/>
+            <point key="canvasLocation" x="4589.8550724637689" y="138.61607142857142"/>
         </scene>
         <!--BookingForm-->
         <scene sceneID="5E6-uH-L0Q">
@@ -121,11 +128,30 @@
                 <viewControllerPlaceholder storyboardName="BookingForm" id="cfE-gE-9fj" sceneMemberID="viewController"/>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="9xe-eJ-JQh" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4372" y="139"/>
+            <point key="canvasLocation" x="5281.884057971015" y="138.61607142857142"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="Ftv-4w-22b">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="bI3-D9-uMA" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="wYK-ih-KYl">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="gkc-Qa-X3U" kind="relationship" relationship="rootViewController" id="nZt-88-67H"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="WEO-Ck-3O1" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3679.7101449275365" y="138.61607142857142"/>
         </scene>
     </scenes>
     <resources>
         <image name="background" width="390" height="347"/>
         <image name="checkmark.circle.fill" catalog="system" width="128" height="121"/>
+        <image name="chevron.left" catalog="system" width="96" height="128"/>
     </resources>
 </document>

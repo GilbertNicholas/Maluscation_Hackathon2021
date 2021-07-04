@@ -296,9 +296,9 @@
                     </tabBar>
                     <connections>
                         <segue destination="Y6W-OH-hqX" kind="relationship" relationship="viewControllers" id="hZR-Vi-Y4x"/>
-                        <segue destination="J65-k0-XNA" kind="relationship" relationship="viewControllers" id="VaK-F5-3da"/>
-                        <segue destination="oLz-wN-GeU" kind="relationship" relationship="viewControllers" id="D7A-Dd-HiI"/>
-                        <segue destination="2hK-5I-SKE" kind="relationship" relationship="viewControllers" id="gSa-lM-00N"/>
+                        <segue destination="2hK-5I-SKE" kind="relationship" relationship="viewControllers" id="Giw-R5-fG0"/>
+                        <segue destination="J65-k0-XNA" kind="relationship" relationship="viewControllers" id="Oi6-Jp-n5s"/>
+                        <segue destination="oLz-wN-GeU" kind="relationship" relationship="viewControllers" id="qob-Im-3o6"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="X9E-SL-9gU" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

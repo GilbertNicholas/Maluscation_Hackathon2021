@@ -354,10 +354,10 @@
             </objects>
             <point key="canvasLocation" x="1975" y="13"/>
         </scene>
-        <!--Receipt-->
+        <!--PaymentStatus-->
         <scene sceneID="dt1-st-t2S">
             <objects>
-                <viewControllerPlaceholder storyboardName="Receipt" id="gMp-Tu-56i" sceneMemberID="viewController"/>
+                <viewControllerPlaceholder storyboardName="PaymentStatus" id="gMp-Tu-56i" sceneMemberID="viewController"/>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="mJV-3T-KMd" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1969.2307692307691" y="122.98578199052132"/>

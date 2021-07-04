@@ -22,7 +22,6 @@ class BookingFormViewController: UIViewController {
     @IBOutlet weak var bottomView: UIView!
     @IBOutlet weak var payButton: UIButton!
     
-    
     @IBOutlet weak var userNameLabel: UILabel!
     @IBOutlet weak var checkInDate: UIDatePicker!
     @IBOutlet weak var checkOutDate: UIDatePicker!
@@ -40,7 +39,7 @@ class BookingFormViewController: UIViewController {
     
     let toolbar = UIToolbar()
     
-    var books = [NSManagedObject]()
+    var id: UUID?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -52,8 +51,17 @@ class BookingFormViewController: UIViewController {
         checkInDate.minimumDate = Calendar.current.date(byAdding: .day, value: 1, to: Date())
         checkOutDate.minimumDate = Calendar.current.date(byAdding: .day, value: 1, to: checkInDate.minimumDate!)
         
+        // TODO: Replace with Apple ID's data
         userNameLabel.text = fullName ?? "Stefan Adisurya"
+        
         paymentOptLabel.text = paymentOpt ?? "Choose"
+        
+        if paymentOptLabel.text == "Choose" {
+            paymentOptLabel.textColor = .gray
+        } else {
+            paymentOptLabel.textColor = UIColor(red: 9/255, green: 28/255, blue: 87/255, alpha: 1)
+        }
+        
         totalPrice = 2000000
         
         payButton.layer.cornerRadius = 20
@@ -82,6 +90,11 @@ class BookingFormViewController: UIViewController {
         paymentOptionView.layer.borderColor = CGColor(red: 9/255, green: 28/255, blue: 87/255, alpha: 1)
         paymentOptionView.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(paymentOptTapped(_:))))
     }
+    
+    // TODO: Fetch DestinationPlace data
+//    func fetchData(with id: UUID) {
+//
+//    }
     
     @objc func userDetailTapped(_ sender: UITapGestureRecognizer) {
         performSegue(withIdentifier: "toUserDetail", sender: nil)
@@ -122,6 +135,7 @@ class BookingFormViewController: UIViewController {
         }
 
         paymentOptLabel.text = paymentOpt
+        paymentOptLabel.textColor = UIColor(red: 9/255, green: 28/255, blue: 87/255, alpha: 1)
         
         guard sender.source is UserDetailViewController else {
             return
@@ -131,7 +145,7 @@ class BookingFormViewController: UIViewController {
     }
     
     @IBAction func continueButtonTapped(_ sender: Any) {
-        if userNameLabel.text != "" && paymentOptLabel.text != "" {
+        if userNameLabel.text != "" && paymentOptLabel.text != "Choose" {
             guard let appDelegate = UIApplication.shared.delegate as? AppDelegate else {
                 return
             }

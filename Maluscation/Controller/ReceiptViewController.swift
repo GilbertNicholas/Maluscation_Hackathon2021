@@ -9,34 +9,60 @@ import UIKit
 
 class ReceiptViewController: UIViewController {
     
-    @IBOutlet weak var villaDetailView: UIView!
-    @IBOutlet weak var bookingDetailView: UIView!
-    @IBOutlet weak var fullNameLbl: UILabel!
-    @IBOutlet weak var emailLbl: UILabel!
-    @IBOutlet weak var phoneNumberLbl: UILabel!
-    @IBOutlet weak var checkInLbl: UILabel!
-    @IBOutlet weak var checkOutLbl: UILabel!
+    @IBOutlet weak var fullNameLabel: UILabel!
+    @IBOutlet weak var dateLabel: UILabel!
+    @IBOutlet weak var paymentOptLabel: UILabel!
+    @IBOutlet weak var accountOwnerLabel: UILabel!
+    @IBOutlet weak var paymentDateLabel: UILabel!
     
-    var fullName: String?
-    var email: String?
-    var phoneNumber: String?
-    var checkInDate: String?
-    var checkOutDate: String?
+    @IBOutlet weak var qrCodeButton: UIButton!
+    @IBOutlet weak var reviewButton: UIButton!
+    @IBOutlet weak var paymentStatusButton: UIButton!
+    
+    @IBOutlet weak var villaNameView: UIView!
+    @IBOutlet weak var dateView: UIView!
+    @IBOutlet weak var paymentView: UIView!
+    
+    var id: UUID?
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        villaDetailView.layer.cornerRadius = 8
-        villaDetailView.layer.opacity = 0.4
+        setUpView()
+    }
+    
+    func setUpView() {
+        villaNameView.layer.opacity = 0.4
         
-        bookingDetailView.layer.cornerRadius = 8
-        bookingDetailView.layer.opacity = 0.4
+        dateView.layer.borderWidth = 4
+        dateView.layer.borderColor = CGColor(red: 9/255, green: 28/255, blue: 87/255, alpha: 1)
         
-        fullNameLbl.text = fullName
-        emailLbl.text = "Email: \(email!)"
-        phoneNumberLbl.text = "Phone number: \(phoneNumber!)"
-        checkInLbl.text = "Check in: \(checkInDate!)"
-        checkOutLbl.text = "Check out: \(checkOutDate!)"
+        paymentView.layer.borderWidth = 4
+        paymentView.layer.borderColor = CGColor(red: 9/255, green: 28/255, blue: 87/255, alpha: 1)
+        
+        qrCodeButton.layer.cornerRadius = 15
+        qrCodeButton.layer.shadowOpacity = 0.5
+        qrCodeButton.layer.shadowRadius = 6
+        qrCodeButton.layer.shadowOffset = CGSize(width: 0.5, height: 0.4)
+        qrCodeButton.layer.borderWidth = 2
+        qrCodeButton.layer.borderColor = CGColor(red: 9/255, green: 28/255, blue: 87/255, alpha: 1)
+        
+        reviewButton.layer.cornerRadius = 15
+        reviewButton.layer.shadowOpacity = 0.5
+        reviewButton.layer.shadowRadius = 6
+        reviewButton.layer.shadowOffset = CGSize(width: 0.5, height: 0.4)
+        reviewButton.layer.borderWidth = 2
+        reviewButton.layer.borderColor = CGColor(red: 9/255, green: 28/255, blue: 87/255, alpha: 1)
+        
+        paymentStatusButton.layer.cornerRadius = 20
+    }
+    
+    @IBAction func qrCodeButtonTapped(_ sender: Any) {
+        performSegue(withIdentifier: "toQRCode", sender: nil)
+    }
+    
+    @IBAction func reviewButtonTapped(_ sender: Any) {
+        performSegue(withIdentifier: "toReview", sender: nil)
     }
     
 }

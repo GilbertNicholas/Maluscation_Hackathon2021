@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="18122" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Y6W-OH-hqX">
+    <device id="retina6_0" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="18093"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Code View Controller-->
+        <scene sceneID="s0d-6b-0kx">
+            <objects>
+                <viewController id="Y6W-OH-hqX" customClass="QRCodeViewController" customModule="Maluscation" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="5EZ-qb-Rvc">
+                        <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Background2" translatesAutoresizingMaskIntoConstraints="NO" id="uFs-Pu-Ebn">
+                                <rect key="frame" x="0.0" y="0.0" width="390" height="347"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="eXu-hR-sBx">
+                                <rect key="frame" x="48.666666666666657" y="225.66666666666663" width="293" height="293"/>
+                                <subviews>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="QRCode" translatesAutoresizingMaskIntoConstraints="NO" id="oTh-q7-GVg">
+                                        <rect key="frame" x="44" y="44.000000000000028" width="205" height="205"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="205" id="Ail-f9-DS8"/>
+                                            <constraint firstAttribute="height" constant="205" id="nQG-ge-wcH"/>
+                                        </constraints>
+                                    </imageView>
+                                </subviews>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstItem="oTh-q7-GVg" firstAttribute="centerX" secondItem="eXu-hR-sBx" secondAttribute="centerX" id="j3S-As-Eat"/>
+                                    <constraint firstItem="oTh-q7-GVg" firstAttribute="centerY" secondItem="eXu-hR-sBx" secondAttribute="centerY" id="kbs-mn-hta"/>
+                                    <constraint firstAttribute="height" constant="293" id="l7z-69-wFn"/>
+                                    <constraint firstAttribute="width" constant="293" id="qz0-Gx-Fy8"/>
+                                </constraints>
+                            </view>
+                            <navigationBar contentMode="scaleToFill" barStyle="black" translucent="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WPO-FW-uE4">
+                                <rect key="frame" x="0.0" y="44" width="390" height="44"/>
+                                <color key="backgroundColor" red="0.035294117649999998" green="0.10980392160000001" blue="0.3411764706" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="tintColor" red="0.035294117649999998" green="0.10980392160000001" blue="0.3411764706" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="barTintColor" red="0.035294117649999998" green="0.10980392160000001" blue="0.3411764706" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <textAttributes key="titleTextAttributes">
+                                    <color key="textColor" red="0.81960784313725488" green="0.85882352941176465" blue="0.98039215686274506" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    <color key="textShadowColor" red="0.035294117649999998" green="0.10980392160000001" blue="0.3411764706" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </textAttributes>
+                                <items>
+                                    <navigationItem title="QR Code" id="q6T-LV-CiJ">
+                                        <barButtonItem key="leftBarButtonItem" image="xmark.circle.fill" catalog="system" id="BfK-OH-CKV">
+                                            <color key="tintColor" red="0.81960784313725488" green="0.85882352941176465" blue="0.98039215686274506" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            <connections>
+                                                <action selector="closeButtonTapped:" destination="Y6W-OH-hqX" id="GnD-YI-Nhx"/>
+                                            </connections>
+                                        </barButtonItem>
+                                    </navigationItem>
+                                </items>
+                            </navigationBar>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="vDu-zF-Fre"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="eXu-hR-sBx" firstAttribute="centerY" secondItem="5EZ-qb-Rvc" secondAttribute="centerY" constant="-50" id="OYc-6S-5S6"/>
+                            <constraint firstItem="WPO-FW-uE4" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" id="SOa-nV-PuX"/>
+                            <constraint firstItem="WPO-FW-uE4" firstAttribute="trailing" secondItem="vDu-zF-Fre" secondAttribute="trailing" id="Zyt-xv-HE7"/>
+                            <constraint firstItem="eXu-hR-sBx" firstAttribute="centerX" secondItem="5EZ-qb-Rvc" secondAttribute="centerX" id="h9e-Dp-JTt"/>
+                            <constraint firstItem="WPO-FW-uE4" firstAttribute="top" secondItem="vDu-zF-Fre" secondAttribute="top" id="hMh-fX-1hi"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="qrCodeView" destination="eXu-hR-sBx" id="3z7-1G-gE5"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="137.68115942028987" y="124.55357142857142"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="Background2" width="1170" height="726"/>
+        <image name="QRCode" width="771" height="771"/>
+        <image name="xmark.circle.fill" catalog="system" width="128" height="121"/>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>

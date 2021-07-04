@@ -15,6 +15,10 @@
 		02CBAE86268FFA90001B1E1F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 02CBAE85268FFA90001B1E1F /* Assets.xcassets */; };
 		02CBAE89268FFA90001B1E1F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 02CBAE87268FFA90001B1E1F /* LaunchScreen.storyboard */; };
 		02D49A842690244B003B7108 /* DataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02D49A832690244B003B7108 /* DataManager.swift */; };
+		02D49A86269075FB003B7108 /* PreferenceCheck.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 02D49A85269075FB003B7108 /* PreferenceCheck.storyboard */; };
+		02D49A8C269076D6003B7108 /* SwipePageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02D49A8B269076D6003B7108 /* SwipePageViewController.swift */; };
+		02D49A8E269076F8003B7108 /* PreferenceCheckViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02D49A8D269076F8003B7108 /* PreferenceCheckViewController.swift */; };
+		02D49A902690770C003B7108 /* SwipePage.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 02D49A8F2690770C003B7108 /* SwipePage.storyboard */; };
 		F388126A269025A40061D243 /* BookingForm.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F3881269269025A40061D243 /* BookingForm.storyboard */; };
 		F388126C269025D20061D243 /* BookingFormViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F388126B269025D20061D243 /* BookingFormViewController.swift */; };
 		F388126E26905EEC0061D243 /* RobotoSlab-Black.ttf in Resources */ = {isa = PBXBuildFile; fileRef = F388126D26905EEC0061D243 /* RobotoSlab-Black.ttf */; };
@@ -27,10 +31,12 @@
 		F3B1C6B8269180AC004C24EC /* PaymentOptViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3B1C6B7269180AC004C24EC /* PaymentOptViewController.swift */; };
 		F3B1C6BA26919186004C24EC /* UserDetail.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F3B1C6B926919186004C24EC /* UserDetail.storyboard */; };
 		F3B1C6BC26919195004C24EC /* UserDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3B1C6BB26919195004C24EC /* UserDetailViewController.swift */; };
-		02D49A86269075FB003B7108 /* PreferenceCheck.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 02D49A85269075FB003B7108 /* PreferenceCheck.storyboard */; };
-		02D49A8C269076D6003B7108 /* SwipePageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02D49A8B269076D6003B7108 /* SwipePageViewController.swift */; };
-		02D49A8E269076F8003B7108 /* PreferenceCheckViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02D49A8D269076F8003B7108 /* PreferenceCheckViewController.swift */; };
-		02D49A902690770C003B7108 /* SwipePage.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 02D49A8F2690770C003B7108 /* SwipePage.storyboard */; };
+		F3B1C6BE26919E2F004C24EC /* PaymentStatus.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F3B1C6BD26919E2F004C24EC /* PaymentStatus.storyboard */; };
+		F3B1C6C026919E3E004C24EC /* PaymentStatusViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3B1C6BF26919E3E004C24EC /* PaymentStatusViewController.swift */; };
+		F3B1C6C22691AA75004C24EC /* QRCode.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F3B1C6C12691AA75004C24EC /* QRCode.storyboard */; };
+		F3B1C6C42691AA84004C24EC /* QRCodeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3B1C6C32691AA84004C24EC /* QRCodeViewController.swift */; };
+		F3B1C6C62691ADD3004C24EC /* Review.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F3B1C6C52691ADD3004C24EC /* Review.storyboard */; };
+		F3B1C6C82691ADDE004C24EC /* ReviewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3B1C6C72691ADDE004C24EC /* ReviewViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -45,6 +51,10 @@
 		02CBAE8A268FFA90001B1E1F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		02D49A822690219F003B7108 /* Maluscation.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Maluscation.entitlements; sourceTree = "<group>"; };
 		02D49A832690244B003B7108 /* DataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataManager.swift; sourceTree = "<group>"; };
+		02D49A85269075FB003B7108 /* PreferenceCheck.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = PreferenceCheck.storyboard; sourceTree = "<group>"; };
+		02D49A8B269076D6003B7108 /* SwipePageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwipePageViewController.swift; sourceTree = "<group>"; };
+		02D49A8D269076F8003B7108 /* PreferenceCheckViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreferenceCheckViewController.swift; sourceTree = "<group>"; };
+		02D49A8F2690770C003B7108 /* SwipePage.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = SwipePage.storyboard; sourceTree = "<group>"; };
 		F3881269269025A40061D243 /* BookingForm.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = BookingForm.storyboard; sourceTree = "<group>"; };
 		F388126B269025D20061D243 /* BookingFormViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookingFormViewController.swift; sourceTree = "<group>"; };
 		F388126D26905EEC0061D243 /* RobotoSlab-Black.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "RobotoSlab-Black.ttf"; sourceTree = "<group>"; };
@@ -57,10 +67,12 @@
 		F3B1C6B7269180AC004C24EC /* PaymentOptViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaymentOptViewController.swift; sourceTree = "<group>"; };
 		F3B1C6B926919186004C24EC /* UserDetail.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = UserDetail.storyboard; sourceTree = "<group>"; };
 		F3B1C6BB26919195004C24EC /* UserDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDetailViewController.swift; sourceTree = "<group>"; };
-		02D49A85269075FB003B7108 /* PreferenceCheck.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = PreferenceCheck.storyboard; sourceTree = "<group>"; };
-		02D49A8B269076D6003B7108 /* SwipePageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwipePageViewController.swift; sourceTree = "<group>"; };
-		02D49A8D269076F8003B7108 /* PreferenceCheckViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreferenceCheckViewController.swift; sourceTree = "<group>"; };
-		02D49A8F2690770C003B7108 /* SwipePage.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = SwipePage.storyboard; sourceTree = "<group>"; };
+		F3B1C6BD26919E2F004C24EC /* PaymentStatus.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = PaymentStatus.storyboard; sourceTree = "<group>"; };
+		F3B1C6BF26919E3E004C24EC /* PaymentStatusViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaymentStatusViewController.swift; sourceTree = "<group>"; };
+		F3B1C6C12691AA75004C24EC /* QRCode.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = QRCode.storyboard; sourceTree = "<group>"; };
+		F3B1C6C32691AA84004C24EC /* QRCodeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QRCodeViewController.swift; sourceTree = "<group>"; };
+		F3B1C6C52691ADD3004C24EC /* Review.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Review.storyboard; sourceTree = "<group>"; };
+		F3B1C6C72691ADDE004C24EC /* ReviewViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReviewViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -126,6 +138,9 @@
 				F3B1C6B926919186004C24EC /* UserDetail.storyboard */,
 				02D49A85269075FB003B7108 /* PreferenceCheck.storyboard */,
 				02D49A8F2690770C003B7108 /* SwipePage.storyboard */,
+				F3B1C6BD26919E2F004C24EC /* PaymentStatus.storyboard */,
+				F3B1C6C12691AA75004C24EC /* QRCode.storyboard */,
+				F3B1C6C52691ADD3004C24EC /* Review.storyboard */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -140,6 +155,9 @@
 				F3B1C6BB26919195004C24EC /* UserDetailViewController.swift */,
 				02D49A8B269076D6003B7108 /* SwipePageViewController.swift */,
 				02D49A8D269076F8003B7108 /* PreferenceCheckViewController.swift */,
+				F3B1C6BF26919E3E004C24EC /* PaymentStatusViewController.swift */,
+				F3B1C6C32691AA84004C24EC /* QRCodeViewController.swift */,
+				F3B1C6C72691ADDE004C24EC /* ReviewViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -215,11 +233,14 @@
 				02D49A902690770C003B7108 /* SwipePage.storyboard in Resources */,
 				02CBAE89268FFA90001B1E1F /* LaunchScreen.storyboard in Resources */,
 				F3B1C6B62691809C004C24EC /* PaymentOpt.storyboard in Resources */,
+				F3B1C6BE26919E2F004C24EC /* PaymentStatus.storyboard in Resources */,
+				F3B1C6C22691AA75004C24EC /* QRCode.storyboard in Resources */,
 				02CBAE86268FFA90001B1E1F /* Assets.xcassets in Resources */,
 				F38812772690940A0061D243 /* Receipt.storyboard in Resources */,
 				F388126E26905EEC0061D243 /* RobotoSlab-Black.ttf in Resources */,
 				F388126A269025A40061D243 /* BookingForm.storyboard in Resources */,
 				F388127526906ACE0061D243 /* RobotoSlab-Light.ttf in Resources */,
+				F3B1C6C62691ADD3004C24EC /* Review.storyboard in Resources */,
 				F388127126906A4E0061D243 /* Signika-Bold.ttf in Resources */,
 				F3B1C6BA26919186004C24EC /* UserDetail.storyboard in Resources */,
 				F388127426906ACE0061D243 /* RobotoSlab-Medium.ttf in Resources */,
@@ -237,6 +258,8 @@
 			files = (
 				02CBAE84268FFA8C001B1E1F /* Maluscation.xcdatamodeld in Sources */,
 				F3B1C6B8269180AC004C24EC /* PaymentOptViewController.swift in Sources */,
+				F3B1C6C82691ADDE004C24EC /* ReviewViewController.swift in Sources */,
+				F3B1C6C42691AA84004C24EC /* QRCodeViewController.swift in Sources */,
 				F3B1C6BC26919195004C24EC /* UserDetailViewController.swift in Sources */,
 				02D49A842690244B003B7108 /* DataManager.swift in Sources */,
 				02CBAE7E268FFA8C001B1E1F /* ViewController.swift in Sources */,
@@ -246,6 +269,7 @@
 				F388126C269025D20061D243 /* BookingFormViewController.swift in Sources */,
 				02CBAE7C268FFA8C001B1E1F /* SceneDelegate.swift in Sources */,
 				02D49A8E269076F8003B7108 /* PreferenceCheckViewController.swift in Sources */,
+				F3B1C6C026919E3E004C24EC /* PaymentStatusViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

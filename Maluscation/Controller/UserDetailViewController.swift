@@ -18,6 +18,7 @@ class UserDetailViewController: UIViewController {
         
         setUpTapGesture()
         
+        // TODO: Replace with Apple ID's data
         fullNameTextField.text = "Gilbert Nicholas"
         emailTextField.text = "gilbert@gmail.com"
         phoneNumberTextField.text = "087887654123"

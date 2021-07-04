@@ -27,6 +27,10 @@
 		F3B1C6B8269180AC004C24EC /* PaymentOptViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3B1C6B7269180AC004C24EC /* PaymentOptViewController.swift */; };
 		F3B1C6BA26919186004C24EC /* UserDetail.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F3B1C6B926919186004C24EC /* UserDetail.storyboard */; };
 		F3B1C6BC26919195004C24EC /* UserDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3B1C6BB26919195004C24EC /* UserDetailViewController.swift */; };
+		02D49A86269075FB003B7108 /* PreferenceCheck.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 02D49A85269075FB003B7108 /* PreferenceCheck.storyboard */; };
+		02D49A8C269076D6003B7108 /* SwipePageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02D49A8B269076D6003B7108 /* SwipePageViewController.swift */; };
+		02D49A8E269076F8003B7108 /* PreferenceCheckViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02D49A8D269076F8003B7108 /* PreferenceCheckViewController.swift */; };
+		02D49A902690770C003B7108 /* SwipePage.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 02D49A8F2690770C003B7108 /* SwipePage.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -53,6 +57,10 @@
 		F3B1C6B7269180AC004C24EC /* PaymentOptViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaymentOptViewController.swift; sourceTree = "<group>"; };
 		F3B1C6B926919186004C24EC /* UserDetail.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = UserDetail.storyboard; sourceTree = "<group>"; };
 		F3B1C6BB26919195004C24EC /* UserDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDetailViewController.swift; sourceTree = "<group>"; };
+		02D49A85269075FB003B7108 /* PreferenceCheck.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = PreferenceCheck.storyboard; sourceTree = "<group>"; };
+		02D49A8B269076D6003B7108 /* SwipePageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwipePageViewController.swift; sourceTree = "<group>"; };
+		02D49A8D269076F8003B7108 /* PreferenceCheckViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreferenceCheckViewController.swift; sourceTree = "<group>"; };
+		02D49A8F2690770C003B7108 /* SwipePage.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = SwipePage.storyboard; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -116,6 +124,8 @@
 				F38812762690940A0061D243 /* Receipt.storyboard */,
 				F3B1C6B52691809C004C24EC /* PaymentOpt.storyboard */,
 				F3B1C6B926919186004C24EC /* UserDetail.storyboard */,
+				02D49A85269075FB003B7108 /* PreferenceCheck.storyboard */,
+				02D49A8F2690770C003B7108 /* SwipePage.storyboard */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -128,6 +138,8 @@
 				F3881278269094220061D243 /* ReceiptViewController.swift */,
 				F3B1C6B7269180AC004C24EC /* PaymentOptViewController.swift */,
 				F3B1C6BB26919195004C24EC /* UserDetailViewController.swift */,
+				02D49A8B269076D6003B7108 /* SwipePageViewController.swift */,
+				02D49A8D269076F8003B7108 /* PreferenceCheckViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -200,6 +212,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				02D49A902690770C003B7108 /* SwipePage.storyboard in Resources */,
 				02CBAE89268FFA90001B1E1F /* LaunchScreen.storyboard in Resources */,
 				F3B1C6B62691809C004C24EC /* PaymentOpt.storyboard in Resources */,
 				02CBAE86268FFA90001B1E1F /* Assets.xcassets in Resources */,
@@ -210,6 +223,7 @@
 				F388127126906A4E0061D243 /* Signika-Bold.ttf in Resources */,
 				F3B1C6BA26919186004C24EC /* UserDetail.storyboard in Resources */,
 				F388127426906ACE0061D243 /* RobotoSlab-Medium.ttf in Resources */,
+				02D49A86269075FB003B7108 /* PreferenceCheck.storyboard in Resources */,
 				02CBAE81268FFA8C001B1E1F /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -226,10 +240,12 @@
 				F3B1C6BC26919195004C24EC /* UserDetailViewController.swift in Sources */,
 				02D49A842690244B003B7108 /* DataManager.swift in Sources */,
 				02CBAE7E268FFA8C001B1E1F /* ViewController.swift in Sources */,
+				02D49A8C269076D6003B7108 /* SwipePageViewController.swift in Sources */,
 				02CBAE7A268FFA8C001B1E1F /* AppDelegate.swift in Sources */,
 				F3881279269094220061D243 /* ReceiptViewController.swift in Sources */,
 				F388126C269025D20061D243 /* BookingFormViewController.swift in Sources */,
 				02CBAE7C268FFA8C001B1E1F /* SceneDelegate.swift in Sources */,
+				02D49A8E269076F8003B7108 /* PreferenceCheckViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

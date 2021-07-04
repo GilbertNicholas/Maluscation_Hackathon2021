@@ -149,17 +149,17 @@ class CoreDataManager {
     }
 
     func updatePlaceRating(id: UUID, upvote:Bool, downvote:Bool, hygieneRating:Int64) {
-        let chosenPlace = getPlaceBasedOnId(id: id)
+        let chosenPlace = getBookingBasedOnId(id: id)
         
         if upvote {
-            chosenPlace[0].totalUpvote += 1
+            chosenPlace[0].bookingToPlace!.totalUpvote += 1
         } else if downvote {
-            chosenPlace[0].totalDownvote += 1
+            chosenPlace[0].bookingToPlace!.totalDownvote += 1
         }
         
-        let totalBooked = chosenPlace[0].totalUpvote + chosenPlace[0].totalDownvote
+        let totalBooked = chosenPlace[0].bookingToPlace!.totalUpvote + chosenPlace[0].bookingToPlace!.totalDownvote
         
-        chosenPlace[0].totalHygiene = ((chosenPlace[0].totalHygiene * totalBooked) + hygieneRating) / totalBooked + 1
+        chosenPlace[0].bookingToPlace!.totalHygiene = ((chosenPlace[0].bookingToPlace!.totalHygiene * totalBooked) + hygieneRating) / totalBooked + 1
         save()
     }
     

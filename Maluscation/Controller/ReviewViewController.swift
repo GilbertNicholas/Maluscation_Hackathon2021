@@ -16,15 +16,13 @@ class ReviewViewController: UIViewController, UITextFieldDelegate {
     @IBOutlet weak var feedbackTextField: UITextField!
     @IBOutlet weak var submitButton: UIButton!
     
-    var DataManager: CoreDataManager!
-    
-    var id: UUID!
+    var DataManager = CoreDataManager()
     
     private var isSelected: Int!
     private var hygieneRating: Int!
     private var feedback: String?
     
-    var bookingId: UUID?
+    var bookingId: UUID!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -95,9 +93,9 @@ class ReviewViewController: UIViewController, UITextFieldDelegate {
     
     private func saveFeedback() {
         if isSelected == 1 {
-            DataManager.updatePlaceRating(id: self.id, upvote: true, downvote: false, hygieneRating: Int64(self.hygieneRating))
+            DataManager.updatePlaceRating(id: self.bookingId, upvote: true, downvote: false, hygieneRating: Int64(self.hygieneRating))
         } else {
-            DataManager.updatePlaceRating(id: self.id, upvote: false, downvote: true, hygieneRating: Int64(self.hygieneRating))
+            DataManager.updatePlaceRating(id: self.bookingId, upvote: false, downvote: true, hygieneRating: Int64(self.hygieneRating))
         }
     }
     

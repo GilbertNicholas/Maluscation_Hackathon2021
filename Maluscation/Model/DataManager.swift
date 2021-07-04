@@ -136,7 +136,7 @@ class CoreDataManager {
         do {
             let request = DestinationPlace.fetchRequest() as NSFetchRequest<DestinationPlace>
             
-            let pred = NSPredicate(format: "isSaved == %@", true)
+            let pred = NSPredicate(format: "isSaved == true")
             request.predicate = pred
             
             tempPlaces = try context.fetch(request)
@@ -178,6 +178,12 @@ class CoreDataManager {
         }
         
         return tempBookings
+    }
+    
+    func savePlaceToWishlist(place: DestinationPlace) {
+        place.isSaved = true
+        
+        save()
     }
     
     private func save() {

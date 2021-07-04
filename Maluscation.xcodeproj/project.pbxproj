@@ -30,6 +30,10 @@
 		A98218142691E8B8005D1AC1 /* Detail.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A98218102691E8B8005D1AC1 /* Detail.storyboard */; };
 		A98218152691E8B8005D1AC1 /* DetailCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A98218112691E8B8005D1AC1 /* DetailCell.xib */; };
 		A98218162691E8B8005D1AC1 /* DetailVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = A98218122691E8B8005D1AC1 /* DetailVC.swift */; };
+		A9EFB35826924A9D00539045 /* SavedCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9EFB35426924A9D00539045 /* SavedCell.swift */; };
+		A9EFB35926924A9D00539045 /* Saved.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A9EFB35526924A9D00539045 /* Saved.storyboard */; };
+		A9EFB35A26924A9D00539045 /* SavedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9EFB35626924A9D00539045 /* SavedViewController.swift */; };
+		A9EFB35B26924A9D00539045 /* SavedCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A9EFB35726924A9D00539045 /* SavedCell.xib */; };
 		A9F33B0F26918B9600246A39 /* DestinationDetails.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A9F33B0E26918B9600246A39 /* DestinationDetails.storyboard */; };
 		F388126A269025A40061D243 /* BookingForm.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F3881269269025A40061D243 /* BookingForm.storyboard */; };
 		F388126C269025D20061D243 /* BookingFormViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F388126B269025D20061D243 /* BookingFormViewController.swift */; };
@@ -78,6 +82,10 @@
 		A98218102691E8B8005D1AC1 /* Detail.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Detail.storyboard; sourceTree = "<group>"; };
 		A98218112691E8B8005D1AC1 /* DetailCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DetailCell.xib; sourceTree = "<group>"; };
 		A98218122691E8B8005D1AC1 /* DetailVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailVC.swift; sourceTree = "<group>"; };
+		A9EFB35426924A9D00539045 /* SavedCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SavedCell.swift; sourceTree = "<group>"; };
+		A9EFB35526924A9D00539045 /* Saved.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Saved.storyboard; sourceTree = "<group>"; };
+		A9EFB35626924A9D00539045 /* SavedViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SavedViewController.swift; sourceTree = "<group>"; };
+		A9EFB35726924A9D00539045 /* SavedCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SavedCell.xib; sourceTree = "<group>"; };
 		A9F33B0E26918B9600246A39 /* DestinationDetails.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = DestinationDetails.storyboard; sourceTree = "<group>"; };
 		F3881269269025A40061D243 /* BookingForm.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = BookingForm.storyboard; sourceTree = "<group>"; };
 		F388126B269025D20061D243 /* BookingFormViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookingFormViewController.swift; sourceTree = "<group>"; };
@@ -129,6 +137,7 @@
 		02CBAE78268FFA8C001B1E1F /* Maluscation */ = {
 			isa = PBXGroup;
 			children = (
+				A9EFB35326924A9100539045 /* Saved */,
 				A96F320A2691F88A00C0C36B /* History */,
 				A982180E2691E88C005D1AC1 /* Destination */,
 				02D49A822690219F003B7108 /* Maluscation.entitlements */,
@@ -214,6 +223,17 @@
 			path = Destination;
 			sourceTree = "<group>";
 		};
+		A9EFB35326924A9100539045 /* Saved */ = {
+			isa = PBXGroup;
+			children = (
+				A9EFB35526924A9D00539045 /* Saved.storyboard */,
+				A9EFB35426924A9D00539045 /* SavedCell.swift */,
+				A9EFB35726924A9D00539045 /* SavedCell.xib */,
+				A9EFB35626924A9D00539045 /* SavedViewController.swift */,
+			);
+			path = Saved;
+			sourceTree = "<group>";
+		};
 		F388126F26905F2C0061D243 /* Fonts */ = {
 			isa = PBXGroup;
 			children = (
@@ -291,6 +311,7 @@
 				02CBAE86268FFA90001B1E1F /* Assets.xcassets in Resources */,
 				A9063F362690662700A95E35 /* Profile.storyboard in Resources */,
 				A9F33B0F26918B9600246A39 /* DestinationDetails.storyboard in Resources */,
+				A9EFB35926924A9D00539045 /* Saved.storyboard in Resources */,
 				F38812772690940A0061D243 /* Receipt.storyboard in Resources */,
 				F388126E26905EEC0061D243 /* RobotoSlab-Black.ttf in Resources */,
 				F388126A269025A40061D243 /* BookingForm.storyboard in Resources */,
@@ -298,6 +319,7 @@
 				F3B1C6C62691ADD3004C24EC /* Review.storyboard in Resources */,
 				A96F32122691F89400C0C36B /* HistoryCell.xib in Resources */,
 				F388127126906A4E0061D243 /* Signika-Bold.ttf in Resources */,
+				A9EFB35B26924A9D00539045 /* SavedCell.xib in Resources */,
 				A98218152691E8B8005D1AC1 /* DetailCell.xib in Resources */,
 				F3B1C6BA26919186004C24EC /* UserDetail.storyboard in Resources */,
 				A98218142691E8B8005D1AC1 /* Detail.storyboard in Resources */,
@@ -322,8 +344,10 @@
 				A98218162691E8B8005D1AC1 /* DetailVC.swift in Sources */,
 				02D49A842690244B003B7108 /* DataManager.swift in Sources */,
 				A9063F32269025E000A95E35 /* DestinationDetailsViewController.swift in Sources */,
+				A9EFB35A26924A9D00539045 /* SavedViewController.swift in Sources */,
 				02CBAE7E268FFA8C001B1E1F /* ViewController.swift in Sources */,
 				A9063F342690661F00A95E35 /* ProfileViewController.swift in Sources */,
+				A9EFB35826924A9D00539045 /* SavedCell.swift in Sources */,
 				02D49A8C269076D6003B7108 /* SwipePageViewController.swift in Sources */,
 				02CBAE7A268FFA8C001B1E1F /* AppDelegate.swift in Sources */,
 				F3881279269094220061D243 /* ReceiptViewController.swift in Sources */,
@@ -482,13 +506,13 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = Maluscation/Maluscation.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 272LRZQ89D;
+				DEVELOPMENT_TEAM = NZ4J9325UD;
 				INFOPLIST_FILE = Maluscation/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.nico.Maluscation;
+				PRODUCT_BUNDLE_IDENTIFIER = com.gilbert.Maluscation;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;
@@ -502,13 +526,13 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = Maluscation/Maluscation.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 272LRZQ89D;
+				DEVELOPMENT_TEAM = NZ4J9325UD;
 				INFOPLIST_FILE = Maluscation/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.nico.Maluscation;
+				PRODUCT_BUNDLE_IDENTIFIER = com.gilbert.Maluscation;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;

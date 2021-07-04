@@ -64,6 +64,8 @@ class DetailVC: UIViewController {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "toBooking" {
             // Passing data booking
+            guard let bookingVC = segue.destination as? BookingFormViewController else { return }
+            bookingVC.id = id
         }
     }
     
@@ -97,3 +99,4 @@ extension DetailVC: UITableViewDataSource {
         return cell
     }
 }
+

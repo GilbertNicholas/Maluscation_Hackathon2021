@@ -138,7 +138,7 @@
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="wYK-ih-KYl">
                         <rect key="frame" x="0.0" y="44" width="414" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
-                        <color key="barTintColor" red="0.5450980392" green="0.64705882349999999" blue="0.95294117649999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="barTintColor" red="0.81960784313725488" green="0.85882352941176465" blue="0.98039215686274506" alpha="1" colorSpace="calibratedRGB"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>

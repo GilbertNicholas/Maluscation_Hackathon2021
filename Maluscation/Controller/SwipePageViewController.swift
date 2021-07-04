@@ -16,7 +16,6 @@ class SwipePageViewController: UIViewController {
     @IBOutlet private weak var casualBtn: UIButton!
     @IBOutlet private weak var natureBtn: UIButton!
     @IBOutlet private weak var chillBtn: UIButton!
-    @IBOutlet private weak var prevBtn: UIButton!
     @IBOutlet weak var nameLblContainer: UIView!
     @IBOutlet weak var statusLblContainer: UIView!
     @IBOutlet weak var placeNameLbl: UILabel!
@@ -27,6 +26,7 @@ class SwipePageViewController: UIViewController {
     @IBOutlet weak var facility3Lbl: UILabel!
     @IBOutlet weak var facility4Lbl: UILabel!
     
+    @IBOutlet weak var prevBtn: UIButton!
     @IBOutlet weak var upvoteLbl: UILabel!
     @IBOutlet weak var downvoteLbl: UILabel!
     @IBOutlet weak var hygieneLbl: UILabel!
@@ -36,38 +36,28 @@ class SwipePageViewController: UIViewController {
     
     var chosenPref: String!
     var DataManager: CoreDataManager!
+    var id: UUID!
     
     private var usedIdx: Int!
     private var divisor: CGFloat!
     private var placeDataBasedOnCategory: [DestinationPlace]!
     
-//    enum prefChosen {
-//        case Active
-//        case Casual
-//        case Nature
-//        case Chill
-//    }
-//
-//    var usedPref: prefChosen {
-//        didSet {
-//            switch usedPref {
-//            case .Active:
-//                activeBtn.layer.borderWidth = 5
-//            case .Casual:
-//                activeBtn.layer.borderWidth = 5
-//            case .Nature:
-//                natureBtn.layer.borderWidth = 5
-//            case .Chill:
-//                chillBtn.layer.borderWidth = 5
-//            }
-//        }
-//    }
+    private let colors: [String: UIColor] = [
+        "Active": red,
+        "Casual": yellow,
+        "Nature": green,
+        "Chill": blue
+    ]
 
     override func viewDidLoad() {
         super.viewDidLoad()
         
         divisor = (view.frame.width / 2) / 0.3
         usedIdx = 0
+        
+        if chosenPref == nil {
+            chosenPref = "Active"
+        }
 
         setupPrefButton()
         setupSwipeCard()
@@ -90,8 +80,6 @@ class SwipePageViewController: UIViewController {
     
     private func initUsedData() {
         placeDataBasedOnCategory = DataManager.getPlaceBasedOnCategory(categoty: chosenPref)
-//        placeNameLbl.text = placeDataBasedOnCategory[0].name
-//        cardImage.image = UIImage(data: placeDataBasedOnCategory[0].image!)
     }
     
     private func setupPrefButton() {
@@ -123,20 +111,27 @@ class SwipePageViewController: UIViewController {
         nameLblContainer.alpha = 0.8
         
         statusLblContainer.layer.cornerRadius = 8
-        
+        statusLblContainer.layer.shadowColor = UIColor.black.cgColor
+        statusLblContainer.layer.shadowOpacity = 1
+        statusLblContainer.layer.shadowOffset = .zero
+        statusLblContainer.layer.shadowRadius = 2
+
         setupCardContent()
     }
     
     private func setupCardContent() {
         if placeDataBasedOnCategory != nil {
+            id = placeDataBasedOnCategory[usedIdx].id
             cardImage.image = UIImage(data: placeDataBasedOnCategory[usedIdx].image!)
             placeNameLbl.text = placeDataBasedOnCategory[usedIdx].name
             locationLbl.text = placeDataBasedOnCategory[usedIdx].location
             
             if placeDataBasedOnCategory[usedIdx].status {
                 statusLbl.text = "Red Zone"
+                statusLblContainer.backgroundColor = red
             } else {
                 statusLbl.text = "Green Zone"
+                statusLblContainer.backgroundColor = green
             }
             
             facility1Lbl.text = placeDataBasedOnCategory[usedIdx].facility![0]
@@ -148,6 +143,10 @@ class SwipePageViewController: UIViewController {
             downvoteLbl.text = String(placeDataBasedOnCategory[usedIdx].totalDownvote)
             hygieneLbl.text = "\(String(placeDataBasedOnCategory[usedIdx].totalHygiene))/5"
             priceLbl.text = "IDR \(String(placeDataBasedOnCategory[usedIdx].price))"
+            
+            cardContainer.backgroundColor = colors[chosenPref]
+            
+            prevBtn.isEnabled = usedIdx == 0 ? false : true
         }
     }
     
@@ -166,8 +165,7 @@ class SwipePageViewController: UIViewController {
     }
     
     @IBAction func panCardTapped(_ sender: UITapGestureRecognizer) {
-        //PAGE DETAIL PLACE
-        print("TAPPED!")
+        self.performSegue(withIdentifier: "detailSegue", sender: self)
     }
     
     @IBAction func panCardSwiped(_ sender: UIPanGestureRecognizer) {
@@ -186,12 +184,13 @@ class SwipePageViewController: UIViewController {
                     card.center = CGPoint(x: card.center.x - 200, y: 410 + 75)
                     card.alpha = 0
                 })
-                
+ 
                 usedIdx += 1
-                if usedIdx <= placeDataBasedOnCategory.count {
+                if usedIdx < placeDataBasedOnCategory.count {
                     setupCardContent()
                 } else {
-                    //OPTION PLACE ABIS
+                    self.usedIdx = 0
+                    setupCardContent()
                 }
 
             } else if card.center.x > (view.frame.width - 30) {
@@ -201,11 +200,14 @@ class SwipePageViewController: UIViewController {
                     card.alpha = 0
                 })
                 
+                DataManager.savePlaceToWishlist(place: placeDataBasedOnCategory[usedIdx])
+                
                 usedIdx += 1
-                if usedIdx <= placeDataBasedOnCategory.count {
+                if usedIdx < placeDataBasedOnCategory.count {
                     setupCardContent()
                 } else {
-                    //OPTION PLACE ABIS
+                    self.usedIdx = 0
+                    setupCardContent()
                 }
             }
             resetCard()
@@ -219,6 +221,16 @@ class SwipePageViewController: UIViewController {
             self.cardContainer.alpha = 1
             self.cardContainer.transform = .identity
         })
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "detailSegue" {
+            guard let navController = segue.destination as? UINavigationController,
+                  let destVC = navController.viewControllers.first as? DetailVC
+            else { return }
+            
+            destVC.id = self.id
+        }
     }
     
 }

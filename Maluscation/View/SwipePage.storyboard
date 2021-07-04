@@ -8,7 +8,7 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Item-->
+        <!--Home-->
         <scene sceneID="s0d-6b-0kx">
             <objects>
                 <viewController id="Y6W-OH-hqX" customClass="SwipePageViewController" customModule="Maluscation" customModuleProvider="target" sceneMemberID="viewController">
@@ -218,19 +218,21 @@
                                     <outletCollection property="gestureRecognizers" destination="bhU-8w-Z5f" appends="YES" id="AO2-Li-ffg"/>
                                 </connections>
                             </view>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VPK-ec-Ulo">
-                                <rect key="frame" x="32" y="685" width="42" height="42"/>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9vA-7p-I3N">
+                                <rect key="frame" x="32" y="681" width="42" height="42"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" image="btnPrev"/>
                                 <connections>
-                                    <action selector="prevButtonTapped:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="Zkl-B2-Cbg"/>
+                                    <action selector="prevButtonTapped:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="ouh-Yb-M1s"/>
                                 </connections>
                             </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="vDu-zF-Fre"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Item" id="X72-qv-oyW"/>
+                    <tabBarItem key="tabBarItem" title="Home" image="note" catalog="system" id="X72-qv-oyW">
+                        <color key="badgeColor" red="0.035294117649999998" green="0.10980392160000001" blue="0.3411764706" alpha="1" colorSpace="calibratedRGB"/>
+                    </tabBarItem>
                     <connections>
                         <outlet property="activeBtn" destination="vdt-91-S5A" id="4ab-Rs-RdG"/>
                         <outlet property="buttonContainer" destination="gw1-hU-U4A" id="qcn-kH-C8a"/>
@@ -249,11 +251,12 @@
                         <outlet property="nameLblContainer" destination="Ze3-AX-XZQ" id="rhi-ec-UHf"/>
                         <outlet property="natureBtn" destination="s21-5o-O7s" id="bGu-QJ-d6s"/>
                         <outlet property="placeNameLbl" destination="bai-Sq-qm4" id="f4Z-ir-uwe"/>
-                        <outlet property="prevBtn" destination="VPK-ec-Ulo" id="jbc-ld-G3M"/>
+                        <outlet property="prevBtn" destination="9vA-7p-I3N" id="2Ka-9f-2tN"/>
                         <outlet property="priceLbl" destination="tee-hC-tXp" id="HmJ-x3-7u4"/>
                         <outlet property="statusLbl" destination="nDL-hc-kaa" id="4BA-YX-Hcl"/>
                         <outlet property="statusLblContainer" destination="LXK-As-vG7" id="DJt-Ln-vN6"/>
                         <outlet property="upvoteLbl" destination="1dQ-Ea-iG4" id="hn6-77-Am1"/>
+                        <segue destination="y6r-iy-fyZ" kind="presentation" identifier="detailSegue" modalPresentationStyle="fullScreen" modalTransitionStyle="crossDissolve" id="gXv-7j-k4D"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -270,6 +273,16 @@
             </objects>
             <point key="canvasLocation" x="1950.7692307692307" y="100.23696682464454"/>
         </scene>
+        <!--Detail-->
+        <scene sceneID="J3F-fv-lPn">
+            <objects>
+                <viewControllerPlaceholder storyboardName="Detail" id="y6r-iy-fyZ" sceneMemberID="viewController">
+                    <navigationItem key="navigationItem" id="MlF-Yk-Ihq"/>
+                </viewControllerPlaceholder>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="XDf-hI-ys1" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2837" y="100"/>
+        </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="fbV-dq-otC">
             <objects>
@@ -279,14 +292,48 @@
                         <rect key="frame" x="0.0" y="0.0" width="1000" height="1000"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="selectedImageTintColor" red="0.035294117649999998" green="0.10980392160000001" blue="0.3411764706" alpha="1" colorSpace="calibratedRGB"/>
                     </tabBar>
                     <connections>
                         <segue destination="Y6W-OH-hqX" kind="relationship" relationship="viewControllers" id="hZR-Vi-Y4x"/>
+                        <segue destination="2hK-5I-SKE" kind="relationship" relationship="viewControllers" id="Giw-R5-fG0"/>
+                        <segue destination="J65-k0-XNA" kind="relationship" relationship="viewControllers" id="Oi6-Jp-n5s"/>
+                        <segue destination="oLz-wN-GeU" kind="relationship" relationship="viewControllers" id="qob-Im-3o6"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="X9E-SL-9gU" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1042.0289855072465" y="100.44642857142857"/>
+        </scene>
+        <!--Saved-->
+        <scene sceneID="0bj-7H-faX">
+            <objects>
+                <viewControllerPlaceholder storyboardName="Saved" id="2hK-5I-SKE" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Item" id="FgM-gf-w6d"/>
+                </viewControllerPlaceholder>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="zGT-2d-YoV" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="616" y="677"/>
+        </scene>
+        <!--History-->
+        <scene sceneID="Wt7-8M-kgj">
+            <objects>
+                <viewControllerPlaceholder storyboardName="History" id="J65-k0-XNA" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Item" id="VSj-3Z-uoV"/>
+                </viewControllerPlaceholder>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="4Rb-gd-A2X" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1042" y="678"/>
+        </scene>
+        <!--Profile-->
+        <scene sceneID="0hh-JK-STX">
+            <objects>
+                <viewControllerPlaceholder storyboardName="Profile" id="oLz-wN-GeU" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Item" id="t2e-mL-bk3"/>
+                </viewControllerPlaceholder>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Zda-TH-EPK" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1492" y="678"/>
         </scene>
     </scenes>
     <resources>
@@ -296,6 +343,7 @@
         <image name="elipsFacility" width="9" height="9"/>
         <image name="hygieneIcon" width="18.333333969116211" height="20.333333969116211"/>
         <image name="locationIcon" width="25" height="25"/>
+        <image name="note" catalog="system" width="128" height="106"/>
         <image name="priceContainer" width="138" height="44"/>
         <image name="savedIcon" width="42" height="42"/>
         <image name="upvoteIcon" width="17" height="16.666666030883789"/>

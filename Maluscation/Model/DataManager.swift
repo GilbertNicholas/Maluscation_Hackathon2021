@@ -41,6 +41,21 @@ class CoreDataManager {
         save()
     }
     
+    func insertBooking(bookingId: UUID, name: String, email: String, phone: String, checkIn: Date, checkOut: Date, paymentOpt: String, bookingToPlace: DestinationPlace?, bookingToUser: User?) {
+        var newBooking = Booking(context: self.context)
+        newBooking.bookingId = bookingId
+        newBooking.name = name
+        newBooking.email = email
+        newBooking.phone = phone
+        newBooking.checkIn = checkIn
+        newBooking.checkOut = checkOut
+        newBooking.paymentOpt = paymentOpt
+        newBooking.bookingToPlace = bookingToPlace
+        newBooking.bookingToUser = bookingToUser
+        
+        save()
+    }
+    
     func getAllData<T:NSManagedObject>(entity: T.Type) -> [T] {
         
         var data : [T] = []
@@ -80,6 +95,95 @@ class CoreDataManager {
         }
         
         return tempPlaces
+    }
+    
+    func getPlaceBasedOnId(id: UUID) -> [DestinationPlace] {
+        var tempPlaces: [DestinationPlace] = []
+        
+        do {
+            let request = DestinationPlace.fetchRequest() as NSFetchRequest<DestinationPlace>
+            
+            let pred = NSPredicate(format: "id == %@", id as CVarArg)
+            request.predicate = pred
+            
+            tempPlaces = try context.fetch(request)
+        } catch {
+            print("Error Fetch Place")
+        }
+        
+        return tempPlaces
+    }
+    
+    func getAllBookings() -> [Booking] {
+        
+        var tempPlaces: [Booking] = []
+        
+        do {
+            let request = Booking.fetchRequest() as NSFetchRequest<Booking>
+            
+            tempPlaces = try context.fetch(request)
+            
+        } catch {
+            print("Error Fetch Place")
+        }
+        
+        return tempPlaces
+    }
+    
+    func getAllSaved() -> [DestinationPlace] {
+        var tempPlaces: [DestinationPlace] = []
+        
+        do {
+            let request = DestinationPlace.fetchRequest() as NSFetchRequest<DestinationPlace>
+            
+            let pred = NSPredicate(format: "isSaved == true")
+            request.predicate = pred
+            
+            tempPlaces = try context.fetch(request)
+            
+        } catch {
+            print("Error Fetch Place")
+        }
+        
+        return tempPlaces
+    }
+
+    func updatePlaceRating(id: UUID, upvote:Bool, downvote:Bool, hygieneRating:Int64) {
+        let chosenPlace = getBookingBasedOnId(id: id)
+        
+        if upvote {
+            chosenPlace[0].bookingToPlace!.totalUpvote += 1
+        } else if downvote {
+            chosenPlace[0].bookingToPlace!.totalDownvote += 1
+        }
+        
+        let totalBooked = chosenPlace[0].bookingToPlace!.totalUpvote + chosenPlace[0].bookingToPlace!.totalDownvote
+        
+        chosenPlace[0].bookingToPlace!.totalHygiene = ((chosenPlace[0].bookingToPlace!.totalHygiene * totalBooked) + hygieneRating) / totalBooked + 1
+        save()
+    }
+    
+    func getBookingBasedOnId(id: UUID) -> [Booking] {
+        var tempBookings: [Booking] = []
+        
+        do {
+            let request = Booking.fetchRequest() as NSFetchRequest<Booking>
+            
+            let pred = NSPredicate(format: "bookingId == %@", id as CVarArg)
+            request.predicate = pred
+            
+            tempBookings = try context.fetch(request)
+        } catch {
+            print("Error Fetch Place")
+        }
+        
+        return tempBookings
+    }
+    
+    func savePlaceToWishlist(place: DestinationPlace) {
+        place.isSaved = true
+        
+        save()
     }
     
     private func save() {

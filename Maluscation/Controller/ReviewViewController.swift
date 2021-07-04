@@ -7,17 +7,27 @@
 
 import UIKit
 
-class ReviewViewController: UIViewController {
+class ReviewViewController: UIViewController, UITextFieldDelegate {
     
     @IBOutlet weak var upvoteButton: UIButton!
     @IBOutlet weak var downvoteButton: UIButton!
-    @IBOutlet weak var sanitationScoreImage: UIImageView!
+    @IBOutlet var sanitationScoreImage: [UIButton]!
     @IBOutlet weak var feedbackView: UIView!
     @IBOutlet weak var feedbackTextField: UITextField!
     @IBOutlet weak var submitButton: UIButton!
     
+    var DataManager = CoreDataManager()
+    
+    private var isSelected: Int!
+    private var hygieneRating: Int!
+    private var feedback: String?
+    
+    var bookingId: UUID!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        isSelected = 1
         
         setUpView()
     }
@@ -44,9 +54,64 @@ class ReviewViewController: UIViewController {
         
         feedbackView.layer.borderWidth = 4
         feedbackView.layer.borderColor = CGColor(red: 9/255, green: 28/255, blue: 87/255, alpha: 1)
+        
+        feedbackTextField.delegate = self
+    }
+    
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {   //delegate method
+       textField.resignFirstResponder()
+       return true
     }
     
     @IBAction func closeButtonTapped(_ sender: Any) {
+        self.dismiss(animated: true)
+    }
+    
+    @IBAction func upvoteButtonTapped(_ sender: Any) {
+        upvoteButton.backgroundColor = UIColor(red: 9/255, green: 28/255, blue: 87/255, alpha: 1)
+        upvoteButton.setTitleColor(.white, for: .normal)
+        upvoteButton.tintColor = .white
+        
+        downvoteButton.backgroundColor = .white
+        downvoteButton.setTitleColor(UIColor(red: 9/255, green: 28/255, blue: 87/255, alpha: 1), for: .normal)
+        downvoteButton.tintColor = UIColor(red: 9/255, green: 28/255, blue: 87/255, alpha: 1)
+        
+        isSelected = 1
+    }
+    
+    @IBAction func downvoteButtonTapped(_ sender: Any) {
+        upvoteButton.backgroundColor = .white
+        upvoteButton.setTitleColor(UIColor(red: 9/255, green: 28/255, blue: 87/255, alpha: 1), for: .normal)
+        upvoteButton.tintColor = UIColor(red: 9/255, green: 28/255, blue: 87/255, alpha: 1)
+        
+        downvoteButton.backgroundColor = UIColor(red: 9/255, green: 28/255, blue: 87/255, alpha: 1)
+        downvoteButton.setTitleColor(.white, for: .normal)
+        downvoteButton.tintColor = .white
+        
+        isSelected = 0
+    }
+    
+    private func saveFeedback() {
+        if isSelected == 1 {
+            DataManager.updatePlaceRating(id: self.bookingId, upvote: true, downvote: false, hygieneRating: Int64(self.hygieneRating))
+        } else {
+            DataManager.updatePlaceRating(id: self.bookingId, upvote: false, downvote: true, hygieneRating: Int64(self.hygieneRating))
+        }
+    }
+    
+    @IBAction func hygieneRatingTapped(_ sender: UIButton) {
+        for button in sanitationScoreImage {
+            if button.tag <= sender.tag {
+                button.setBackgroundImage(UIImage(systemName: "hands.clap.fill"), for: .normal)
+            } else {
+                button.setBackgroundImage(UIImage(systemName: "hands.clap"), for: .normal)
+            }
+        }
+        self.hygieneRating = sender.tag
+    }
+    
+    @IBAction func submitBtnTapped(_ sender: UIButton) {
+        saveFeedback()
         self.dismiss(animated: true)
     }
 }

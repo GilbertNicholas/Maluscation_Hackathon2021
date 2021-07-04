@@ -23,7 +23,7 @@ class PaymentStatusViewController: UIViewController {
     }
     
     @IBAction func seeHistoryButtonTapped(_ sender: Any) {
-        
+        performSegue(withIdentifier: "toHistory", sender: nil)
     }
     
 }

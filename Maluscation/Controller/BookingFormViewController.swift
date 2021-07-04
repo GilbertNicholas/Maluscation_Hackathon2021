@@ -22,6 +22,10 @@ class BookingFormViewController: UIViewController {
     @IBOutlet weak var bottomView: UIView!
     @IBOutlet weak var payButton: UIButton!
     
+    @IBOutlet weak var villaNameLabel: UILabel!
+    @IBOutlet weak var villaLocationLabel: UILabel!
+    @IBOutlet weak var villaZoneLabel: UILabel!
+    
     @IBOutlet weak var userNameLabel: UILabel!
     @IBOutlet weak var checkInDate: UIDatePicker!
     @IBOutlet weak var checkOutDate: UIDatePicker!
@@ -35,12 +39,13 @@ class BookingFormViewController: UIViewController {
     var email: String?
     var phoneNumber: String?
     var paymentOpt: String?
-    var totalPrice: Float?
+    var totalPrice: Int64?
     
     var DataManager: CoreDataManager!
     var destinationPlace: [DestinationPlace]!
     
     var id: UUID?
+    var bookingId: UUID?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -55,6 +60,23 @@ class BookingFormViewController: UIViewController {
     }
     
     func setUpView() {
+        bookingId = UUID()
+        
+        villaNameLabel.text = destinationPlace[0].name
+        villaLocationLabel.text = destinationPlace[0].location
+        
+        if destinationPlace[0].status {
+            villaZoneLabel.text = "Red Zone"
+            zoneView.backgroundColor = .red
+        } else {
+            villaZoneLabel.text = "Green Zone"
+            zoneView.backgroundColor = .green
+        }
+        
+        priceLabel.text = "IDR \(destinationPlace[0].price)"
+        
+        totalPrice = destinationPlace[0].price
+        
         checkInDate.minimumDate = Calendar.current.date(byAdding: .day, value: 1, to: Date())
         checkOutDate.minimumDate = Calendar.current.date(byAdding: .day, value: 1, to: checkInDate.minimumDate!)
         
@@ -68,8 +90,6 @@ class BookingFormViewController: UIViewController {
         } else {
             paymentOptLabel.textColor = UIColor(red: 9/255, green: 28/255, blue: 87/255, alpha: 1)
         }
-        
-        totalPrice = 2000000
         
         payButton.layer.cornerRadius = 20
         
@@ -159,6 +179,7 @@ class BookingFormViewController: UIViewController {
             let entity = NSEntityDescription.entity(forEntityName: "Booking", in: managedContext)!
 
             let bookingDetails = NSManagedObject(entity: entity, insertInto: managedContext)
+            bookingDetails.setValue(id, forKey: "bookingId")
             bookingDetails.setValue(userNameLabel.text, forKey: "name")
             bookingDetails.setValue(email, forKey: "email")
             bookingDetails.setValue(phoneNumber, forKey: "phone")

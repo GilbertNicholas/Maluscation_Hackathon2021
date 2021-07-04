@@ -134,7 +134,7 @@
                                         <rect key="frame" x="14" y="93" width="25" height="25"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                     </imageView>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Depok, Indonesia" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mZW-vr-c2G">
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Depok, Sleman" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mZW-vr-c2G">
                                         <rect key="frame" x="47" y="93" width="125" height="24"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <fontDescription key="fontDescription" name="RobotoSlab-Black" family="Roboto Slab" pointSize="15"/>
@@ -327,7 +327,10 @@
                         <outlet property="userDetailView" destination="ezd-iD-JSw" id="AlA-iH-yKN"/>
                         <outlet property="userNameLabel" destination="QqY-RJ-7LO" id="3Lw-WS-Nm8"/>
                         <outlet property="villaDetailView" destination="Osq-Ft-R2X" id="5Y9-iN-2cd"/>
+                        <outlet property="villaLocationLabel" destination="mZW-vr-c2G" id="PNa-9G-s1q"/>
+                        <outlet property="villaNameLabel" destination="FBF-Ur-kxg" id="BnI-Pc-4ar"/>
                         <outlet property="villaNameView" destination="o2C-L8-KnO" id="RWr-N6-QPw"/>
+                        <outlet property="villaZoneLabel" destination="Bvy-xx-a0S" id="m6F-cL-7d0"/>
                         <outlet property="zoneView" destination="iP2-sO-NyR" id="sTb-YW-NWe"/>
                         <segue destination="gMp-Tu-56i" kind="presentation" identifier="toPaymentStatus" modalPresentationStyle="fullScreen" modalTransitionStyle="crossDissolve" id="hFt-C8-GYC"/>
                         <segue destination="M6q-M3-ygu" kind="presentation" identifier="toPaymentOpt" modalPresentationStyle="fullScreen" modalTransitionStyle="crossDissolve" id="QZI-qv-DcJ"/>

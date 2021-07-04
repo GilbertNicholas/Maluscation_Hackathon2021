@@ -254,6 +254,7 @@
                         <outlet property="statusLbl" destination="nDL-hc-kaa" id="4BA-YX-Hcl"/>
                         <outlet property="statusLblContainer" destination="LXK-As-vG7" id="DJt-Ln-vN6"/>
                         <outlet property="upvoteLbl" destination="1dQ-Ea-iG4" id="hn6-77-Am1"/>
+                        <segue destination="y6r-iy-fyZ" kind="presentation" identifier="detailSegue" modalPresentationStyle="fullScreen" modalTransitionStyle="crossDissolve" id="gXv-7j-k4D"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -269,6 +270,16 @@
                 </tapGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="1950.7692307692307" y="100.23696682464454"/>
+        </scene>
+        <!--Detail-->
+        <scene sceneID="J3F-fv-lPn">
+            <objects>
+                <viewControllerPlaceholder storyboardName="Detail" id="y6r-iy-fyZ" sceneMemberID="viewController">
+                    <navigationItem key="navigationItem" id="MlF-Yk-Ihq"/>
+                </viewControllerPlaceholder>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="XDf-hI-ys1" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2837" y="100"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="fbV-dq-otC">

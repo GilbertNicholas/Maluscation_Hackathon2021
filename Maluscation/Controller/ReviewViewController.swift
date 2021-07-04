@@ -18,7 +18,6 @@ class ReviewViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         setUpView()
     }
     
@@ -48,5 +47,9 @@ class ReviewViewController: UIViewController {
     
     @IBAction func closeButtonTapped(_ sender: Any) {
         self.dismiss(animated: true)
+    }
+    
+    @IBAction func submitBtnTapped(_ sender: UIButton) {
+        
     }
 }

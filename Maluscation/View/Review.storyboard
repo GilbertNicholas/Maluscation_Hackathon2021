@@ -47,7 +47,7 @@
                                     <color key="titleColor" red="0.035294117649999998" green="0.10980392160000001" blue="0.3411764706" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
                                 <connections>
-                                    <action selector="upvoteButtonTapped:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="Q5B-Me-Z1v"/>
+                                    <action selector="upvoteButtonTapped:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="fdi-3N-TYX"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4Ke-e8-2mX">
@@ -62,7 +62,7 @@
                                     <color key="titleColor" red="0.035294117649999998" green="0.10980392160000001" blue="0.3411764706" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
                                 <connections>
-                                    <action selector="downvoteButtonTapped:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="hS5-KJ-g2h"/>
+                                    <action selector="downvoteButtonTapped:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="uKy-Zc-c3n"/>
                                 </connections>
                             </button>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Divider" translatesAutoresizingMaskIntoConstraints="NO" id="RQf-ya-OZk">
@@ -76,11 +76,6 @@
                                 <color key="textColor" red="0.035294117649999998" green="0.10980392160000001" blue="0.3411764706" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="hands.clap" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="NXI-ls-7pO">
-                                <rect key="frame" x="40" y="269" width="33" height="36"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="tintColor" red="0.035294117649999998" green="0.10980392160000001" blue="0.3411764706" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                            </imageView>
                             <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Tlz-ya-7rj">
                                 <rect key="frame" x="32" y="383" width="326" height="194"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -93,7 +88,7 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Type something..." minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="eEH-RD-X9Y">
-                                        <rect key="frame" x="13" y="44" width="305" height="27"/>
+                                        <rect key="frame" x="13" y="44" width="305" height="32"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <fontDescription key="fontDescription" name="RobotoSlab-Medium" family="Roboto Slab" pointSize="12"/>
                                         <textInputTraits key="textInputTraits" autocorrectionType="no"/>
@@ -137,6 +132,61 @@
                                     </navigationItem>
                                 </items>
                             </navigationBar>
+                            <button opaque="NO" tag="1" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fGs-DC-sdd">
+                                <rect key="frame" x="40" y="271.33333333333331" width="40" height="36"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="tintColor" red="0.035294117649999998" green="0.10980392160000001" blue="0.3411764706" alpha="1" colorSpace="calibratedRGB"/>
+                                <state key="normal" backgroundImage="hands.clap" catalog="system">
+                                    <color key="titleColor" red="0.035294117649999998" green="0.10980392160000001" blue="0.3411764706" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="hygieneRatingTapped:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="NQM-Aa-uXH"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" tag="2" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iLf-XD-5is">
+                                <rect key="frame" x="85" y="271.33333333333331" width="40" height="36"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="tintColor" red="0.035294117649999998" green="0.10980392160000001" blue="0.3411764706" alpha="1" colorSpace="calibratedRGB"/>
+                                <state key="normal" backgroundImage="hands.clap" catalog="system">
+                                    <color key="titleColor" red="0.035294117649999998" green="0.10980392160000001" blue="0.3411764706" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="hygieneRatingTapped:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="gT0-lz-q35"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" tag="3" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="d6R-Z3-h8X">
+                                <rect key="frame" x="130" y="271.33333333333331" width="40" height="36"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="tintColor" red="0.035294117649999998" green="0.10980392160000001" blue="0.3411764706" alpha="1" colorSpace="calibratedRGB"/>
+                                <state key="normal" backgroundImage="hands.clap" catalog="system">
+                                    <color key="titleColor" red="0.035294117649999998" green="0.10980392160000001" blue="0.3411764706" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="hygieneRatingTapped:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="ld5-bc-mza"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" tag="4" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JTM-YY-FOS">
+                                <rect key="frame" x="175" y="271.33333333333331" width="40" height="36"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="tintColor" red="0.035294117649999998" green="0.10980392160000001" blue="0.3411764706" alpha="1" colorSpace="calibratedRGB"/>
+                                <state key="normal" backgroundImage="hands.clap" catalog="system">
+                                    <color key="titleColor" red="0.035294117649999998" green="0.10980392160000001" blue="0.3411764706" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="hygieneRatingTapped:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="Yhs-OR-Aca"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" tag="5" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vdK-dl-44Y">
+                                <rect key="frame" x="220" y="271.33333333333331" width="40" height="36"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="tintColor" red="0.035294117649999998" green="0.10980392160000001" blue="0.3411764706" alpha="1" colorSpace="calibratedRGB"/>
+                                <state key="normal" backgroundImage="hands.clap" catalog="system">
+                                    <color key="titleColor" red="0.035294117649999998" green="0.10980392160000001" blue="0.3411764706" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="hygieneRatingTapped:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="jSx-XT-Gi2"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="vDu-zF-Fre"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -150,14 +200,18 @@
                         <outlet property="downvoteButton" destination="4Ke-e8-2mX" id="eRc-12-8JO"/>
                         <outlet property="feedbackTextField" destination="eEH-RD-X9Y" id="Ixm-cD-J9N"/>
                         <outlet property="feedbackView" destination="Tlz-ya-7rj" id="l4n-4h-uEL"/>
-                        <outlet property="sanitationScoreImage" destination="NXI-ls-7pO" id="a7P-1D-v0l"/>
                         <outlet property="submitButton" destination="NbA-jt-xWn" id="1pF-mo-OHk"/>
                         <outlet property="upvoteButton" destination="mUI-Ou-Tqc" id="ZLg-TI-g5G"/>
+                        <outletCollection property="sanitationScoreImage" destination="fGs-DC-sdd" collectionClass="NSMutableArray" id="QDg-fa-DCd"/>
+                        <outletCollection property="sanitationScoreImage" destination="iLf-XD-5is" collectionClass="NSMutableArray" id="zZS-q1-jN2"/>
+                        <outletCollection property="sanitationScoreImage" destination="d6R-Z3-h8X" collectionClass="NSMutableArray" id="Ewa-Dt-ngl"/>
+                        <outletCollection property="sanitationScoreImage" destination="JTM-YY-FOS" collectionClass="NSMutableArray" id="9hP-wa-bj1"/>
+                        <outletCollection property="sanitationScoreImage" destination="vdK-dl-44Y" collectionClass="NSMutableArray" id="nk8-rI-SEd"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="137.68115942028987" y="130.58035714285714"/>
+            <point key="canvasLocation" x="135.38461538461539" y="130.09478672985782"/>
         </scene>
     </scenes>
     <resources>

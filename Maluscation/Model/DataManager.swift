@@ -82,6 +82,23 @@ class CoreDataManager {
         return tempPlaces
     }
     
+    func getPlaceBasedOnId(id: UUID) -> [DestinationPlace] {
+        var tempPlaces: [DestinationPlace] = []
+        
+        do {
+            let request = DestinationPlace.fetchRequest() as NSFetchRequest<DestinationPlace>
+            
+            let pred = NSPredicate(format: "id == %@", id as CVarArg)
+            request.predicate = pred
+            
+            tempPlaces = try context.fetch(request)
+        } catch {
+            print("Error Fetch Place")
+        }
+        
+        return tempPlaces
+    }
+    
     private func save() {
         do {
             try self.context.save()

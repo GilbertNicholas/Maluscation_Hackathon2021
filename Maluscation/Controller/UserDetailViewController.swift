@@ -18,10 +18,21 @@ class UserDetailViewController: UIViewController {
         
         setUpTapGesture()
         
-        // TODO: Replace with Apple ID's data
-        fullNameTextField.text = "Gilbert Nicholas"
-        emailTextField.text = "gilbert@gmail.com"
-        phoneNumberTextField.text = "087887654123"
+        signInCheck()
+    }
+    
+    func signInCheck() {
+        guard let isSignedIn = UserDefaults.standard.value(forKey: "isSignedIn") as? Bool else { return }
+        
+        if isSignedIn {
+            fullNameTextField.text = UserDefaults.standard.value(forKey: "firstName") as? String
+            emailTextField.text = UserDefaults.standard.value(forKey: "email") as? String
+            phoneNumberTextField.text = ""
+        } else {
+            fullNameTextField.text = ""
+            emailTextField.text = ""
+            phoneNumberTextField.text = ""
+        }
     }
     
     func validateEmail(enteredEmail:String) -> Bool {

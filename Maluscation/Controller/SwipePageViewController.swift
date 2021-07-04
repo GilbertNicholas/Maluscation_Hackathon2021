@@ -221,9 +221,9 @@ class SwipePageViewController: UIViewController {
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "detailSegue" {
-            guard let destVC = segue.destination as? DetailVC else {
-                return
-            }
+            guard let navController = segue.destination as? UINavigationController,
+                  let destVC = navController.viewControllers.first as? DetailVC
+            else { return }
             
             destVC.id = self.id
         }

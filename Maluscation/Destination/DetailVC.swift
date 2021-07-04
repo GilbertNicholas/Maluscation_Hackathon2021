@@ -9,10 +9,25 @@ import UIKit
 
 class DetailVC: UIViewController {
     
-    var id: UUID? = nil
+    private let backgroundColors: [String: UIColor] = [
+        "Active": red,
+        "Casual": yellow,
+        "Nature": green,
+        "Chill": blue
+    ]
     
+    private let secondaryBackgroundColors: [String: UIColor] = [
+        "Active": secondaryRed,
+        "Casual": secondaryYellow,
+        "Nature": secondaryGreen,
+        "Chill": secondaryBlue
+    ]
+    
+    var id: UUID!
+    private var dataManager = CoreDataManager()
 //    var destination = DestinationPlacete(id: UUID(), name: "Villa A", category: "Casual", location: "Depok, Sleman", price: 4000000, upVote: 9090, downVote: 1023, status: true, discount: 0.5, sanitationScore: 4, description: "description description description description description description description description description description description ", additional: "additional description description description description", extras: ["netflix", "health kit", "dll"])
-    var destination = DestinationPlaceTest(id: UUID(), name: "Villa", category: "Casual", location: "Batam", price: 10000000, upVote: 231, downVote: 30, status: true, discount: 0.4, sanitationScore: 5)
+    var destination: DestinationPlaceTest?
+    var destinations: [DestinationPlace] = []
 
     @IBOutlet weak var tableView: UITableView!
     
@@ -26,6 +41,7 @@ class DetailVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         title = "Details"
+        fetchData()
         setupToolbarView()
         tableView.register(UINib(nibName: "DetailCell", bundle: .main), forCellReuseIdentifier: "DetailCell")
         tableView.dataSource = self
@@ -41,7 +57,8 @@ class DetailVC: UIViewController {
         toolbarContainer.layer.borderColor = UIColor.black.cgColor
         
         // Full price labels
-        guard let fullPrice = formatter.string(from: NSNumber(value: destination.price)),
+        guard let destination = destinations.first,
+              let fullPrice = formatter.string(from: NSNumber(value: destination.price)),
               let discountedPrice = formatter.string(from: NSNumber(value: Float(destination.price) * (1 - destination.discount)))
         else { return }
         
@@ -61,6 +78,11 @@ class DetailVC: UIViewController {
         bookButton.layer.cornerRadius = bookButton.frame.height * 0.5
     }
 
+    private func fetchData() {
+        guard let dataID = id else { return }
+        destinations = dataManager.getPlaceBasedOnId(id: dataID)
+    }
+    
     @IBAction func backButtonTapped(_ sender: UIBarButtonItem) {
         self.dismiss(animated: true, completion: nil)
     }
@@ -85,19 +107,25 @@ extension DetailVC: UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
-        guard let cell = tableView.dequeueReusableCell(withIdentifier: "DetailCell") as? DetailCell
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: "DetailCell") as? DetailCell,
+              let destination = destinations.first,
+              let image = UIImage(data: destination.image!)
         else { return UITableViewCell() }
         
-//        cell.setContainerView(color: colors[destination.category] ?? UIColor.white)
-        cell.setNameLabel(name: destination.name)
-        cell.setLocationLabel(location: destination.location)
+        cell.setContainerView(color: backgroundColors[destination.category ?? ""] ?? UIColor.white)
+        cell.destinationImageView.image = image
+        cell.setNameLabel(name: destination.name ?? "")
+        cell.destinationLabel.backgroundColor = secondaryBackgroundColors[destination.category ?? ""] ?? UIColor.white
+        cell.setLocationLabel(location: destination.location ?? "")
         cell.setZoneLabel(isGreen: destination.status)
-        cell.setUpVote(upvote: destination.upVote)
-        cell.setDownVote(downvote: destination.downVote)
-        cell.setSanitatyLabel(score: destination.sanitationScore)
-//        cell.setDescriptionLabel(description: destination.description)
-//        cell.setAdditionalDescriptionLabel(description: destination.additional)
-//        cell.setExtraLabels(numberOfExtras: destination.extras.count, extras: destination.extras)
+        cell.setUpVote(upvote: Int(destination.totalUpvote))
+        cell.setDownVote(downvote: Int(destination.totalDownvote))
+        cell.setSanitatyLabel(score: Int(destination.totalHygiene))
+        cell.setDescriptionLabel(description: "")
+        cell.setAdditionalDescriptionLabel(description: "")
+        cell.descriptionLabel.isHidden = true
+        cell.additionalDescriptionLabel.isHidden = true
+        cell.setExtraLabels(numberOfExtras: destination.facility?.count ?? 7, extras: destination.facility ?? [""])
         
         return cell
     }

@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="18122" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Y6W-OH-hqX">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="18093"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="RobotoSlab-Black.ttf">
+            <string>RobotoSlab-Black</string>
+        </array>
+    </customFonts>
+    <scenes>
+        <!--Payment Status View Controller-->
+        <scene sceneID="s0d-6b-0kx">
+            <objects>
+                <viewController id="Y6W-OH-hqX" customClass="PaymentStatusViewController" customModule="Maluscation" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="5EZ-qb-Rvc">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <navigationBar contentMode="scaleToFill" barStyle="black" translatesAutoresizingMaskIntoConstraints="NO" id="LFl-oD-TeU">
+                                <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                                <color key="barTintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <textAttributes key="titleTextAttributes">
+                                    <color key="textColor" red="0.035294117649999998" green="0.10980392160000001" blue="0.3411764706" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    <color key="textShadowColor" red="0.035294117649999998" green="0.10980392160000001" blue="0.3411764706" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </textAttributes>
+                                <items>
+                                    <navigationItem title="Payment" id="obJ-xn-3Gc"/>
+                                </items>
+                            </navigationBar>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="DoubleDivider" translatesAutoresizingMaskIntoConstraints="NO" id="oF8-eP-CHh">
+                                <rect key="frame" x="44.5" y="593" width="325" height="10"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="10" id="Mi2-xB-EK3"/>
+                                    <constraint firstAttribute="width" constant="325" id="w0d-CV-QXD"/>
+                                </constraints>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sz0-B0-o8Z">
+                                <rect key="frame" x="137" y="627" width="140" height="42"/>
+                                <color key="backgroundColor" red="0.81960784313725488" green="0.85882352941176465" blue="0.98039215686274506" alpha="0.84705882352941175" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="140" id="rR5-nW-ovF"/>
+                                    <constraint firstAttribute="height" constant="42" id="uSe-tT-uRK"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="RobotoSlab-Black" family="Roboto Slab" pointSize="15"/>
+                                <inset key="titleEdgeInsets" minX="10" minY="0.0" maxX="10" maxY="0.0"/>
+                                <state key="normal" title="See History">
+                                    <color key="titleColor" red="0.035294117647058823" green="0.10980392156862745" blue="0.3411764705882353" alpha="0.84705882352941175" colorSpace="calibratedRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="seeHistoryButtonTapped:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="Uz3-c6-bE6"/>
+                                </connections>
+                            </button>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="PaymentStatus" translatesAutoresizingMaskIntoConstraints="NO" id="tDD-SH-MlH">
+                                <rect key="frame" x="71.5" y="304.5" width="271" height="187"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="187" id="FrV-dN-tWz"/>
+                                    <constraint firstAttribute="width" constant="271" id="Noj-vM-JrK"/>
+                                </constraints>
+                            </imageView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="vDu-zF-Fre"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="sz0-B0-o8Z" firstAttribute="centerY" secondItem="5EZ-qb-Rvc" secondAttribute="centerY" constant="200" id="3qr-Ob-60l"/>
+                            <constraint firstItem="oF8-eP-CHh" firstAttribute="centerY" secondItem="5EZ-qb-Rvc" secondAttribute="centerY" constant="150" id="4H5-hf-6Cb"/>
+                            <constraint firstItem="LFl-oD-TeU" firstAttribute="top" secondItem="vDu-zF-Fre" secondAttribute="top" id="75Y-hb-aHW"/>
+                            <constraint firstItem="LFl-oD-TeU" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" id="7dG-hP-ZHa"/>
+                            <constraint firstItem="LFl-oD-TeU" firstAttribute="trailing" secondItem="vDu-zF-Fre" secondAttribute="trailing" id="F9o-Sa-QJF"/>
+                            <constraint firstItem="tDD-SH-MlH" firstAttribute="centerX" secondItem="5EZ-qb-Rvc" secondAttribute="centerX" id="Knf-2Q-Riw"/>
+                            <constraint firstItem="oF8-eP-CHh" firstAttribute="centerX" secondItem="5EZ-qb-Rvc" secondAttribute="centerX" id="Lgl-ic-Qrm"/>
+                            <constraint firstItem="sz0-B0-o8Z" firstAttribute="centerX" secondItem="oF8-eP-CHh" secondAttribute="centerX" id="d5z-p0-GUz"/>
+                            <constraint firstItem="tDD-SH-MlH" firstAttribute="centerY" secondItem="5EZ-qb-Rvc" secondAttribute="centerY" constant="-50" id="jgA-bZ-tXD"/>
+                            <constraint firstItem="tDD-SH-MlH" firstAttribute="top" secondItem="LFl-oD-TeU" secondAttribute="bottom" constant="216.5" id="ruQ-SP-KLJ"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="seeHistoryButton" destination="sz0-B0-o8Z" id="o92-1F-CHG"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="137.68115942028987" y="130.58035714285714"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="DoubleDivider" width="975" height="30"/>
+        <image name="PaymentStatus" width="813" height="561"/>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>

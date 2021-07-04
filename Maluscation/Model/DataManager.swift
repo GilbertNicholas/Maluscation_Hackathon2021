@@ -99,6 +99,31 @@ class CoreDataManager {
         return tempPlaces
     }
     
+    func updatePlaceRating(id: UUID, upvote:Bool, downvote:Bool, hygieneRating:Int64) {
+        let chosenPlace = getPlaceBasedOnId(id: id)
+        
+        if upvote {
+            chosenPlace[0].totalUpvote += 1
+        } else if downvote {
+            chosenPlace[0].totalDownvote += 1
+        }
+        
+        let totalBooked = chosenPlace[0].totalUpvote + chosenPlace[0].totalDownvote
+        
+        chosenPlace[0].totalHygiene = ((chosenPlace[0].totalHygiene * totalBooked) + hygieneRating) / totalBooked + 1
+        save()
+    }
+    
+    func createReview(user: User, place: DestinationPlace) {
+        
+        var newReview = Review(context: self.context)
+        newReview.reviewToUser = user
+        newReview.reviewToPlace = place
+
+        save()
+        print("Scene Created")
+    }
+    
     private func save() {
         do {
             try self.context.save()

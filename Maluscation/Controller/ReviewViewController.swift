@@ -7,22 +7,27 @@
 
 import UIKit
 
-class ReviewViewController: UIViewController {
+class ReviewViewController: UIViewController, UITextFieldDelegate {
     
     @IBOutlet weak var upvoteButton: UIButton!
     @IBOutlet weak var downvoteButton: UIButton!
-    @IBOutlet weak var sanitationScoreImage: UIImageView!
+    @IBOutlet var sanitationScoreImage: [UIButton]!
     @IBOutlet weak var feedbackView: UIView!
     @IBOutlet weak var feedbackTextField: UITextField!
     @IBOutlet weak var submitButton: UIButton!
     
     var DataManager: CoreDataManager!
     
+    var id: UUID!
+    
+    private var isSelected: Int!
+    private var hygieneRating: Int!
+    private var feedback: String?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        upvote = 0
-        downvote = 0
+        isSelected = 1
         
         setUpView()
     }
@@ -49,6 +54,13 @@ class ReviewViewController: UIViewController {
         
         feedbackView.layer.borderWidth = 4
         feedbackView.layer.borderColor = CGColor(red: 9/255, green: 28/255, blue: 87/255, alpha: 1)
+        
+        feedbackTextField.delegate = self
+    }
+    
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {   //delegate method
+       textField.resignFirstResponder()
+       return true
     }
     
     @IBAction func closeButtonTapped(_ sender: Any) {
@@ -64,11 +76,7 @@ class ReviewViewController: UIViewController {
         downvoteButton.setTitleColor(UIColor(red: 9/255, green: 28/255, blue: 87/255, alpha: 1), for: .normal)
         downvoteButton.tintColor = UIColor(red: 9/255, green: 28/255, blue: 87/255, alpha: 1)
         
-        if upvote == 0 {
-            upvote! += 1
-        } else {
-            upvote! += 0
-        }
+        isSelected = 1
     }
     
     @IBAction func downvoteButtonTapped(_ sender: Any) {
@@ -80,26 +88,30 @@ class ReviewViewController: UIViewController {
         downvoteButton.setTitleColor(.white, for: .normal)
         downvoteButton.tintColor = .white
         
-        if upvote == 0 {
-            upvote! += 1
+        isSelected = 0
+    }
+    
+    private func saveFeedback() {
+        if isSelected == 1 {
+            DataManager.updatePlaceRating(id: self.id, upvote: true, downvote: false)
         } else {
-            upvote! += 0
+            DataManager.updatePlaceRating(id: self.id, upvote: false, downvote: true)
         }
     }
     
-    func saveFeedback() {
-        
+    @IBAction func hygieneRatingTapped(_ sender: UIButton) {
+        for button in sanitationScoreImage {
+            if button.tag <= sender.tag {
+                button.setBackgroundImage(UIImage(systemName: "hands.clap.fill"), for: .normal)
+            } else {
+                button.setBackgroundImage(UIImage(systemName: "hands.clap"), for: .normal)
+            }
+        }
+        self.hygieneRating = sender.tag
     }
     
     @IBAction func submitBtnTapped(_ sender: UIButton) {
-        
-    }
-    
-    @IBAction func upvoteButtonTapped(_ sender: UIButton) {
-        
-    }
-    
-    @IBAction func downvoteButtonTapped(_ sender: UIButton) {
-        
+        saveFeedback()
+        self.dismiss(animated: true)
     }
 }

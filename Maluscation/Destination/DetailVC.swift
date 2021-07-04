@@ -86,11 +86,28 @@ class DetailVC: UIViewController {
     @IBAction func backButtonTapped(_ sender: UIBarButtonItem) {
         self.dismiss(animated: true, completion: nil)
     }
+    
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "toBooking" {
             // Passing data booking
             guard let bookingVC = segue.destination as? BookingFormViewController else { return }
             bookingVC.id = id
+            bookingVC.DataManager = self.dataManager
+            
+            guard let isSignedIn = UserDefaults.standard.value(forKey: "isSignedIn") as? Bool else { return }
+            
+            if isSignedIn {
+                guard let firstName = UserDefaults.standard.value(forKey: "firstName") as? String,
+                      let lastName = UserDefaults.standard.value(forKey: "lastName") as? String,
+                      let email = UserDefaults.standard.value(forKey: "email") as? String
+                else { return }
+                
+                bookingVC.fullName = "\(firstName) \(lastName)"
+                bookingVC.email = "\(email)"
+            } else {
+                return
+            }
+            
         }
     }
     

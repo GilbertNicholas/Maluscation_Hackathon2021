@@ -43,7 +43,7 @@
                                         <barButtonItem key="rightBarButtonItem" style="done" systemItem="save" id="C5d-qo-q3E">
                                             <color key="tintColor" red="0.035294117649999998" green="0.10980392160000001" blue="0.3411764706" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                             <connections>
-                                                <segue destination="T3B-rb-JRg" kind="unwind" unwindAction="performUnwindSegueOperation:" id="iRA-gD-1iY"/>
+                                                <segue destination="T3B-rb-JRg" kind="unwind" unwindAction="performUnwindSegue2:" id="dKj-QG-cUO"/>
                                             </connections>
                                         </barButtonItem>
                                     </navigationItem>

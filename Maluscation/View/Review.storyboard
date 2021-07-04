@@ -46,6 +46,9 @@
                                 <state key="normal" title="Upvote" image="arrow.up.square.fill" catalog="system">
                                     <color key="titleColor" red="0.035294117649999998" green="0.10980392160000001" blue="0.3411764706" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
+                                <connections>
+                                    <action selector="upvoteButtonTapped:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="Q5B-Me-Z1v"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4Ke-e8-2mX">
                                 <rect key="frame" x="192" y="143" width="129" height="42"/>
@@ -58,6 +61,9 @@
                                 <state key="normal" title="Downvote" image="arrow.down.square" catalog="system">
                                     <color key="titleColor" red="0.035294117649999998" green="0.10980392160000001" blue="0.3411764706" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
+                                <connections>
+                                    <action selector="downvoteButtonTapped:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="hS5-KJ-g2h"/>
+                                </connections>
                             </button>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Divider" translatesAutoresizingMaskIntoConstraints="NO" id="RQf-ya-OZk">
                                 <rect key="frame" x="40" y="213" width="325" height="2"/>

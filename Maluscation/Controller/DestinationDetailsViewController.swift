@@ -80,6 +80,9 @@ class DestinationDetailsViewController: UIViewController {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "bookingSegue" {
             // Passing data disini
+            if let nextVC = segue.destination as? BookingFormViewController {
+                nextVC.id = destination.id
+            }
         }
     }
     

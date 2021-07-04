@@ -37,12 +37,19 @@ class BookingFormViewController: UIViewController {
     var paymentOpt: String?
     var totalPrice: Float?
     
-    let toolbar = UIToolbar()
+    var DataManager: CoreDataManager!
+    var destinationPlace: [DestinationPlace]!
     
     var id: UUID?
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+//        destinationPlace = DataManager.getPlaceBasedOnId(id: id!)
+        
+//        for dest in destinationPlace {
+//            print(dest)
+//        }
         
         setUpView()
     }
@@ -91,11 +98,6 @@ class BookingFormViewController: UIViewController {
         paymentOptionView.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(paymentOptTapped(_:))))
     }
     
-    // TODO: Fetch DestinationPlace data
-//    func fetchData(with id: UUID) {
-//
-//    }
-    
     @objc func userDetailTapped(_ sender: UITapGestureRecognizer) {
         performSegue(withIdentifier: "toUserDetail", sender: nil)
     }
@@ -136,11 +138,13 @@ class BookingFormViewController: UIViewController {
 
         paymentOptLabel.text = paymentOpt
         paymentOptLabel.textColor = UIColor(red: 9/255, green: 28/255, blue: 87/255, alpha: 1)
-        
+    }
+    
+    @IBAction func performUnwindSegue2(_ sender: UIStoryboardSegue) {
         guard sender.source is UserDetailViewController else {
             return
         }
-        
+
         userNameLabel.text = fullName
     }
     

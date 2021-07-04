@@ -218,14 +218,6 @@
                                     <outletCollection property="gestureRecognizers" destination="bhU-8w-Z5f" appends="YES" id="AO2-Li-ffg"/>
                                 </connections>
                             </view>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VPK-ec-Ulo">
-                                <rect key="frame" x="32" y="685" width="42" height="42"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" image="btnPrev"/>
-                                <connections>
-                                    <action selector="prevButtonTapped:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="Zkl-B2-Cbg"/>
-                                </connections>
-                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="vDu-zF-Fre"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -249,7 +241,6 @@
                         <outlet property="nameLblContainer" destination="Ze3-AX-XZQ" id="rhi-ec-UHf"/>
                         <outlet property="natureBtn" destination="s21-5o-O7s" id="bGu-QJ-d6s"/>
                         <outlet property="placeNameLbl" destination="bai-Sq-qm4" id="f4Z-ir-uwe"/>
-                        <outlet property="prevBtn" destination="VPK-ec-Ulo" id="jbc-ld-G3M"/>
                         <outlet property="priceLbl" destination="tee-hC-tXp" id="HmJ-x3-7u4"/>
                         <outlet property="statusLbl" destination="nDL-hc-kaa" id="4BA-YX-Hcl"/>
                         <outlet property="statusLblContainer" destination="LXK-As-vG7" id="DJt-Ln-vN6"/>
@@ -302,7 +293,6 @@
     </scenes>
     <resources>
         <image name="BGMalus" width="390" height="347"/>
-        <image name="btnPrev" width="42" height="42"/>
         <image name="downvoteIcon" width="17" height="16.666666030883789"/>
         <image name="elipsFacility" width="9" height="9"/>
         <image name="hygieneIcon" width="18.333333969116211" height="20.333333969116211"/>

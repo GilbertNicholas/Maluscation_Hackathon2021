@@ -6,26 +6,31 @@
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
+    <customFonts key="customFonts">
+        <array key="RobotoSlab-Medium.ttf">
+            <string>RobotoSlab-Medium</string>
+        </array>
+    </customFonts>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
-        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="HistoryCell" rowHeight="218" id="KGk-i7-Jjw" customClass="HistoryCell" customModule="signInWithApple2" customModuleProvider="target">
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="HistoryCell" rowHeight="218" id="KGk-i7-Jjw" customClass="HistoryCell" customModule="Maluscation" customModuleProvider="target">
             <rect key="frame" x="0.0" y="0.0" width="326" height="220"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
                 <rect key="frame" x="0.0" y="0.0" width="326" height="220"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="villa" translatesAutoresizingMaskIntoConstraints="NO" id="OVw-a4-odq">
+                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="OVw-a4-odq">
                         <rect key="frame" x="16" y="16" width="50" height="50"/>
                         <constraints>
                             <constraint firstAttribute="height" constant="50" id="Tun-um-wP7"/>
                             <constraint firstAttribute="width" constant="50" id="sSS-MH-1K7"/>
                         </constraints>
                     </imageView>
-                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Nama vila" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="w33-eV-WQo" customClass="PaddingLabel" customModule="signInWithApple2" customModuleProvider="target">
+                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Nama vila" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="w33-eV-WQo" customClass="PaddingLabel" customModule="Maluscation" customModuleProvider="target">
                         <rect key="frame" x="82" y="16" width="228" height="50"/>
-                        <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="15"/>
+                        <fontDescription key="fontDescription" name="RobotoSlab-Medium" family="Roboto Slab" pointSize="20"/>
                         <color key="textColor" red="0.027450980390000001" green="0.086274509799999996" blue="0.27450980390000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <nil key="highlightedColor"/>
                         <userDefinedRuntimeAttributes>
@@ -45,13 +50,13 @@
                     </imageView>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Location" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pgC-hV-FWb">
                         <rect key="frame" x="48" y="74" width="148" height="24"/>
-                        <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="15"/>
+                        <fontDescription key="fontDescription" name="RobotoSlab-Medium" family="Roboto Slab" pointSize="15"/>
                         <color key="textColor" red="0.027450980390000001" green="0.086274509799999996" blue="0.27450980390000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <nil key="highlightedColor"/>
                     </label>
                     <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="zone" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aou-Mc-vWV">
                         <rect key="frame" x="212" y="74" width="98" height="24"/>
-                        <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="15"/>
+                        <fontDescription key="fontDescription" name="RobotoSlab-Medium" family="Roboto Slab" pointSize="15"/>
                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <nil key="highlightedColor"/>
                     </label>
@@ -65,34 +70,34 @@
                         </constraints>
                     </imageView>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="metode pembayaran" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9lS-eV-F3C">
-                        <rect key="frame" x="16" y="146" width="180" height="14.5"/>
-                        <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="12"/>
+                        <rect key="frame" x="16" y="146" width="180" height="20"/>
+                        <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="15"/>
                         <color key="textColor" red="0.027450980390000001" green="0.086274509799999996" blue="0.27450980390000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <nil key="highlightedColor"/>
                     </label>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="extra" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8j4-LW-fFf">
-                        <rect key="frame" x="212" y="146" width="98" height="14.5"/>
-                        <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="12"/>
+                        <rect key="frame" x="212" y="146" width="98" height="20"/>
+                        <fontDescription key="fontDescription" name="RobotoSlab-Medium" family="Roboto Slab" pointSize="15"/>
                         <color key="textColor" red="0.027450980390000001" green="0.086274509799999996" blue="0.27450980390000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <nil key="highlightedColor"/>
                     </label>
-                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="harga" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bLb-KS-0nS" customClass="PaddingLabel" customModule="signInWithApple2" customModuleProvider="target">
-                        <rect key="frame" x="16" y="151.5" width="294" height="52.5"/>
-                        <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="17"/>
+                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="harga" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bLb-KS-0nS" customClass="PaddingLabel" customModule="Maluscation" customModuleProvider="target">
+                        <rect key="frame" x="16" y="165.5" width="294" height="38.5"/>
+                        <fontDescription key="fontDescription" name="RobotoSlab-Medium" family="Roboto Slab" pointSize="17"/>
                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <nil key="highlightedColor"/>
                         <userDefinedRuntimeAttributes>
                             <userDefinedRuntimeAttribute type="number" keyPath="topInset">
-                                <real key="value" value="16"/>
+                                <real key="value" value="8"/>
                             </userDefinedRuntimeAttribute>
                             <userDefinedRuntimeAttribute type="number" keyPath="bottomInset">
-                                <real key="value" value="16"/>
+                                <real key="value" value="8"/>
                             </userDefinedRuntimeAttribute>
                         </userDefinedRuntimeAttributes>
                     </label>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="checkin checkout" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Zju-cT-7YV">
                         <rect key="frame" x="48" y="106" width="148" height="24"/>
-                        <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="12"/>
+                        <fontDescription key="fontDescription" name="RobotoSlab-Medium" family="Roboto Slab" pointSize="12"/>
                         <color key="textColor" red="0.027450980390000001" green="0.086274509799999996" blue="0.27450980390000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <nil key="highlightedColor"/>
                     </label>
@@ -169,15 +174,14 @@
     </objects>
     <designables>
         <designable name="bLb-KS-0nS">
-            <size key="intrinsicContentSize" width="59.5" height="52.5"/>
+            <size key="intrinsicContentSize" width="61" height="38.5"/>
         </designable>
         <designable name="w33-eV-WQo">
-            <size key="intrinsicContentSize" width="93" height="28"/>
+            <size key="intrinsicContentSize" width="121" height="36.5"/>
         </designable>
     </designables>
     <resources>
         <image name="calendar" catalog="system" width="128" height="106"/>
         <image name="location.fill" catalog="system" width="128" height="121"/>
-        <image name="villa" width="1500" height="843"/>
     </resources>
 </document>

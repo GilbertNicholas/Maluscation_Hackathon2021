@@ -11,12 +11,12 @@
         <!--History-->
         <scene sceneID="s0d-6b-0kx">
             <objects>
-                <viewController id="Y6W-OH-hqX" customClass="HistoryViewController" customModule="signInWithApple2" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="Y6W-OH-hqX" customClass="HistoryViewController" customModule="Maluscation" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="5EZ-qb-Rvc">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="background" translatesAutoresizingMaskIntoConstraints="NO" id="Z7z-54-bVA">
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Background" translatesAutoresizingMaskIntoConstraints="NO" id="Z7z-54-bVA">
                                 <rect key="frame" x="0.0" y="88" width="414" height="313.5"/>
                             </imageView>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="insetGrouped" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="18" sectionFooterHeight="18" translatesAutoresizingMaskIntoConstraints="NO" id="tuY-qy-4mZ">
@@ -43,17 +43,17 @@
                     <navigationItem key="navigationItem" title="History" id="LCR-Yc-5Cf"/>
                     <connections>
                         <outlet property="tableView" destination="tuY-qy-4mZ" id="mDG-25-pXl"/>
-                        <segue destination="1l2-36-akv" kind="show" identifier="historyToDetail" id="uMl-t7-Jhc"/>
+                        <segue destination="1l2-36-akv" kind="show" identifier="historyToReceipt" id="uMl-t7-Jhc"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1047.8260869565217" y="107.8125"/>
         </scene>
-        <!--Detail-->
+        <!--Receipt-->
         <scene sceneID="Zan-01-Wmf">
             <objects>
-                <viewControllerPlaceholder storyboardName="Detail" id="1l2-36-akv" sceneMemberID="viewController">
+                <viewControllerPlaceholder storyboardName="Receipt" id="1l2-36-akv" sceneMemberID="viewController">
                     <navigationItem key="navigationItem" id="PCU-yw-MLd"/>
                 </viewControllerPlaceholder>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="XRs-GO-9By" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -81,7 +81,7 @@
         </scene>
     </scenes>
     <resources>
-        <image name="background" width="390" height="347"/>
+        <image name="Background" width="390" height="347"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

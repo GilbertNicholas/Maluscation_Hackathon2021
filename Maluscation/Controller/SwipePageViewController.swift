@@ -164,7 +164,6 @@ class SwipePageViewController: UIViewController {
     
     @IBAction func panCardTapped(_ sender: UITapGestureRecognizer) {
         self.performSegue(withIdentifier: "detailSegue", sender: self)
-        print("TAPPED!")
     }
     
     @IBAction func panCardSwiped(_ sender: UIPanGestureRecognizer) {
@@ -218,6 +217,16 @@ class SwipePageViewController: UIViewController {
             self.cardContainer.alpha = 1
             self.cardContainer.transform = .identity
         })
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "detailSegue" {
+            guard let destVC = segue.destination as? DetailVC else {
+                return
+            }
+            
+            destVC.id = self.id
+        }
     }
     
 }

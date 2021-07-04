@@ -191,15 +191,27 @@ class BookingFormViewController: UIViewController {
 
             let entity = NSEntityDescription.entity(forEntityName: "Booking", in: managedContext)!
 
-            let bookingDetails = NSManagedObject(entity: entity, insertInto: managedContext)
-            bookingDetails.setValue(id, forKey: "bookingId")
-            bookingDetails.setValue(userNameLabel.text, forKey: "name")
-            bookingDetails.setValue(email, forKey: "email")
-            bookingDetails.setValue(phoneNumber, forKey: "phone")
-            bookingDetails.setValue(checkInDate.date, forKey: "checkIn")
-            bookingDetails.setValue(checkOutDate.date, forKey: "checkOut")
-            bookingDetails.setValue(totalPrice, forKey: "totalPrice")
-            bookingDetails.setValue(paymentOptLabel.text, forKey: "paymentOpt")
+//            let bookingDetails = NSManagedObject(entity: entity, insertInto: managedContext)
+//            bookingDetails.setValue(id, forKey: "bookingId")
+//            bookingDetails.setValue(userNameLabel.text, forKey: "name")
+//            bookingDetails.setValue(email, forKey: "email")
+//            bookingDetails.setValue(phoneNumber, forKey: "phone")
+//            bookingDetails.setValue(checkInDate.date, forKey: "checkIn")
+//            bookingDetails.setValue(checkOutDate.date, forKey: "checkOut")
+//            bookingDetails.setValue(totalPrice, forKey: "totalPrice")
+//            bookingDetails.setValue(paymentOptLabel.text, forKey: "paymentOpt")
+            
+            let bookedPlace = DataManager.getPlaceBasedOnId(id: id!)
+            let bookingDetails = Booking(context: managedContext)
+            bookingDetails.bookingId = id
+            bookingDetails.name = userNameLabel.text
+            bookingDetails.email = email
+            bookingDetails.phone = phoneNumber
+            bookingDetails.checkIn = checkInDate.date
+            bookingDetails.checkOut = checkOutDate.date
+            bookingDetails.totalPrice = totalPrice ?? 0
+            bookingDetails.paymentOpt = paymentOptLabel.text
+            bookingDetails.bookingToPlace = bookedPlace.first
         
             do {
                 try managedContext.save()

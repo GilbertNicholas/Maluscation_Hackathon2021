@@ -10,36 +10,56 @@ import UIKit
 class HistoryViewController: UIViewController {
     
     // Diganti jadi hasil fetch dari core data
-//    let destinations: [DestinationPlace] = [
-//        DestinationPlace(id: UUID(), name: "Vila 1", category: "Nature", location: "Bali", price: 1000000, upVote: 1200, downVote: 42, status: true, discount: 0.2, sanitationScore: 1, description: "description", additional: "additional", extras: ["netflix", "health kit", "dll"]),
-//        DestinationPlace(id: UUID(), name: "Vila 2", category: "Chill", location: "Yogyakarta", price: 2000000, upVote: 1400, downVote: 102, status: false, discount: 0.5, sanitationScore: 2, description: "description", additional: "additional", extras: ["netflix", "health kit", "dll"]),
-//        DestinationPlace(id: UUID(), name: "Vila 3", category: "Active", location: "Batam", price: 3500000, upVote: 100, downVote: 23, status: true, discount: 0.1, sanitationScore: 3, description: "description", additional: "additional", extras: ["netflix", "health kit", "dll"]),
-//        DestinationPlace(id: UUID(), name: "Vila 4", category: "Casual", location: "Jakarta", price: 6000000, upVote: 1023, downVote: 43, status: false, discount: 0.15, sanitationScore: 5, description: "description", additional: "additional", extras: ["netflix", "health kit", "dll"]),
-//    ]
-    let destinations: [DestinationPlaceTest] = [DestinationPlaceTest(id: UUID(), name: "Villa A", category: "Active", location: "Jakarta, Indonesia", price: 10500000, upVote: 1203, downVote: 31, status: true, discount: 0.2, sanitationScore: 5)]
+    private let backgroundColors: [String: UIColor] = [
+        "Active": red,
+        "Casual": yellow,
+        "Nature": green,
+        "Chill": blue
+    ]
+
+    private let secondaryBackgroundColors: [String: UIColor] = [
+        "Active": secondaryRed,
+        "Casual": secondaryYellow,
+        "Nature": secondaryGreen,
+        "Chill": secondaryBlue
+    ]
+    
+    var destinations: [DestinationPlace] = []
+    var bookings: [Booking] = []
+    let dataManager = CoreDataManager()
 
     @IBOutlet weak var tableView: UITableView!
     override func viewDidLoad() {
         super.viewDidLoad()
+        fetchData()
         tableView.delegate = self
         tableView.dataSource = self
         tableView.register(UINib(nibName: "HistoryCell", bundle: .main), forCellReuseIdentifier: "HistoryCell")
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if segue.identifier == "historyToDetail" {
-            guard let detailVC = segue.destination as? DetailVC,
-                  let senderIndex = sender as? Int
+        if segue.identifier == "historyToReceipt" {
+            guard let receiptVC = segue.destination as? ReceiptViewController,
+                  let senderIndex = sender as? Int,
+                  let bookingId = bookings[senderIndex].bookingId
+//                  let bookingId = destinations[senderIndex].placeToBooking?.value(forKey: "bookingId") as? UUID
                   else { return }
-            detailVC.id = destinations[senderIndex].id
-            detailVC.destination = destinations[senderIndex]
+            receiptVC.bookingId = bookingId
+        }
+    }
+    
+    private func fetchData() {
+        bookings = dataManager.getAllBookings()
+        for booking in bookings {
+            guard let place = booking.bookingToPlace else { return }
+            destinations.append(place)
         }
     }
 }
 
 extension HistoryViewController: UITableViewDataSource {
     func numberOfSections(in tableView: UITableView) -> Int {
-        return destinations.count
+        return bookings.count
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -48,19 +68,31 @@ extension HistoryViewController: UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let section = indexPath.section
-        guard let cell = tableView.dequeueReusableCell(withIdentifier: "HistoryCell") as? HistoryCell
+        let booking = bookings[section]
+        
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: "HistoryCell") as? HistoryCell,
+              let bookedPlace = booking.bookingToPlace,
+              let image = UIImage(data: bookedPlace.image!)
         else { return UITableViewCell() }
         
-//        cell.setContentView(backgroundColor: colors[destinations[section].category] ?? UIColor.white)
-        cell.setDestinationImage(image: (UIImage(named: "villa") ?? UIImage()))
-//        cell.setDestinationName(name: destinations[section].name, backgroundColor: secondaryColors[destinations[section].category] ?? UIColor.white)
-        cell.setLocationLabel(location: destinations[section].location)
-        cell.setZoneLabel(isGreen: destinations[section].status)
-        cell.setDateLabel(date: "01-01-2021 - 02-02-2021")
-        cell.setPaymentMethod(method: "BCA Virtual Account")
-        cell.setExtraLabel(extra: "Extra something")
         
-//        cell.setPriceLabel(price: formatThousanSeparator(price: destinations[section].price, addIDR: true), backgroundColor: secondaryColors[destinations[section].category] ?? UIColor.white)
+        cell.setContentView(backgroundColor: backgroundColors[bookedPlace.category ?? ""] ?? UIColor.white)
+        cell.setDestinationImage(image: image)
+        cell.setDestinationName(name: bookedPlace.name ?? "", backgroundColor: secondaryBackgroundColors[bookedPlace.category ?? ""] ?? UIColor.white)
+        cell.setLocationLabel(location: bookedPlace.location ?? "")
+        cell.setZoneLabel(isGreen: bookedPlace.status)
+        
+        guard let facilitiy = bookedPlace.facility?.first,
+              let checkIn = booking.checkIn,
+              let checkOut = booking.checkOut,
+              let paymentOpt = booking.paymentOpt
+        else { return UITableViewCell () }
+        
+        cell.setDateLabel(date: dateFormatter(from: checkIn, to: checkOut))
+        cell.setPaymentMethod(method: paymentOpt)
+        cell.setExtraLabel(extra: facilitiy)
+        
+        cell.setPriceLabel(price: formatThousandSeparator(price: Int(bookedPlace.price), addIDR: true), backgroundColor: secondaryBackgroundColors[bookedPlace.category ?? ""] ?? UIColor.white)
         
         return cell
     }
@@ -68,10 +100,29 @@ extension HistoryViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 242
     }
+    
+    private func formatThousandSeparator(price: Int, addIDR: Bool) -> String {
+        let formatter = NumberFormatter()
+        formatter.numberStyle = .decimal
+        
+        guard let fullPrice = formatter.string(from: NSNumber(value: price))
+        else { return "" }
+        
+        return addIDR ? "IDR \(fullPrice)" : "\(fullPrice)"
+    }
+    
+    private func dateFormatter(from: Date, to: Date) -> String {
+        let formatter = DateFormatter()
+        formatter.dateFormat = "dd-MM-yy"
+        return "\(formatter.string(from: from)) - \(formatter.string(from: to))"
+    }
 }
 
 extension HistoryViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        performSegue(withIdentifier: "historyToDetail", sender: indexPath.section)
+        tableView.deselectRow(at: indexPath, animated: true)
+        performSegue(withIdentifier: "historyToReceipt", sender: indexPath.section)
     }
 }
+
+

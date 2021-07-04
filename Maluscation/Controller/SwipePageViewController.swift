@@ -16,7 +16,6 @@ class SwipePageViewController: UIViewController {
     @IBOutlet private weak var casualBtn: UIButton!
     @IBOutlet private weak var natureBtn: UIButton!
     @IBOutlet private weak var chillBtn: UIButton!
-    @IBOutlet private weak var prevBtn: UIButton!
     @IBOutlet weak var nameLblContainer: UIView!
     @IBOutlet weak var statusLblContainer: UIView!
     @IBOutlet weak var placeNameLbl: UILabel!
@@ -143,8 +142,6 @@ class SwipePageViewController: UIViewController {
             priceLbl.text = "IDR \(String(placeDataBasedOnCategory[usedIdx].price))"
             
             cardContainer.backgroundColor = colors[chosenPref]
-            
-            prevBtn.isEnabled = usedIdx == 0 ? false : true
         }
     }
     
@@ -183,8 +180,8 @@ class SwipePageViewController: UIViewController {
                     card.alpha = 0
                 })
                 
-                usedIdx += 1
-                if usedIdx < placeDataBasedOnCategory.count {
+                usedIdx -= 1
+                if usedIdx >= 0 {
                     setupCardContent()
                 } else {
                     self.usedIdx = 0

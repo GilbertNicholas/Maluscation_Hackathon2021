@@ -53,6 +53,10 @@ class SwipePageViewController: UIViewController {
         
         divisor = (view.frame.width / 2) / 0.3
         usedIdx = 0
+        
+        if chosenPref == nil {
+            chosenPref = "Active"
+        }
 
         setupPrefButton()
         setupSwipeCard()

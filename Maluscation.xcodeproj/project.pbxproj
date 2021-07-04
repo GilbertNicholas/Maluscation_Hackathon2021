@@ -19,6 +19,28 @@
 		A9063F342690661F00A95E35 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9063F332690661F00A95E35 /* ProfileViewController.swift */; };
 		A9063F362690662700A95E35 /* Profile.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A9063F352690662700A95E35 /* Profile.storyboard */; };
 		A9F33B0F26918B9600246A39 /* DestinationDetails.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A9F33B0E26918B9600246A39 /* DestinationDetails.storyboard */; };
+		02D49A86269075FB003B7108 /* PreferenceCheck.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 02D49A85269075FB003B7108 /* PreferenceCheck.storyboard */; };
+		02D49A8C269076D6003B7108 /* SwipePageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02D49A8B269076D6003B7108 /* SwipePageViewController.swift */; };
+		02D49A8E269076F8003B7108 /* PreferenceCheckViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02D49A8D269076F8003B7108 /* PreferenceCheckViewController.swift */; };
+		02D49A902690770C003B7108 /* SwipePage.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 02D49A8F2690770C003B7108 /* SwipePage.storyboard */; };
+		F388126A269025A40061D243 /* BookingForm.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F3881269269025A40061D243 /* BookingForm.storyboard */; };
+		F388126C269025D20061D243 /* BookingFormViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F388126B269025D20061D243 /* BookingFormViewController.swift */; };
+		F388126E26905EEC0061D243 /* RobotoSlab-Black.ttf in Resources */ = {isa = PBXBuildFile; fileRef = F388126D26905EEC0061D243 /* RobotoSlab-Black.ttf */; };
+		F388127126906A4E0061D243 /* Signika-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = F388127026906A4E0061D243 /* Signika-Bold.ttf */; };
+		F388127426906ACE0061D243 /* RobotoSlab-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = F388127226906ACE0061D243 /* RobotoSlab-Medium.ttf */; };
+		F388127526906ACE0061D243 /* RobotoSlab-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = F388127326906ACE0061D243 /* RobotoSlab-Light.ttf */; };
+		F38812772690940A0061D243 /* Receipt.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F38812762690940A0061D243 /* Receipt.storyboard */; };
+		F3881279269094220061D243 /* ReceiptViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3881278269094220061D243 /* ReceiptViewController.swift */; };
+		F3B1C6B62691809C004C24EC /* PaymentOpt.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F3B1C6B52691809C004C24EC /* PaymentOpt.storyboard */; };
+		F3B1C6B8269180AC004C24EC /* PaymentOptViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3B1C6B7269180AC004C24EC /* PaymentOptViewController.swift */; };
+		F3B1C6BA26919186004C24EC /* UserDetail.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F3B1C6B926919186004C24EC /* UserDetail.storyboard */; };
+		F3B1C6BC26919195004C24EC /* UserDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3B1C6BB26919195004C24EC /* UserDetailViewController.swift */; };
+		F3B1C6BE26919E2F004C24EC /* PaymentStatus.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F3B1C6BD26919E2F004C24EC /* PaymentStatus.storyboard */; };
+		F3B1C6C026919E3E004C24EC /* PaymentStatusViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3B1C6BF26919E3E004C24EC /* PaymentStatusViewController.swift */; };
+		F3B1C6C22691AA75004C24EC /* QRCode.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F3B1C6C12691AA75004C24EC /* QRCode.storyboard */; };
+		F3B1C6C42691AA84004C24EC /* QRCodeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3B1C6C32691AA84004C24EC /* QRCodeViewController.swift */; };
+		F3B1C6C62691ADD3004C24EC /* Review.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F3B1C6C52691ADD3004C24EC /* Review.storyboard */; };
+		F3B1C6C82691ADDE004C24EC /* ReviewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3B1C6C72691ADDE004C24EC /* ReviewViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -37,6 +59,28 @@
 		A9063F332690661F00A95E35 /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		A9063F352690662700A95E35 /* Profile.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Profile.storyboard; sourceTree = "<group>"; };
 		A9F33B0E26918B9600246A39 /* DestinationDetails.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = DestinationDetails.storyboard; sourceTree = "<group>"; };
+		02D49A85269075FB003B7108 /* PreferenceCheck.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = PreferenceCheck.storyboard; sourceTree = "<group>"; };
+		02D49A8B269076D6003B7108 /* SwipePageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwipePageViewController.swift; sourceTree = "<group>"; };
+		02D49A8D269076F8003B7108 /* PreferenceCheckViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreferenceCheckViewController.swift; sourceTree = "<group>"; };
+		02D49A8F2690770C003B7108 /* SwipePage.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = SwipePage.storyboard; sourceTree = "<group>"; };
+		F3881269269025A40061D243 /* BookingForm.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = BookingForm.storyboard; sourceTree = "<group>"; };
+		F388126B269025D20061D243 /* BookingFormViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookingFormViewController.swift; sourceTree = "<group>"; };
+		F388126D26905EEC0061D243 /* RobotoSlab-Black.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "RobotoSlab-Black.ttf"; sourceTree = "<group>"; };
+		F388127026906A4E0061D243 /* Signika-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Signika-Bold.ttf"; sourceTree = "<group>"; };
+		F388127226906ACE0061D243 /* RobotoSlab-Medium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "RobotoSlab-Medium.ttf"; sourceTree = "<group>"; };
+		F388127326906ACE0061D243 /* RobotoSlab-Light.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "RobotoSlab-Light.ttf"; sourceTree = "<group>"; };
+		F38812762690940A0061D243 /* Receipt.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Receipt.storyboard; sourceTree = "<group>"; };
+		F3881278269094220061D243 /* ReceiptViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReceiptViewController.swift; sourceTree = "<group>"; };
+		F3B1C6B52691809C004C24EC /* PaymentOpt.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = PaymentOpt.storyboard; sourceTree = "<group>"; };
+		F3B1C6B7269180AC004C24EC /* PaymentOptViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaymentOptViewController.swift; sourceTree = "<group>"; };
+		F3B1C6B926919186004C24EC /* UserDetail.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = UserDetail.storyboard; sourceTree = "<group>"; };
+		F3B1C6BB26919195004C24EC /* UserDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDetailViewController.swift; sourceTree = "<group>"; };
+		F3B1C6BD26919E2F004C24EC /* PaymentStatus.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = PaymentStatus.storyboard; sourceTree = "<group>"; };
+		F3B1C6BF26919E3E004C24EC /* PaymentStatusViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaymentStatusViewController.swift; sourceTree = "<group>"; };
+		F3B1C6C12691AA75004C24EC /* QRCode.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = QRCode.storyboard; sourceTree = "<group>"; };
+		F3B1C6C32691AA84004C24EC /* QRCodeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QRCodeViewController.swift; sourceTree = "<group>"; };
+		F3B1C6C52691ADD3004C24EC /* Review.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Review.storyboard; sourceTree = "<group>"; };
+		F3B1C6C72691ADDE004C24EC /* ReviewViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReviewViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -73,6 +117,7 @@
 				02CBAE90268FFB06001B1E1F /* Model */,
 				02CBAE92268FFB19001B1E1F /* View */,
 				02CBAE93268FFB1E001B1E1F /* Controller */,
+				F388126F26905F2C0061D243 /* Fonts */,
 				02CBAE79268FFA8C001B1E1F /* AppDelegate.swift */,
 				02CBAE7B268FFA8C001B1E1F /* SceneDelegate.swift */,
 				02CBAE85268FFA90001B1E1F /* Assets.xcassets */,
@@ -95,8 +140,18 @@
 			isa = PBXGroup;
 			children = (
 				02CBAE7F268FFA8C001B1E1F /* Main.storyboard */,
+
 				A9063F352690662700A95E35 /* Profile.storyboard */,
 				A9F33B0E26918B9600246A39 /* DestinationDetails.storyboard */,
+				F3881269269025A40061D243 /* BookingForm.storyboard */,
+				F38812762690940A0061D243 /* Receipt.storyboard */,
+				F3B1C6B52691809C004C24EC /* PaymentOpt.storyboard */,
+				F3B1C6B926919186004C24EC /* UserDetail.storyboard */,
+				02D49A85269075FB003B7108 /* PreferenceCheck.storyboard */,
+				02D49A8F2690770C003B7108 /* SwipePage.storyboard */,
+				F3B1C6BD26919E2F004C24EC /* PaymentStatus.storyboard */,
+				F3B1C6C12691AA75004C24EC /* QRCode.storyboard */,
+				F3B1C6C52691ADD3004C24EC /* Review.storyboard */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -105,10 +160,33 @@
 			isa = PBXGroup;
 			children = (
 				02CBAE7D268FFA8C001B1E1F /* ViewController.swift */,
+
 				A9063F31269025E000A95E35 /* DestinationDetailsViewController.swift */,
 				A9063F332690661F00A95E35 /* ProfileViewController.swift */,
+
+				F388126B269025D20061D243 /* BookingFormViewController.swift */,
+				F3881278269094220061D243 /* ReceiptViewController.swift */,
+				F3B1C6B7269180AC004C24EC /* PaymentOptViewController.swift */,
+				F3B1C6BB26919195004C24EC /* UserDetailViewController.swift */,
+				02D49A8B269076D6003B7108 /* SwipePageViewController.swift */,
+				02D49A8D269076F8003B7108 /* PreferenceCheckViewController.swift */,
+				F3B1C6BF26919E3E004C24EC /* PaymentStatusViewController.swift */,
+				F3B1C6C32691AA84004C24EC /* QRCodeViewController.swift */,
+				F3B1C6C72691ADDE004C24EC /* ReviewViewController.swift */,
+
 			);
 			path = Controller;
+			sourceTree = "<group>";
+		};
+		F388126F26905F2C0061D243 /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+				F388127026906A4E0061D243 /* Signika-Bold.ttf */,
+				F388126D26905EEC0061D243 /* RobotoSlab-Black.ttf */,
+				F388127326906ACE0061D243 /* RobotoSlab-Light.ttf */,
+				F388127226906ACE0061D243 /* RobotoSlab-Medium.ttf */,
+			);
+			path = Fonts;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -168,10 +246,26 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				02D49A902690770C003B7108 /* SwipePage.storyboard in Resources */,
 				02CBAE89268FFA90001B1E1F /* LaunchScreen.storyboard in Resources */,
+				F3B1C6B62691809C004C24EC /* PaymentOpt.storyboard in Resources */,
+				F3B1C6BE26919E2F004C24EC /* PaymentStatus.storyboard in Resources */,
+				F3B1C6C22691AA75004C24EC /* QRCode.storyboard in Resources */,
 				02CBAE86268FFA90001B1E1F /* Assets.xcassets in Resources */,
+
 				A9063F362690662700A95E35 /* Profile.storyboard in Resources */,
 				A9F33B0F26918B9600246A39 /* DestinationDetails.storyboard in Resources */,
+
+				F38812772690940A0061D243 /* Receipt.storyboard in Resources */,
+				F388126E26905EEC0061D243 /* RobotoSlab-Black.ttf in Resources */,
+				F388126A269025A40061D243 /* BookingForm.storyboard in Resources */,
+				F388127526906ACE0061D243 /* RobotoSlab-Light.ttf in Resources */,
+				F3B1C6C62691ADD3004C24EC /* Review.storyboard in Resources */,
+				F388127126906A4E0061D243 /* Signika-Bold.ttf in Resources */,
+				F3B1C6BA26919186004C24EC /* UserDetail.storyboard in Resources */,
+				F388127426906ACE0061D243 /* RobotoSlab-Medium.ttf in Resources */,
+				02D49A86269075FB003B7108 /* PreferenceCheck.storyboard in Resources */,
+
 				02CBAE81268FFA8C001B1E1F /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -184,12 +278,24 @@
 			buildActionMask = 2147483647;
 			files = (
 				02CBAE84268FFA8C001B1E1F /* Maluscation.xcdatamodeld in Sources */,
+				F3B1C6B8269180AC004C24EC /* PaymentOptViewController.swift in Sources */,
+				F3B1C6C82691ADDE004C24EC /* ReviewViewController.swift in Sources */,
+				F3B1C6C42691AA84004C24EC /* QRCodeViewController.swift in Sources */,
+				F3B1C6BC26919195004C24EC /* UserDetailViewController.swift in Sources */,
 				02D49A842690244B003B7108 /* DataManager.swift in Sources */,
 				A9063F32269025E000A95E35 /* DestinationDetailsViewController.swift in Sources */,
 				02CBAE7E268FFA8C001B1E1F /* ViewController.swift in Sources */,
+
 				A9063F342690661F00A95E35 /* ProfileViewController.swift in Sources */,
+
+				02D49A8C269076D6003B7108 /* SwipePageViewController.swift in Sources */,
+
 				02CBAE7A268FFA8C001B1E1F /* AppDelegate.swift in Sources */,
+				F3881279269094220061D243 /* ReceiptViewController.swift in Sources */,
+				F388126C269025D20061D243 /* BookingFormViewController.swift in Sources */,
 				02CBAE7C268FFA8C001B1E1F /* SceneDelegate.swift in Sources */,
+				02D49A8E269076F8003B7108 /* PreferenceCheckViewController.swift in Sources */,
+				F3B1C6C026919E3E004C24EC /* PaymentStatusViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

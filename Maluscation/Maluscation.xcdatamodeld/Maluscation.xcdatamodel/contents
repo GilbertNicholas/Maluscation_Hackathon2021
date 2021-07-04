@@ -5,20 +5,35 @@
         <attribute name="checkOut" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
         <attribute name="email" optional="YES" attributeType="String"/>
         <attribute name="name" optional="YES" attributeType="String"/>
+        <attribute name="paymentOpt" optional="YES" attributeType="Transformable" customClassName="[String]"/>
         <attribute name="phone" optional="YES" attributeType="String"/>
+        <attribute name="totalPrice" optional="YES" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES"/>
         <relationship name="bookingToPlace" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="DestinationPlace" inverseName="placeToBooking" inverseEntity="DestinationPlace"/>
         <relationship name="bookingToUser" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="User" inverseName="userToBooking" inverseEntity="User"/>
     </entity>
     <entity name="DestinationPlace" representedClassName="DestinationPlace" syncable="YES" codeGenerationType="class">
-        <attribute name="facility" optional="YES" attributeType="Transformable"/>
+        <attribute name="category" optional="YES" attributeType="String"/>
+        <attribute name="discount" optional="YES" attributeType="Float" defaultValueString="0.0" usesScalarValueType="YES"/>
+        <attribute name="facility" optional="YES" attributeType="Transformable" customClassName="[String]"/>
+        <attribute name="id" optional="YES" attributeType="UUID" usesScalarValueType="NO"/>
+        <attribute name="image" optional="YES" attributeType="Binary"/>
+        <attribute name="isBooked" optional="YES" attributeType="Boolean" usesScalarValueType="YES"/>
+        <attribute name="isSaved" optional="YES" attributeType="Boolean" usesScalarValueType="YES"/>
         <attribute name="location" optional="YES" attributeType="String"/>
-        <attribute name="ratingAll" optional="YES" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="name" optional="YES" attributeType="String"/>
+        <attribute name="price" optional="YES" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="status" optional="YES" attributeType="Boolean" usesScalarValueType="YES"/>
+        <attribute name="totalDownvote" optional="YES" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="totalHygiene" optional="YES" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="totalUpvote" optional="YES" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES"/>
         <relationship name="placeToBooking" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Booking" inverseName="bookingToPlace" inverseEntity="Booking"/>
         <relationship name="placeToReview" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Review" inverseName="reviewToPlace" inverseEntity="Review"/>
     </entity>
     <entity name="Review" representedClassName="Review" syncable="YES" codeGenerationType="class">
+        <attribute name="downvote" optional="YES" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES"/>
         <attribute name="feedback" optional="YES" attributeType="String"/>
-        <attribute name="rating" optional="YES" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="hygieneRating" optional="YES" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="upvote" optional="YES" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES"/>
         <relationship name="reviewToPlace" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="DestinationPlace" inverseName="placeToReview" inverseEntity="DestinationPlace"/>
         <relationship name="reviewToUser" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="User" inverseName="userToReview" inverseEntity="User"/>
     </entity>
@@ -29,9 +44,9 @@
         <relationship name="userToReview" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Review" inverseName="reviewToUser" inverseEntity="Review"/>
     </entity>
     <elements>
-        <element name="Booking" positionX="-54" positionY="9" width="128" height="134"/>
-        <element name="DestinationPlace" positionX="-36" positionY="18" width="128" height="104"/>
-        <element name="Review" positionX="-18" positionY="63" width="128" height="89"/>
+        <element name="Booking" positionX="-54" positionY="9" width="128" height="164"/>
+        <element name="DestinationPlace" positionX="-36" positionY="18" width="128" height="269"/>
+        <element name="Review" positionX="-18" positionY="63" width="128" height="119"/>
         <element name="User" positionX="-63" positionY="-18" width="128" height="89"/>
     </elements>
 </model>

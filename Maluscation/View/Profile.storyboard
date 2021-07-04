@@ -20,12 +20,12 @@
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
-                        <segue destination="pzJ-gt-pKR" kind="relationship" relationship="rootViewController" id="01h-Dy-p2N"/>
+                        <segue destination="pzJ-gt-pKR" kind="relationship" relationship="rootViewController" id="oe5-hz-Kif"/>
                     </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="SXq-MK-2Cr" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="137.68115942028987" y="111.83035714285714"/>
+            <point key="canvasLocation" x="841" y="112"/>
         </scene>
         <!--Profile-->
         <scene sceneID="n3E-d0-aRK">
@@ -179,6 +179,7 @@
                             <constraint firstItem="OPB-j9-bj7" firstAttribute="trailing" secondItem="0qj-dd-ygy" secondAttribute="trailing" constant="32" id="wE3-zM-zYO"/>
                         </constraints>
                     </view>
+                    <tabBarItem key="tabBarItem" title="Profile" image="person.circle.fill" catalog="system" id="dsU-8K-GEm"/>
                     <navigationItem key="navigationItem" title="Profile" id="55n-lT-Ote"/>
                     <connections>
                         <outlet property="emailContainer" destination="Cgc-Yw-VIk" id="Tqm-lm-i4y"/>
@@ -193,15 +194,16 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="0Nb-yE-DfO" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1020" y="112"/>
+            <point key="canvasLocation" x="1928.985507246377" y="111.83035714285714"/>
         </scene>
     </scenes>
     <designables>
         <designable name="dFo-1t-l9d">
-            <size key="intrinsicContentSize" width="41.5" height="20.5"/>
+            <size key="intrinsicContentSize" width="73.5" height="30.5"/>
         </designable>
     </designables>
     <resources>
+        <image name="person.circle.fill" catalog="system" width="128" height="121"/>
         <image name="person.crop.circle.fill" catalog="system" width="128" height="121"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>

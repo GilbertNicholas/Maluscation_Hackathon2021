@@ -168,7 +168,7 @@ class SwipePageViewController: UIViewController {
         let point = sender.translation(in: view)
         let xFromCenter = card.center.x - view.center.x
         
-        card.center = CGPoint(x: view.center.x + point.x, y: 410 + point.y)
+        card.center = CGPoint(x: view.center.x + point.x, y: 430 + point.y)
         card.transform = CGAffineTransform(rotationAngle: xFromCenter / divisor)
         
         if sender.state == UIGestureRecognizer.State.ended {
@@ -176,7 +176,7 @@ class SwipePageViewController: UIViewController {
             if card.center.x < 30 {
 //                Geser kiri
                 UIView.animate(withDuration: 0.3, animations: {
-                    card.center = CGPoint(x: card.center.x - 200, y: 410 + 75)
+                    card.center = CGPoint(x: card.center.x - 200, y: 430 + 75)
                     card.alpha = 0
                 })
                 
@@ -191,7 +191,7 @@ class SwipePageViewController: UIViewController {
             } else if card.center.x > (view.frame.width - 30) {
 //                Geser kanan
                 UIView.animate(withDuration: 0.3, animations: {
-                    card.center = CGPoint(x: card.center.x + 200, y: 410 + 75)
+                    card.center = CGPoint(x: card.center.x + 200, y: 430 + 75)
                     card.alpha = 0
                 })
                 
@@ -209,7 +209,7 @@ class SwipePageViewController: UIViewController {
     
     func resetCard() {
         UIView.animate(withDuration: 0.2, animations: {
-            self.cardContainer.center = CGPoint(x: self.view.center.x, y: 410)
+            self.cardContainer.center = CGPoint(x: self.view.center.x, y: 430)
 //            self.lblOption.alpha = 0
             self.cardContainer.alpha = 1
             self.cardContainer.transform = .identity

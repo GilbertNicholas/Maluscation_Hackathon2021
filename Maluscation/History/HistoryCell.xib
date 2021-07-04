@@ -21,7 +21,7 @@
                 <rect key="frame" x="0.0" y="0.0" width="326" height="220"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="villa" translatesAutoresizingMaskIntoConstraints="NO" id="OVw-a4-odq">
+                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="OVw-a4-odq">
                         <rect key="frame" x="16" y="16" width="50" height="50"/>
                         <constraints>
                             <constraint firstAttribute="height" constant="50" id="Tun-um-wP7"/>
@@ -183,6 +183,5 @@
     <resources>
         <image name="calendar" catalog="system" width="128" height="106"/>
         <image name="location.fill" catalog="system" width="128" height="121"/>
-        <image name="villa" width="1500" height="843"/>
     </resources>
 </document>

@@ -15,6 +15,10 @@
 		02CBAE86268FFA90001B1E1F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 02CBAE85268FFA90001B1E1F /* Assets.xcassets */; };
 		02CBAE89268FFA90001B1E1F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 02CBAE87268FFA90001B1E1F /* LaunchScreen.storyboard */; };
 		02D49A842690244B003B7108 /* DataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02D49A832690244B003B7108 /* DataManager.swift */; };
+		A9063F32269025E000A95E35 /* DestinationDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9063F31269025E000A95E35 /* DestinationDetailsViewController.swift */; };
+		A9063F342690661F00A95E35 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9063F332690661F00A95E35 /* ProfileViewController.swift */; };
+		A9063F362690662700A95E35 /* Profile.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A9063F352690662700A95E35 /* Profile.storyboard */; };
+		A9F33B0F26918B9600246A39 /* DestinationDetails.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A9F33B0E26918B9600246A39 /* DestinationDetails.storyboard */; };
 		02D49A86269075FB003B7108 /* PreferenceCheck.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 02D49A85269075FB003B7108 /* PreferenceCheck.storyboard */; };
 		02D49A8C269076D6003B7108 /* SwipePageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02D49A8B269076D6003B7108 /* SwipePageViewController.swift */; };
 		02D49A8E269076F8003B7108 /* PreferenceCheckViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02D49A8D269076F8003B7108 /* PreferenceCheckViewController.swift */; };
@@ -51,6 +55,10 @@
 		02CBAE8A268FFA90001B1E1F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		02D49A822690219F003B7108 /* Maluscation.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Maluscation.entitlements; sourceTree = "<group>"; };
 		02D49A832690244B003B7108 /* DataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataManager.swift; sourceTree = "<group>"; };
+		A9063F31269025E000A95E35 /* DestinationDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DestinationDetailsViewController.swift; sourceTree = "<group>"; };
+		A9063F332690661F00A95E35 /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
+		A9063F352690662700A95E35 /* Profile.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Profile.storyboard; sourceTree = "<group>"; };
+		A9F33B0E26918B9600246A39 /* DestinationDetails.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = DestinationDetails.storyboard; sourceTree = "<group>"; };
 		02D49A85269075FB003B7108 /* PreferenceCheck.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = PreferenceCheck.storyboard; sourceTree = "<group>"; };
 		02D49A8B269076D6003B7108 /* SwipePageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwipePageViewController.swift; sourceTree = "<group>"; };
 		02D49A8D269076F8003B7108 /* PreferenceCheckViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreferenceCheckViewController.swift; sourceTree = "<group>"; };
@@ -132,6 +140,9 @@
 			isa = PBXGroup;
 			children = (
 				02CBAE7F268FFA8C001B1E1F /* Main.storyboard */,
+
+				A9063F352690662700A95E35 /* Profile.storyboard */,
+				A9F33B0E26918B9600246A39 /* DestinationDetails.storyboard */,
 				F3881269269025A40061D243 /* BookingForm.storyboard */,
 				F38812762690940A0061D243 /* Receipt.storyboard */,
 				F3B1C6B52691809C004C24EC /* PaymentOpt.storyboard */,
@@ -149,6 +160,10 @@
 			isa = PBXGroup;
 			children = (
 				02CBAE7D268FFA8C001B1E1F /* ViewController.swift */,
+
+				A9063F31269025E000A95E35 /* DestinationDetailsViewController.swift */,
+				A9063F332690661F00A95E35 /* ProfileViewController.swift */,
+
 				F388126B269025D20061D243 /* BookingFormViewController.swift */,
 				F3881278269094220061D243 /* ReceiptViewController.swift */,
 				F3B1C6B7269180AC004C24EC /* PaymentOptViewController.swift */,
@@ -158,6 +173,7 @@
 				F3B1C6BF26919E3E004C24EC /* PaymentStatusViewController.swift */,
 				F3B1C6C32691AA84004C24EC /* QRCodeViewController.swift */,
 				F3B1C6C72691ADDE004C24EC /* ReviewViewController.swift */,
+
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -236,6 +252,10 @@
 				F3B1C6BE26919E2F004C24EC /* PaymentStatus.storyboard in Resources */,
 				F3B1C6C22691AA75004C24EC /* QRCode.storyboard in Resources */,
 				02CBAE86268FFA90001B1E1F /* Assets.xcassets in Resources */,
+
+				A9063F362690662700A95E35 /* Profile.storyboard in Resources */,
+				A9F33B0F26918B9600246A39 /* DestinationDetails.storyboard in Resources */,
+
 				F38812772690940A0061D243 /* Receipt.storyboard in Resources */,
 				F388126E26905EEC0061D243 /* RobotoSlab-Black.ttf in Resources */,
 				F388126A269025A40061D243 /* BookingForm.storyboard in Resources */,
@@ -245,6 +265,7 @@
 				F3B1C6BA26919186004C24EC /* UserDetail.storyboard in Resources */,
 				F388127426906ACE0061D243 /* RobotoSlab-Medium.ttf in Resources */,
 				02D49A86269075FB003B7108 /* PreferenceCheck.storyboard in Resources */,
+
 				02CBAE81268FFA8C001B1E1F /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -262,8 +283,13 @@
 				F3B1C6C42691AA84004C24EC /* QRCodeViewController.swift in Sources */,
 				F3B1C6BC26919195004C24EC /* UserDetailViewController.swift in Sources */,
 				02D49A842690244B003B7108 /* DataManager.swift in Sources */,
+				A9063F32269025E000A95E35 /* DestinationDetailsViewController.swift in Sources */,
 				02CBAE7E268FFA8C001B1E1F /* ViewController.swift in Sources */,
+
+				A9063F342690661F00A95E35 /* ProfileViewController.swift in Sources */,
+
 				02D49A8C269076D6003B7108 /* SwipePageViewController.swift in Sources */,
+
 				02CBAE7A268FFA8C001B1E1F /* AppDelegate.swift in Sources */,
 				F3881279269094220061D243 /* ReceiptViewController.swift in Sources */,
 				F388126C269025D20061D243 /* BookingFormViewController.swift in Sources */,

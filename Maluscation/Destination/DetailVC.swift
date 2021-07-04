@@ -61,6 +61,9 @@ class DetailVC: UIViewController {
         bookButton.layer.cornerRadius = bookButton.frame.height * 0.5
     }
 
+    @IBAction func backButtonTapped(_ sender: UIBarButtonItem) {
+        self.dismiss(animated: true, completion: nil)
+    }
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "toBooking" {
             // Passing data booking

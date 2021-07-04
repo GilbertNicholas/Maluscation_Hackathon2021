@@ -16,6 +16,8 @@
 		02CBAE89268FFA90001B1E1F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 02CBAE87268FFA90001B1E1F /* LaunchScreen.storyboard */; };
 		02D49A842690244B003B7108 /* DataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02D49A832690244B003B7108 /* DataManager.swift */; };
 		A9063F32269025E000A95E35 /* DestinationDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9063F31269025E000A95E35 /* DestinationDetailsViewController.swift */; };
+		A9063F342690661F00A95E35 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9063F332690661F00A95E35 /* ProfileViewController.swift */; };
+		A9063F362690662700A95E35 /* Profile.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A9063F352690662700A95E35 /* Profile.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -31,6 +33,8 @@
 		02D49A822690219F003B7108 /* Maluscation.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Maluscation.entitlements; sourceTree = "<group>"; };
 		02D49A832690244B003B7108 /* DataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataManager.swift; sourceTree = "<group>"; };
 		A9063F31269025E000A95E35 /* DestinationDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DestinationDetailsViewController.swift; sourceTree = "<group>"; };
+		A9063F332690661F00A95E35 /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
+		A9063F352690662700A95E35 /* Profile.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Profile.storyboard; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -89,6 +93,7 @@
 			isa = PBXGroup;
 			children = (
 				02CBAE7F268FFA8C001B1E1F /* Main.storyboard */,
+				A9063F352690662700A95E35 /* Profile.storyboard */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -98,6 +103,7 @@
 			children = (
 				02CBAE7D268FFA8C001B1E1F /* ViewController.swift */,
 				A9063F31269025E000A95E35 /* DestinationDetailsViewController.swift */,
+				A9063F332690661F00A95E35 /* ProfileViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -161,6 +167,7 @@
 			files = (
 				02CBAE89268FFA90001B1E1F /* LaunchScreen.storyboard in Resources */,
 				02CBAE86268FFA90001B1E1F /* Assets.xcassets in Resources */,
+				A9063F362690662700A95E35 /* Profile.storyboard in Resources */,
 				02CBAE81268FFA8C001B1E1F /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -176,6 +183,7 @@
 				02D49A842690244B003B7108 /* DataManager.swift in Sources */,
 				A9063F32269025E000A95E35 /* DestinationDetailsViewController.swift in Sources */,
 				02CBAE7E268FFA8C001B1E1F /* ViewController.swift in Sources */,
+				A9063F342690661F00A95E35 /* ProfileViewController.swift in Sources */,
 				02CBAE7A268FFA8C001B1E1F /* AppDelegate.swift in Sources */,
 				02CBAE7C268FFA8C001B1E1F /* SceneDelegate.swift in Sources */,
 			);

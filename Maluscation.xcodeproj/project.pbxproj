@@ -23,6 +23,10 @@
 		F388127526906ACE0061D243 /* RobotoSlab-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = F388127326906ACE0061D243 /* RobotoSlab-Light.ttf */; };
 		F38812772690940A0061D243 /* Receipt.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F38812762690940A0061D243 /* Receipt.storyboard */; };
 		F3881279269094220061D243 /* ReceiptViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3881278269094220061D243 /* ReceiptViewController.swift */; };
+		F3B1C6B62691809C004C24EC /* PaymentOpt.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F3B1C6B52691809C004C24EC /* PaymentOpt.storyboard */; };
+		F3B1C6B8269180AC004C24EC /* PaymentOptViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3B1C6B7269180AC004C24EC /* PaymentOptViewController.swift */; };
+		F3B1C6BA26919186004C24EC /* UserDetail.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F3B1C6B926919186004C24EC /* UserDetail.storyboard */; };
+		F3B1C6BC26919195004C24EC /* UserDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3B1C6BB26919195004C24EC /* UserDetailViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -45,6 +49,10 @@
 		F388127326906ACE0061D243 /* RobotoSlab-Light.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "RobotoSlab-Light.ttf"; sourceTree = "<group>"; };
 		F38812762690940A0061D243 /* Receipt.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Receipt.storyboard; sourceTree = "<group>"; };
 		F3881278269094220061D243 /* ReceiptViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReceiptViewController.swift; sourceTree = "<group>"; };
+		F3B1C6B52691809C004C24EC /* PaymentOpt.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = PaymentOpt.storyboard; sourceTree = "<group>"; };
+		F3B1C6B7269180AC004C24EC /* PaymentOptViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaymentOptViewController.swift; sourceTree = "<group>"; };
+		F3B1C6B926919186004C24EC /* UserDetail.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = UserDetail.storyboard; sourceTree = "<group>"; };
+		F3B1C6BB26919195004C24EC /* UserDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDetailViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -103,10 +111,11 @@
 		02CBAE92268FFB19001B1E1F /* View */ = {
 			isa = PBXGroup;
 			children = (
-				F388127A26909B5F0061D243 /* UI */,
 				02CBAE7F268FFA8C001B1E1F /* Main.storyboard */,
 				F3881269269025A40061D243 /* BookingForm.storyboard */,
 				F38812762690940A0061D243 /* Receipt.storyboard */,
+				F3B1C6B52691809C004C24EC /* PaymentOpt.storyboard */,
+				F3B1C6B926919186004C24EC /* UserDetail.storyboard */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -117,6 +126,8 @@
 				02CBAE7D268FFA8C001B1E1F /* ViewController.swift */,
 				F388126B269025D20061D243 /* BookingFormViewController.swift */,
 				F3881278269094220061D243 /* ReceiptViewController.swift */,
+				F3B1C6B7269180AC004C24EC /* PaymentOptViewController.swift */,
+				F3B1C6BB26919195004C24EC /* UserDetailViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -130,13 +141,6 @@
 				F388127226906ACE0061D243 /* RobotoSlab-Medium.ttf */,
 			);
 			path = Fonts;
-			sourceTree = "<group>";
-		};
-		F388127A26909B5F0061D243 /* UI */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = UI;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -197,12 +201,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				02CBAE89268FFA90001B1E1F /* LaunchScreen.storyboard in Resources */,
+				F3B1C6B62691809C004C24EC /* PaymentOpt.storyboard in Resources */,
 				02CBAE86268FFA90001B1E1F /* Assets.xcassets in Resources */,
 				F38812772690940A0061D243 /* Receipt.storyboard in Resources */,
 				F388126E26905EEC0061D243 /* RobotoSlab-Black.ttf in Resources */,
 				F388126A269025A40061D243 /* BookingForm.storyboard in Resources */,
 				F388127526906ACE0061D243 /* RobotoSlab-Light.ttf in Resources */,
 				F388127126906A4E0061D243 /* Signika-Bold.ttf in Resources */,
+				F3B1C6BA26919186004C24EC /* UserDetail.storyboard in Resources */,
 				F388127426906ACE0061D243 /* RobotoSlab-Medium.ttf in Resources */,
 				02CBAE81268FFA8C001B1E1F /* Main.storyboard in Resources */,
 			);
@@ -216,6 +222,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				02CBAE84268FFA8C001B1E1F /* Maluscation.xcdatamodeld in Sources */,
+				F3B1C6B8269180AC004C24EC /* PaymentOptViewController.swift in Sources */,
+				F3B1C6BC26919195004C24EC /* UserDetailViewController.swift in Sources */,
 				02D49A842690244B003B7108 /* DataManager.swift in Sources */,
 				02CBAE7E268FFA8C001B1E1F /* ViewController.swift in Sources */,
 				02CBAE7A268FFA8C001B1E1F /* AppDelegate.swift in Sources */,

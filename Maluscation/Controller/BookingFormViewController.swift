@@ -10,19 +10,33 @@ import CoreData
 
 class BookingFormViewController: UIViewController {
     
-    @IBOutlet weak var checkInTextField: UITextField!
-    @IBOutlet weak var checkOutTextField: UITextField!
-    @IBOutlet weak var fullNameTextField: UITextField!
-    @IBOutlet weak var emailTextField: UITextField!
-    @IBOutlet weak var phoneNumberTextField: UITextField!
-    @IBOutlet weak var paymentButton: UIButton!
+    @IBOutlet weak var villaDetailView: UIView!
+    @IBOutlet weak var villaNameView: UIView!
+    @IBOutlet weak var zoneView: UIView!
+    @IBOutlet weak var userDetailView: UIView!
+    
+    @IBOutlet weak var checkInView: UIView!
+    @IBOutlet weak var checkOutView: UIView!
+    @IBOutlet weak var paymentOptionView: UIView!
+    
+    @IBOutlet weak var bottomView: UIView!
+    @IBOutlet weak var payButton: UIButton!
+    
+    
+    @IBOutlet weak var userNameLabel: UILabel!
+    @IBOutlet weak var checkInDate: UIDatePicker!
+    @IBOutlet weak var checkOutDate: UIDatePicker!
+    @IBOutlet weak var paymentOptLabel: UILabel!
+    @IBOutlet weak var priceLabel: UILabel!
     
     let date = Calendar.current.date(byAdding: .day, value: 1, to: Date())
     let formatter = DateFormatter()
-    let datePicker = UIDatePicker()
-    let datePicker2 = UIDatePicker()
     
-    var minDate: Date?
+    var fullName: String?
+    var email: String?
+    var phoneNumber: String?
+    var paymentOpt: String?
+    var totalPrice: Float?
     
     let toolbar = UIToolbar()
     
@@ -31,21 +45,50 @@ class BookingFormViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        paymentButton.layer.cornerRadius = 20
+        setUpView()
+    }
+    
+    func setUpView() {
+        checkInDate.minimumDate = Calendar.current.date(byAdding: .day, value: 1, to: Date())
+        checkOutDate.minimumDate = Calendar.current.date(byAdding: .day, value: 1, to: checkInDate.minimumDate!)
         
-        setUpDate()
-        setUpDate2()
-        setUpCheckInTextField()
-        setUpCheckOutTextField()
+        userNameLabel.text = fullName ?? "Stefan Adisurya"
+        paymentOptLabel.text = paymentOpt ?? "Choose"
+        totalPrice = 2000000
         
-        setUpDoneButton()
+        payButton.layer.cornerRadius = 20
         
-        checkInTextField.inputAccessoryView = toolbar
-        checkOutTextField.inputAccessoryView = toolbar
+        userDetailView.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(userDetailTapped(_:))))
         
-        setUpTapGesture()
+        villaDetailView.layer.borderWidth = 4
+        villaDetailView.layer.borderColor = CGColor(red: 9/255, green: 28/255, blue: 87/255, alpha: 1)
         
-        minDate = datePicker.minimumDate
+        villaNameView.layer.opacity = 0.4
+        
+        zoneView.layer.shadowOpacity = 0.5
+        zoneView.layer.shadowRadius = 3
+        zoneView.layer.shadowOffset = CGSize(width: 0.5, height: 0.4)
+        
+        checkInView.layer.borderWidth = 4
+        checkInView.layer.borderColor = CGColor(red: 9/255, green: 28/255, blue: 87/255, alpha: 1)
+        
+        checkOutView.layer.borderWidth = 4
+        checkOutView.layer.borderColor = CGColor(red: 9/255, green: 28/255, blue: 87/255, alpha: 1)
+        
+        bottomView.layer.borderWidth = 4
+        bottomView.layer.borderColor = CGColor(red: 9/255, green: 28/255, blue: 87/255, alpha: 1)
+        
+        paymentOptionView.layer.borderWidth = 4
+        paymentOptionView.layer.borderColor = CGColor(red: 9/255, green: 28/255, blue: 87/255, alpha: 1)
+        paymentOptionView.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(paymentOptTapped(_:))))
+    }
+    
+    @objc func userDetailTapped(_ sender: UITapGestureRecognizer) {
+        performSegue(withIdentifier: "toUserDetail", sender: nil)
+    }
+    
+    @objc func paymentOptTapped(_ sender: UITapGestureRecognizer) {
+        performSegue(withIdentifier: "toPaymentOpt", sender: nil)
     }
     
     @IBAction func closeButtonTapped(_ sender: Any) {
@@ -65,12 +108,6 @@ class BookingFormViewController: UIViewController {
         }
     }
     
-    func validateEmail(enteredEmail:String) -> Bool {
-        let emailFormat = "[A-Z0-9a-z._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,64}"
-        let emailPredicate = NSPredicate(format:"SELF MATCHES %@", emailFormat)
-        return emailPredicate.evaluate(with: enteredEmail)
-    }
-    
     func popUpAlert() {
         let alert = UIAlertController(title: "Please fill the form correctly", message: nil, preferredStyle: .alert)
         let okButton = UIAlertAction(title: "Ok", style: .cancel, handler: nil)
@@ -79,136 +116,48 @@ class BookingFormViewController: UIViewController {
         self.present(alert, animated: true, completion: nil)
     }
     
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if segue.identifier == "toReceipt" {
-            if let nextVC = segue.destination as? ReceiptViewController {
-                nextVC.fullName = fullNameTextField.text
-                nextVC.email = emailTextField.text
-                nextVC.phoneNumber = phoneNumberTextField.text
-                nextVC.checkInDate = checkInTextField.text
-                nextVC.checkOutDate = checkOutTextField.text
-            }
+    @IBAction func performUnwindSegueOperation(_ sender: UIStoryboardSegue) {
+        guard sender.source is PaymentOptViewController else {
+            return
         }
+
+        paymentOptLabel.text = paymentOpt
+        
+        guard sender.source is UserDetailViewController else {
+            return
+        }
+        
+        userNameLabel.text = fullName
     }
     
     @IBAction func continueButtonTapped(_ sender: Any) {
-        if checkInTextField.text != "" && checkOutTextField.text != "" && fullNameTextField.text != "" && emailTextField.text != "" && phoneNumberTextField.text != "" {
-            if fullNameTextField.text!.count >= 3 && validateEmail(enteredEmail: emailTextField.text!) && phoneNumberTextField.text!.count >= 10 {
-                guard let appDelegate = UIApplication.shared.delegate as? AppDelegate else {
-                    return
-                }
-
-                let managedContext = appDelegate.persistentContainer.viewContext
-
-                let entity = NSEntityDescription.entity(forEntityName: "Booking", in: managedContext)!
-
-                let bookingDetails = NSManagedObject(entity: entity, insertInto: managedContext)
-                bookingDetails.setValue(fullNameTextField.text, forKey: "name")
-                bookingDetails.setValue(emailTextField.text, forKey: "email")
-                bookingDetails.setValue(phoneNumberTextField.text, forKey: "phone")
-                bookingDetails.setValue(formatter.date(from: checkInTextField.text!), forKey: "checkIn")
-                bookingDetails.setValue(formatter.date(from: checkOutTextField.text!), forKey: "checkOut")
-
-                do {
-                    try managedContext.save()
-                } catch let error as NSError {
-                    print("Could not save. \(error), \(error.userInfo)")
-                }
-                
-                performSegue(withIdentifier: "toReceipt", sender: nil)
-            } else {
-               popUpAlert()
+        if userNameLabel.text != "" && paymentOptLabel.text != "" {
+            guard let appDelegate = UIApplication.shared.delegate as? AppDelegate else {
+                return
             }
+
+            let managedContext = appDelegate.persistentContainer.viewContext
+
+            let entity = NSEntityDescription.entity(forEntityName: "Booking", in: managedContext)!
+
+            let bookingDetails = NSManagedObject(entity: entity, insertInto: managedContext)
+            bookingDetails.setValue(userNameLabel.text, forKey: "name")
+            bookingDetails.setValue(email, forKey: "email")
+            bookingDetails.setValue(phoneNumber, forKey: "phone")
+            bookingDetails.setValue(checkInDate.date, forKey: "checkIn")
+            bookingDetails.setValue(checkOutDate.date, forKey: "checkOut")
+            bookingDetails.setValue(totalPrice, forKey: "totalPrice")
+        
+            do {
+                try managedContext.save()
+            } catch let error as NSError {
+                print("Could not save. \(error), \(error.userInfo)")
+            }
+            
+            performSegue(withIdentifier: "toPaymentStatus", sender: nil)
         } else {
             popUpAlert()
         }
-    }
-    
-}
-
-extension BookingFormViewController {
-    
-    func setUpTapGesture() {
-        let tapRecognizer = UITapGestureRecognizer()
-        tapRecognizer.addTarget(self, action: #selector(didTapView))
-        self.view.addGestureRecognizer(tapRecognizer)
-    }
-    
-    func setUpDoneButton() {
-        let doneBtn = UIBarButtonItem(barButtonSystemItem: .done, target: nil, action: #selector(donePressed(_:)))
-        toolbar.setItems([doneBtn], animated: true)
-        toolbar.sizeToFit()
-    }
-    
-    func setUpDate() {
-        formatter.dateFormat = "dd/MM/yyyy"
-        
-        datePicker.datePickerMode = .dateAndTime
-        datePicker.minimumDate = Calendar.current.date(byAdding: .day, value: 1, to: Date())
-        datePicker.addTarget(self, action: #selector(checkInValueChanged(sender:)), for: .valueChanged)
-        datePicker.frame.size = CGSize(width: 0, height: 250)
-    }
-    
-    func setUpDate2() {
-        formatter.dateFormat = "dd/MM/yyyy"
-
-        datePicker2.datePickerMode = .dateAndTime
-        datePicker2.minimumDate = Calendar.current.date(byAdding: .day, value: 1, to: minDate ?? Date())
-        datePicker2.addTarget(self, action: #selector(checkOutValueChanged(sender:)), for: .valueChanged)
-        datePicker2.frame.size = CGSize(width: 0, height: 250)
-    }
-    
-    func setUpCheckInTextField() {
-        checkInTextField.textColor = .black
-        checkInTextField.inputView = datePicker
-    }
-    
-    func setUpCheckOutTextField() {
-        checkOutTextField.textColor = .black
-        checkOutTextField.inputView = datePicker2
-    }
-    
-    @objc func checkInValueChanged(sender: UIDatePicker) {
-        let formatter = DateFormatter()
-        formatter.dateFormat = "dd/MM/yyyy"
-        checkInTextField.text = formatter.string(from: sender.date)
-    }
-    
-    @objc func checkOutValueChanged(sender: UIDatePicker) {
-        let formatter = DateFormatter()
-        formatter.dateFormat = "dd/MM/yyyy"
-        checkOutTextField.text = formatter.string(from: sender.date)
-    }
-    
-}
-
-extension BookingFormViewController {
-    
-    @objc func didTapView() {
-        self.view.endEditing(true)
-    }
-    
-    @objc func donePressed(_ sender: UIBarButtonItem) {
-        self.view.endEditing(true)
-    }
-    
-}
-
-extension BookingFormViewController: UITextFieldDelegate {
-    
-    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
-        self.view.endEditing(true)
-        return false
-    }
-    
-    func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
-        if textField == phoneNumberTextField {
-            let allowedCharacters = CharacterSet(charactersIn:"+0123456789 ")
-            let characterSet = CharacterSet(charactersIn: string)
-            return allowedCharacters.isSuperset(of: characterSet)
-        }
-        
-        return true
     }
     
 }

@@ -99,6 +99,39 @@ class CoreDataManager {
         return tempPlaces
     }
     
+    func getAllBookings() -> [Booking] {
+        
+        var tempPlaces: [Booking] = []
+        
+        do {
+            let request = Booking.fetchRequest() as NSFetchRequest<Booking>
+            
+            tempPlaces = try context.fetch(request)
+            
+        } catch {
+            print("Error Fetch Place")
+        }
+        
+        return tempPlaces
+    }
+    
+    func getBookingBasedOnId(id: UUID) -> [Booking] {
+        var tempBookings: [Booking] = []
+        
+        do {
+            let request = Booking.fetchRequest() as NSFetchRequest<Booking>
+            
+            let pred = NSPredicate(format: "id == %@", id as CVarArg)
+            request.predicate = pred
+            
+            tempBookings = try context.fetch(request)
+        } catch {
+            print("Error Fetch Place")
+        }
+        
+        return tempBookings
+    }
+    
     private func save() {
         do {
             try self.context.save()

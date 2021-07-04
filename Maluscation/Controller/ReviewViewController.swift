@@ -95,9 +95,9 @@ class ReviewViewController: UIViewController, UITextFieldDelegate {
     
     private func saveFeedback() {
         if isSelected == 1 {
-            DataManager.updatePlaceRating(id: self.id, upvote: true, downvote: false)
+            DataManager.updatePlaceRating(id: self.id, upvote: true, downvote: false, hygieneRating: Int64(self.hygieneRating))
         } else {
-            DataManager.updatePlaceRating(id: self.id, upvote: false, downvote: true)
+            DataManager.updatePlaceRating(id: self.id, upvote: false, downvote: true, hygieneRating: Int64(self.hygieneRating))
         }
     }
     

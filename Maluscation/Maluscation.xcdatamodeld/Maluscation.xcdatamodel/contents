@@ -16,13 +16,16 @@
         <attribute name="discount" optional="YES" attributeType="Float" defaultValueString="0.0" usesScalarValueType="YES"/>
         <attribute name="facility" optional="YES" attributeType="Transformable" customClassName="[String]"/>
         <attribute name="id" optional="YES" attributeType="UUID" usesScalarValueType="NO"/>
+        <attribute name="image" optional="YES" attributeType="Binary"/>
         <attribute name="isBooked" optional="YES" attributeType="Boolean" usesScalarValueType="YES"/>
         <attribute name="isSaved" optional="YES" attributeType="Boolean" usesScalarValueType="YES"/>
         <attribute name="location" optional="YES" attributeType="String"/>
         <attribute name="name" optional="YES" attributeType="String"/>
         <attribute name="price" optional="YES" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES"/>
-        <attribute name="ratingAll" optional="YES" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES"/>
         <attribute name="status" optional="YES" attributeType="Boolean" usesScalarValueType="YES"/>
+        <attribute name="totalDownvote" optional="YES" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="totalHygiene" optional="YES" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="totalUpvote" optional="YES" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES"/>
         <relationship name="placeToBooking" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Booking" inverseName="bookingToPlace" inverseEntity="Booking"/>
         <relationship name="placeToReview" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Review" inverseName="reviewToPlace" inverseEntity="Review"/>
     </entity>
@@ -42,7 +45,7 @@
     </entity>
     <elements>
         <element name="Booking" positionX="-54" positionY="9" width="128" height="164"/>
-        <element name="DestinationPlace" positionX="-36" positionY="18" width="128" height="224"/>
+        <element name="DestinationPlace" positionX="-36" positionY="18" width="128" height="269"/>
         <element name="Review" positionX="-18" positionY="63" width="128" height="119"/>
         <element name="User" positionX="-63" positionY="-18" width="128" height="89"/>
     </elements>

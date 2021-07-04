@@ -9,19 +9,41 @@ import UIKit
 
 class PreferenceCheckViewController: UIViewController {
 
-    @IBOutlet weak var casualBtn: UIButton!
-    @IBOutlet weak var activeBtn: UIButton!
-    @IBOutlet weak var natureBtn: UIButton!
-    @IBOutlet weak var chillBtn: UIButton!
+    @IBOutlet private weak var casualBtn: UIButton!
+    @IBOutlet private weak var activeBtn: UIButton!
+    @IBOutlet private weak var natureBtn: UIButton!
+    @IBOutlet private weak var chillBtn: UIButton!
     
-    @IBOutlet weak var nextBtn: UIButton!
+    @IBOutlet private weak var nextBtn: UIButton!
     
     private var selectedPref: String!
+    private var DataManager = CoreDataManager()
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+//        initData()
 
         setupButton()
+    }
+    
+    private func initData() {
+        DataManager.insertPlace(name: "Vila Batik", price: 400000, discount: 0.2, category: "Active", location: "Batam", status: false, facility: ["Netflix", "Breakfast", "Covid Protocol", "Dinner"], image: UIImage(imageLiteralResourceName: "vilaBatik").pngData()!, totalUp: 1140, totalDown: 242, totalHygiene: 4)
+        
+        DataManager.insertPlace(name: "Vila Senayan", price: 700000, discount: 0, category: "Chill", location: "Yogyakarta", status: false, facility: ["Near Mall", "Full Meal", "Covid Protocol", "Free Ride"], image: UIImage(imageLiteralResourceName: "vilaSenayan").pngData()!, totalUp: 1272, totalDown: 10, totalHygiene: 5)
+        
+        DataManager.insertPlace(name: "Vila Malus", price: 250000, discount: 0.4, category: "Nature", location: "Bandung", status: false, facility: ["Fresh", "Breakfast", "Dinner ", "Near Beach"], image: UIImage(imageLiteralResourceName: "vilaMalus").pngData()!, totalUp: 1678, totalDown: 647, totalHygiene: 3)
+        
+        DataManager.insertPlace(name: "Vila Danur", price: 800000, discount: 0.5, category: "Casual", location: "Batam", status: false, facility: ["Full Meal", "Covid Protocol", "Free Ride", "Dinner"], image: UIImage(imageLiteralResourceName: "vilaDanur").pngData()!, totalUp: 457, totalDown: 21, totalHygiene: 4)
+        
+        DataManager.insertPlace(name: "Vila Kurinci", price: 150000, discount: 0, category: "Active", location: "Bandung", status: true, facility: ["Full Meal", "Covid Protocol", "Free Ride", "Dinner"], image: UIImage(imageLiteralResourceName: "vilaKurinci").pngData()!, totalUp: 2892, totalDown: 845, totalHygiene: 4)
+        
+        DataManager.insertPlace(name: "Vila Melawai", price: 600000, discount: 0.5, category: "Active", location: "Yogyakarta", status: true, facility: ["Full Meal", "Covid Protocol", "Free Ride", "Dinner"], image: UIImage(imageLiteralResourceName: "vilaMelawai").pngData()!, totalUp: 769, totalDown: 590, totalHygiene: 3)
+        
+        DataManager.insertUser(name: "Adi", email: "adi@icloud.com")
+        DataManager.insertUser(name: "Sarah", email: "sarah@icloud.com")
+        
+        
     }
     
     private func setupButton() {
@@ -62,6 +84,7 @@ class PreferenceCheckViewController: UIViewController {
             
             if let presentVC = destVC.viewControllers?[0] as? SwipePageViewController {
                 presentVC.chosenPref = self.selectedPref
+                presentVC.DataManager = self.DataManager
             }
         }
     }

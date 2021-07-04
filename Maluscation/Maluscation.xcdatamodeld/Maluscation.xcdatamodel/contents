@@ -5,15 +5,21 @@
         <attribute name="checkOut" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
         <attribute name="email" optional="YES" attributeType="String"/>
         <attribute name="name" optional="YES" attributeType="String"/>
+        <attribute name="paymentOpt" optional="YES" attributeType="Transformable" customClassName="[String]"/>
         <attribute name="phone" optional="YES" attributeType="String"/>
+        <attribute name="totalPrice" optional="YES" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES"/>
         <relationship name="bookingToPlace" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="DestinationPlace" inverseName="placeToBooking" inverseEntity="DestinationPlace"/>
         <relationship name="bookingToUser" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="User" inverseName="userToBooking" inverseEntity="User"/>
     </entity>
     <entity name="DestinationPlace" representedClassName="DestinationPlace" syncable="YES" codeGenerationType="class">
         <attribute name="category" optional="YES" attributeType="String"/>
-        <attribute name="facility" optional="YES" attributeType="Transformable"/>
+        <attribute name="discount" optional="YES" attributeType="Float" defaultValueString="0.0" usesScalarValueType="YES"/>
+        <attribute name="facility" optional="YES" attributeType="Transformable" customClassName="[String]"/>
         <attribute name="id" optional="YES" attributeType="UUID" usesScalarValueType="NO"/>
+        <attribute name="isBooked" optional="YES" attributeType="Boolean" usesScalarValueType="YES"/>
+        <attribute name="isSaved" optional="YES" attributeType="Boolean" usesScalarValueType="YES"/>
         <attribute name="location" optional="YES" attributeType="String"/>
+        <attribute name="name" optional="YES" attributeType="String"/>
         <attribute name="price" optional="YES" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES"/>
         <attribute name="ratingAll" optional="YES" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES"/>
         <attribute name="status" optional="YES" attributeType="Boolean" usesScalarValueType="YES"/>
@@ -31,14 +37,13 @@
     <entity name="User" representedClassName="User" syncable="YES" codeGenerationType="class">
         <attribute name="email" attributeType="String"/>
         <attribute name="name" attributeType="String"/>
-        <attribute name="phone" optional="YES" attributeType="String"/>
         <relationship name="userToBooking" optional="YES" toMany="YES" deletionRule="Cascade" destinationEntity="Booking" inverseName="bookingToUser" inverseEntity="Booking"/>
         <relationship name="userToReview" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Review" inverseName="reviewToUser" inverseEntity="Review"/>
     </entity>
     <elements>
-        <element name="Booking" positionX="-54" positionY="9" width="128" height="134"/>
-        <element name="DestinationPlace" positionX="-36" positionY="18" width="128" height="164"/>
+        <element name="Booking" positionX="-54" positionY="9" width="128" height="164"/>
+        <element name="DestinationPlace" positionX="-36" positionY="18" width="128" height="224"/>
         <element name="Review" positionX="-18" positionY="63" width="128" height="119"/>
-        <element name="User" positionX="-63" positionY="-18" width="128" height="104"/>
+        <element name="User" positionX="-63" positionY="-18" width="128" height="89"/>
     </elements>
 </model>

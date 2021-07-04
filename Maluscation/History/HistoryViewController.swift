@@ -31,10 +31,16 @@ class HistoryViewController: UIViewController {
     @IBOutlet weak var tableView: UITableView!
     override func viewDidLoad() {
         super.viewDidLoad()
+//        self.hidesBottomBarWhenPushed = false
         fetchData()
         tableView.delegate = self
         tableView.dataSource = self
         tableView.register(UINib(nibName: "HistoryCell", bundle: .main), forCellReuseIdentifier: "HistoryCell")
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        self.tabBarController?.tabBar.isHidden = false
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {

@@ -48,7 +48,7 @@
                                 </constraints>
                                 <fontDescription key="fontDescription" name="RobotoSlab-Black" family="Roboto Slab" pointSize="15"/>
                                 <inset key="titleEdgeInsets" minX="10" minY="0.0" maxX="10" maxY="0.0"/>
-                                <state key="normal" title="See History">
+                                <state key="normal" title="Done">
                                     <color key="titleColor" red="0.035294117647058823" green="0.10980392156862745" blue="0.3411764705882353" alpha="0.84705882352941175" colorSpace="calibratedRGB"/>
                                 </state>
                                 <connections>
@@ -80,17 +80,17 @@
                     </view>
                     <connections>
                         <outlet property="seeHistoryButton" destination="sz0-B0-o8Z" id="o92-1F-CHG"/>
-                        <segue destination="gpz-gT-MQb" kind="presentation" identifier="toHistory" modalPresentationStyle="fullScreen" modalTransitionStyle="crossDissolve" id="D1v-d5-TVY"/>
+                        <segue destination="gpz-gT-MQb" kind="presentation" identifier="toSwipe" modalPresentationStyle="fullScreen" modalTransitionStyle="crossDissolve" id="D1v-d5-TVY"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="137.68115942028987" y="130.58035714285714"/>
         </scene>
-        <!--History-->
+        <!--SwipePage-->
         <scene sceneID="Ndp-he-aVq">
             <objects>
-                <viewControllerPlaceholder storyboardName="History" id="gpz-gT-MQb" sceneMemberID="viewController"/>
+                <viewControllerPlaceholder storyboardName="SwipePage" id="gpz-gT-MQb" sceneMemberID="viewController"/>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="TS0-zE-M0r" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="966" y="175"/>

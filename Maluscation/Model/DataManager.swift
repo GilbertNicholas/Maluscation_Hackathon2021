@@ -41,6 +41,21 @@ class CoreDataManager {
         save()
     }
     
+    func insertBooking(bookingId: UUID, name: String, email: String, phone: String, checkIn: Date, checkOut: Date, paymentOpt: String, bookingToPlace: DestinationPlace?, bookingToUser: User?) {
+        var newBooking = Booking(context: self.context)
+        newBooking.bookingId = bookingId
+        newBooking.name = name
+        newBooking.email = email
+        newBooking.phone = phone
+        newBooking.checkIn = checkIn
+        newBooking.checkOut = checkOut
+        newBooking.paymentOpt = paymentOpt
+        newBooking.bookingToPlace = bookingToPlace
+        newBooking.bookingToUser = bookingToUser
+        
+        save()
+    }
+    
     func getAllData<T:NSManagedObject>(entity: T.Type) -> [T] {
         
         var data : [T] = []
@@ -115,6 +130,24 @@ class CoreDataManager {
         return tempPlaces
     }
     
+    func getAllSaved() -> [DestinationPlace] {
+        var tempPlaces: [DestinationPlace] = []
+        
+        do {
+            let request = DestinationPlace.fetchRequest() as NSFetchRequest<DestinationPlace>
+            
+            let pred = NSPredicate(format: "isSaved == %@", true)
+            request.predicate = pred
+            
+            tempPlaces = try context.fetch(request)
+            
+        } catch {
+            print("Error Fetch Place")
+        }
+        
+        return tempPlaces
+    }
+
     func updatePlaceRating(id: UUID, upvote:Bool, downvote:Bool, hygieneRating:Int64) {
         let chosenPlace = getPlaceBasedOnId(id: id)
         

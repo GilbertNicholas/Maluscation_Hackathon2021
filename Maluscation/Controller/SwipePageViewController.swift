@@ -26,6 +26,7 @@ class SwipePageViewController: UIViewController {
     @IBOutlet weak var facility3Lbl: UILabel!
     @IBOutlet weak var facility4Lbl: UILabel!
     
+    @IBOutlet weak var prevBtn: UIButton!
     @IBOutlet weak var upvoteLbl: UILabel!
     @IBOutlet weak var downvoteLbl: UILabel!
     @IBOutlet weak var hygieneLbl: UILabel!
@@ -79,8 +80,6 @@ class SwipePageViewController: UIViewController {
     
     private func initUsedData() {
         placeDataBasedOnCategory = DataManager.getPlaceBasedOnCategory(categoty: chosenPref)
-//        placeNameLbl.text = placeDataBasedOnCategory[0].name
-//        cardImage.image = UIImage(data: placeDataBasedOnCategory[0].image!)
     }
     
     private func setupPrefButton() {
@@ -146,6 +145,8 @@ class SwipePageViewController: UIViewController {
             priceLbl.text = "IDR \(String(placeDataBasedOnCategory[usedIdx].price))"
             
             cardContainer.backgroundColor = colors[chosenPref]
+            
+            prevBtn.isEnabled = usedIdx == 0 ? false : true
         }
     }
     
@@ -172,7 +173,7 @@ class SwipePageViewController: UIViewController {
         let point = sender.translation(in: view)
         let xFromCenter = card.center.x - view.center.x
         
-        card.center = CGPoint(x: view.center.x + point.x, y: 430 + point.y)
+        card.center = CGPoint(x: view.center.x + point.x, y: 410 + point.y)
         card.transform = CGAffineTransform(rotationAngle: xFromCenter / divisor)
         
         if sender.state == UIGestureRecognizer.State.ended {
@@ -180,12 +181,12 @@ class SwipePageViewController: UIViewController {
             if card.center.x < 30 {
 //                Geser kiri
                 UIView.animate(withDuration: 0.3, animations: {
-                    card.center = CGPoint(x: card.center.x - 200, y: 430 + 75)
+                    card.center = CGPoint(x: card.center.x - 200, y: 410 + 75)
                     card.alpha = 0
                 })
-                
-                usedIdx -= 1
-                if usedIdx >= 0 {
+ 
+                usedIdx += 1
+                if usedIdx < placeDataBasedOnCategory.count {
                     setupCardContent()
                 } else {
                     self.usedIdx = 0
@@ -195,9 +196,11 @@ class SwipePageViewController: UIViewController {
             } else if card.center.x > (view.frame.width - 30) {
 //                Geser kanan
                 UIView.animate(withDuration: 0.3, animations: {
-                    card.center = CGPoint(x: card.center.x + 200, y: 430 + 75)
+                    card.center = CGPoint(x: card.center.x + 200, y: 410 + 75)
                     card.alpha = 0
                 })
+                
+                DataManager.savePlaceToWishlist(place: placeDataBasedOnCategory[usedIdx])
                 
                 usedIdx += 1
                 if usedIdx < placeDataBasedOnCategory.count {
@@ -213,7 +216,7 @@ class SwipePageViewController: UIViewController {
     
     func resetCard() {
         UIView.animate(withDuration: 0.2, animations: {
-            self.cardContainer.center = CGPoint(x: self.view.center.x, y: 430)
+            self.cardContainer.center = CGPoint(x: self.view.center.x, y: 410)
 //            self.lblOption.alpha = 0
             self.cardContainer.alpha = 1
             self.cardContainer.transform = .identity

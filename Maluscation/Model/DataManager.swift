@@ -82,6 +82,8 @@ class CoreDataManager {
         return tempPlaces
     }
     
+    
+    
     private func save() {
         do {
             try self.context.save()

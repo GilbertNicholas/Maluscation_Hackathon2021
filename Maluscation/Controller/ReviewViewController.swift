@@ -16,6 +16,8 @@ class ReviewViewController: UIViewController {
     @IBOutlet weak var feedbackTextField: UITextField!
     @IBOutlet weak var submitButton: UIButton!
     
+    var DataManager: CoreDataManager!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         setUpView()
@@ -50,6 +52,14 @@ class ReviewViewController: UIViewController {
     }
     
     @IBAction func submitBtnTapped(_ sender: UIButton) {
+        
+    }
+    
+    @IBAction func upvoteButtonTapped(_ sender: UIButton) {
+        
+    }
+    
+    @IBAction func downvoteButtonTapped(_ sender: UIButton) {
         
     }
 }

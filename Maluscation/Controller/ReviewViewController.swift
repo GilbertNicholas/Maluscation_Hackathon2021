@@ -19,6 +19,8 @@ class ReviewViewController: UIViewController {
     var upvote: Int?
     var downvote: Int?
     
+    var bookingId: UUID?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         

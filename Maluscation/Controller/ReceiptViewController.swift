@@ -14,6 +14,7 @@ class ReceiptViewController: UIViewController {
     @IBOutlet weak var paymentOptLabel: UILabel!
     @IBOutlet weak var accountOwnerLabel: UILabel!
     @IBOutlet weak var paymentDateLabel: UILabel!
+    @IBOutlet weak var totalPriceLabel: UILabel!
     
     @IBOutlet weak var qrCodeButton: UIButton!
     @IBOutlet weak var reviewButton: UIButton!
@@ -26,16 +27,30 @@ class ReceiptViewController: UIViewController {
     @IBOutlet weak var leftView: UIView!
     @IBOutlet weak var rightView: UIView!
     
-    var id: UUID?
     var bookingId: UUID?
+    
+    var DataManager: CoreDataManager?
+    var bookings: [Booking]!
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        DataManager = CoreDataManager()
+        
+        // MARK: Uncomment this to get booking by bookingId
+//        bookings = DataManager?.getBookingBasedOnId(id: bookingId!)
         
         setUpView()
     }
     
     func setUpView() {
+        // MARK: Uncomment if bookingId has been generated
+//        fullNameLabel.text = bookings[0].name
+//        dateLabel.text = "\(bookings[0].checkIn!) - \(bookings[0].checkOut!)"
+//        paymentOptLabel.text = bookings[0].paymentOpt
+//        accountOwnerLabel.text = bookings[0].name
+//        totalPriceLabel.text = "IDR \(bookings[0].totalPrice)"
+        
         leftView.layer.cornerRadius = 4
         leftView.layer.backgroundColor = CGColor(red: 9/255, green: 28/255, blue: 87/255, alpha: 1)
         
@@ -65,6 +80,16 @@ class ReceiptViewController: UIViewController {
         reviewButton.layer.borderColor = CGColor(red: 9/255, green: 28/255, blue: 87/255, alpha: 1)
         
         paymentStatusButton.layer.cornerRadius = 20
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "toReview" {
+            guard let nextVC = segue.destination as? ReviewViewController else {
+                return
+            }
+            
+            nextVC.bookingId = self.bookingId
+        }
     }
     
     @IBAction func qrCodeButtonTapped(_ sender: Any) {

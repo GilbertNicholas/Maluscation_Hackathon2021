@@ -339,6 +339,7 @@
                         <outlet property="qrCodeButton" destination="SNM-aX-i1T" id="jnV-Hd-Vtb"/>
                         <outlet property="reviewButton" destination="gHv-9n-fhm" id="OW2-Mc-7kL"/>
                         <outlet property="rightView" destination="sG8-Ep-TI5" id="mVq-CP-ZjP"/>
+                        <outlet property="totalPriceLabel" destination="d68-TY-xc3" id="wNN-Gp-m4P"/>
                         <outlet property="villaNameView" destination="QE4-Ja-YKh" id="t6K-zT-6j7"/>
                         <segue destination="t8d-Fc-fIg" kind="presentation" identifier="toQRCode" id="VFU-j7-0x2"/>
                         <segue destination="rgU-K4-62K" kind="presentation" identifier="toReview" id="C8P-2r-84f"/>

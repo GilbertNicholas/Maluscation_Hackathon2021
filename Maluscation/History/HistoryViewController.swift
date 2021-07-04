@@ -10,30 +10,43 @@ import UIKit
 class HistoryViewController: UIViewController {
     
     // Diganti jadi hasil fetch dari core data
-//    let destinations: [DestinationPlace] = [
-//        DestinationPlace(id: UUID(), name: "Vila 1", category: "Nature", location: "Bali", price: 1000000, upVote: 1200, downVote: 42, status: true, discount: 0.2, sanitationScore: 1, description: "description", additional: "additional", extras: ["netflix", "health kit", "dll"]),
-//        DestinationPlace(id: UUID(), name: "Vila 2", category: "Chill", location: "Yogyakarta", price: 2000000, upVote: 1400, downVote: 102, status: false, discount: 0.5, sanitationScore: 2, description: "description", additional: "additional", extras: ["netflix", "health kit", "dll"]),
-//        DestinationPlace(id: UUID(), name: "Vila 3", category: "Active", location: "Batam", price: 3500000, upVote: 100, downVote: 23, status: true, discount: 0.1, sanitationScore: 3, description: "description", additional: "additional", extras: ["netflix", "health kit", "dll"]),
-//        DestinationPlace(id: UUID(), name: "Vila 4", category: "Casual", location: "Jakarta", price: 6000000, upVote: 1023, downVote: 43, status: false, discount: 0.15, sanitationScore: 5, description: "description", additional: "additional", extras: ["netflix", "health kit", "dll"]),
-//    ]
-    let destinations: [DestinationPlaceTest] = [DestinationPlaceTest(id: UUID(), name: "Villa A", category: "Active", location: "Jakarta, Indonesia", price: 10500000, upVote: 1203, downVote: 31, status: true, discount: 0.2, sanitationScore: 5)]
+    private let backgroundColors: [String: UIColor] = [
+        "Active": red,
+        "Casual": yellow,
+        "Nature": green,
+        "Chill": blue
+    ]
+
+    private let secondaryBackgroundColors: [String: UIColor] = [
+        "Active": secondaryRed,
+        "Casual": secondaryYellow,
+        "Nature": secondaryGreen,
+        "Chill": secondaryBlue
+    ]
+    
+    var destinations: [DestinationPlace] = []
+    let dataManager = CoreDataManager()
 
     @IBOutlet weak var tableView: UITableView!
     override func viewDidLoad() {
         super.viewDidLoad()
+        fetchData()
         tableView.delegate = self
         tableView.dataSource = self
         tableView.register(UINib(nibName: "HistoryCell", bundle: .main), forCellReuseIdentifier: "HistoryCell")
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if segue.identifier == "historyToDetail" {
-            guard let detailVC = segue.destination as? DetailVC,
+        if segue.identifier == "historyToReceipt" {
+            guard let receiptVC = segue.destination as? ReceiptViewController,
                   let senderIndex = sender as? Int
                   else { return }
-            detailVC.id = destinations[senderIndex].id
-            detailVC.destination = destinations[senderIndex]
+            receiptVC.id = destinations[senderIndex].id
         }
+    }
+    
+    private func fetchData() {
+        destinations = dataManager.getPlaceBasedOnCategory(categoty: "Casual")
     }
 }
 
@@ -48,19 +61,27 @@ extension HistoryViewController: UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let section = indexPath.section
-        guard let cell = tableView.dequeueReusableCell(withIdentifier: "HistoryCell") as? HistoryCell
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: "HistoryCell") as? HistoryCell,
+              let image = UIImage(data: destinations[section].image!)
         else { return UITableViewCell() }
         
-//        cell.setContentView(backgroundColor: colors[destinations[section].category] ?? UIColor.white)
-        cell.setDestinationImage(image: (UIImage(named: "villa") ?? UIImage()))
-//        cell.setDestinationName(name: destinations[section].name, backgroundColor: secondaryColors[destinations[section].category] ?? UIColor.white)
-        cell.setLocationLabel(location: destinations[section].location)
+        cell.setContentView(backgroundColor: backgroundColors[destinations[section].category ?? ""] ?? UIColor.white)
+        cell.setDestinationImage(image: image)
+        cell.setDestinationName(name: destinations[section].name ?? "", backgroundColor: secondaryBackgroundColors[destinations[section].category ?? ""] ?? UIColor.white)
+        cell.setLocationLabel(location: destinations[section].location ?? "")
         cell.setZoneLabel(isGreen: destinations[section].status)
-        cell.setDateLabel(date: "01-01-2021 - 02-02-2021")
-        cell.setPaymentMethod(method: "BCA Virtual Account")
-        cell.setExtraLabel(extra: "Extra something")
         
-//        cell.setPriceLabel(price: formatThousanSeparator(price: destinations[section].price, addIDR: true), backgroundColor: secondaryColors[destinations[section].category] ?? UIColor.white)
+        guard let checkIn = destinations[section].placeToBooking?.value(forKey: "checkIn") as? Date,
+              let checkOut = destinations[section].placeToBooking?.value(forKey: "checkOut") as? Date,
+              let paymentOpt = destinations[section].placeToBooking?.value(forKey: "paymentOpt") as? String,
+              let facilitiy = destinations[section].facility?.first
+        else { return UITableViewCell () }
+        
+        cell.setDateLabel(date: "\(checkIn) - \(checkOut)")
+        cell.setPaymentMethod(method: paymentOpt)
+        cell.setExtraLabel(extra: facilitiy)
+        
+//        cell.setPriceLabel(price: formatThousanSeparator(price: destinations[section].price, addIDR: true), backgroundColor: secondaryBackgroundColors[destinations[section].category] ?? UIColor.white)
         
         return cell
     }

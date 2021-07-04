@@ -11,6 +11,8 @@ class PaymentStatusViewController: UIViewController {
     
     @IBOutlet weak var seeHistoryButton: UIButton!
     
+    var DataManager: CoreDataManager?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -23,15 +25,18 @@ class PaymentStatusViewController: UIViewController {
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if segue.identifier == "toHistory" {
-            let destinationController = segue.destination as? HistoryViewController
-            destinationController?.hidesBottomBarWhenPushed = false
+        if segue.identifier == "toSwipe" {
+            let destVC = segue.destination as! UITabBarController
+            
+            if let presentVC = destVC.viewControllers?[0] as? SwipePageViewController {
+                presentVC.chosenPref = "Active"
+                presentVC.DataManager = self.DataManager
+            }
         }
     }
     
     @IBAction func seeHistoryButtonTapped(_ sender: Any) {
-//        performSegue(withIdentifier: "toHistory", sender: nil)
-//        self.dismiss(animated: true)
+        performSegue(withIdentifier: "toSwipe", sender: nil)
     }
     
 }

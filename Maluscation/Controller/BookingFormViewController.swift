@@ -164,6 +164,14 @@ class BookingFormViewController: UIViewController {
         self.present(alert, animated: true, completion: nil)
     }
     
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "toPaymentStatus" {
+            if let presentVC = segue.destination as? PaymentStatusViewController {
+                presentVC.DataManager = self.DataManager
+            }
+        }
+    }
+    
     @IBAction func performUnwindSegueOperation(_ sender: UIStoryboardSegue) {
         guard sender.source is PaymentOptViewController else {
             return

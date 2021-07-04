@@ -22,8 +22,16 @@ class PaymentStatusViewController: UIViewController {
         seeHistoryButton.layer.borderColor = CGColor(red: 9/255, green: 28/255, blue: 87/255, alpha: 1)
     }
     
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "toHistory" {
+            let destinationController = segue.destination as? HistoryViewController
+            destinationController?.hidesBottomBarWhenPushed = false
+        }
+    }
+    
     @IBAction func seeHistoryButtonTapped(_ sender: Any) {
-        performSegue(withIdentifier: "toHistory", sender: nil)
+//        performSegue(withIdentifier: "toHistory", sender: nil)
+//        self.dismiss(animated: true)
     }
     
 }
